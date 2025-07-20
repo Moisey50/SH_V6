@@ -1,0 +1,9 @@
+FLWCapture FLWCaptureGadget1(FileName=C:\\07.28.10 10-26-39.flw;)
+VideoRender VideoRenderGadget1(Name=Float window 1;Monochrome=false;Scale=-1;)
+
+Connect(FLWCaptureGadget1>>0,VideoRenderGadget1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=FLWCaptureGadget1;x=98;y=135;)
+MOVE(gadget=VideoRenderGadget1;x=503;y=191;)
+END_VIEW_SECTION

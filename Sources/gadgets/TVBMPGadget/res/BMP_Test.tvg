@@ -1,0 +1,8 @@
+BMPCapture BMPCapture1(FileName=*.bmp;Directory=C:/Users/Moise/File\bX\bLtd/File\bX\bTeam\bSite\b-\bDocuments/Clients/Tecto/FromClient/wax\bmaya\b\o29-12-21\bnoiman\c/images;FrameRate=25;Loop=0;LabelFullPath=0;WatchNew=0;DeleteRead=0;Remove#=0;IterationMode=0;_GADGET_OUTPUT1=Name\eBMPCapture\\boutput\s;)
+
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=BMPCapture1;x=161;y=93;)
+GRAPHVIEW(name=GraphView;x=0.00852273;y=0.00805369;w=0.974432;h=0.672483;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

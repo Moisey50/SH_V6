@@ -1,0 +1,29 @@
+ScrollCtrl YShift(Name=_inplace;Min=-100;Max=100;Vertical=0;MessageFormat=YCrossShift\e%d\s;SynchroPin=0;)
+Knob Knob1(Name=_inplace;ButtonName=Next;Value=1;Mode=1;)
+ScrollCtrl XShift(Name=_inplace;Min=-100;Max=100;Vertical=0;MessageFormat=XCrossShift\e%d\s;SynchroPin=0;)
+BMPCapture BMPCapture1(FileName=bevel_M03105_NG_5_Y*.bmp;Directory=D:\\Documents\\SixEyes\\DataSetsAfterDL\\bevel_M03105_NG_5;FrameRate=5;Loop=0;LabelFullPath=0;WatchNew=0;DeleteRead=0;Remove#=0;IterationMode=2;_GADGET_OUTPUT1=Name\eBMPCapture\\boutput\s;)
+FRender FRender3(Name=Float\bwindow\b3;Monochrome=0;offset=297,0;Scale=1;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;)
+FRender FRender2(Name=Float\bwindow\b2;Monochrome=0;offset=0,1000;Scale=1;LineSelection=false;RectSelection=false;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;)
+CrossFFT CrossFFT1(CrossPt=436,120;XCrossShift=13;YCrossShift=-28;RectHalfSize=64;FFT_Order=10;HalfUsed=32;Resolution_um_per_pix=19.8;_OUTPUTMODE=0;_GADGET_OUTPUT1=Name\eVideoWithSpectrums\s;_GADGET_INPUT1=Name\eVideoFrameIn\s;_GADGET_DUPLEX1=Name\eControl\s;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=1;offset=355,634;Scale=0;LineSelection=false;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0;Id=0;ObjectSelection=0;ShowLabel=1;Scale&Units=1.000000,;)
+
+Connect(YShift>>0,CrossFFT1<>0)
+Connect(XShift>>0,CrossFFT1<>0)
+Connect(BMPCapture1>>0,FRender1<<0)
+Connect(BMPCapture1>>0,CrossFFT1<<0)
+Connect(CrossFFT1>>0,FRender2<<0)
+Connect(CrossFFT1>>0,FRender3<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=BMPCapture1;x=197;y=75;)
+MOVE(gadget=TextRender1;x=353;y=64;)
+MOVE(gadget=FRender1;x=377;y=65;)
+MOVE(gadget=Knob1;x=46;y=58;)
+MOVE(gadget=CrossFFT1;x=304;y=122;)
+MOVE(gadget=FRender2;x=542;y=83;)
+MOVE(gadget=FRender3;x=632;y=244;)
+MOVE(gadget=XShift;x=61;y=143;)
+MOVE(gadget=YShift;x=61;y=209;)
+GRAPHVIEW(name=GraphView;x=0;y=-0.0292463;w=0.577529;h=1.04387;Viewed=0;)
+END_VIEW_SECTION
+

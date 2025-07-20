@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{ca85fbd0-c7b3-4474-b4e3-61bf7b080b8e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0267883b-a17f-4b8b-a594-cdead855c4db}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{9e1ddc88-9b3b-4af2-a079-fcc8eb57613d}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\imageproc\Averager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorMapGadget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSlideView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DibRect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\userinterface\DIBRender3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\video\dibview3d.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\video\DibVSq.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MergeLayers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScanLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SlideView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SlideViewRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\video\stereoview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TVRotate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TVVideo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoCutRect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoCutRectDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoFilters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoRenders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoStereoRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoStereoSplitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DXRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pseudocolor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GMarking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TVVideo.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\helpers\16bit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorMapGadget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSlideView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\imageproc\customfilters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DibRect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\userinterface\dibrender3d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\video\DIBView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\video\DIBView3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\video\DIBViewBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\imageproc\fstfilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeLayers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\gadgets\RectFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScanLine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SlideView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SlideViewRender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TVRotate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TVVideo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoCutRect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoCutRectDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoFilters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoRenders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoStereoRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoStereoSplitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DXRender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GadgetsLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\imageproc\basedef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\imageproc\rotate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\imageproc\simpleip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\video\stereoview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\shbase\dibrender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\imageproc\Averager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GMarking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Gifs\1000.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1001.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1002.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1003.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1004.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1005.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1006.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1007.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1008.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1009.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1010.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1011.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1012.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1013.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1014.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1015.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1016.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1017.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\grates.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\JPGS\1000.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\JPGS\1001.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\JPGS\1002.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\JPGS\1003.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\JPGS\1004.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\JPGS\1005.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\JPGS\1006.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\JPGS\1007.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TVVideo.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TVG\1000.tvg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10000.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10001.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10002.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10002.mht">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10003.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10004.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10005.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10006.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10007.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10008.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10009.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\1001.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10010.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10011.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10012.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10013.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10014.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10015.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10016.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10017.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10018.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10019.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10020.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10021.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10022.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10023.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10024.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10025.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10026.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10027.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10028.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10029.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10030.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10031.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10032.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10033.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10034.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10035.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10036.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10037.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10038.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10039.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10040.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10041.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10042.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10043.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10044.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10045.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10046.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10047.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10048.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10049.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10050.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10051.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10052.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10053.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10054.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10055.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10056.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10057.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10058.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10059.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+WaveCapture WaveCapture1(MCIDeviceID=0;NChannels=1;)
+WavSpectrum WavSpectrum1(_OUTPUTMODE=1;Range=10;)
+PlotGraph PlotGraph1(Name=Float\bwindow\b2;RangeX=0.000000,100.000000;RangeY=0.000000,125000.000000;Labels=0.000000,0.000000,0.000000,0.000000;Fit=0;DataLength=320;ViewNames=1;ViewNet=7;ViewRanges=1;Clear=0;SamplePeriod_ms=0;)
+WavOscillograph WavOscillograph1(Name=Float\bwindow\b1;)
+
+Connect(WaveCapture1>>0,WavOscillograph1<<0)
+Connect(WaveCapture1>>0,WavSpectrum1<<0)
+Connect(WavSpectrum1>>0,PlotGraph1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=WaveCapture1;x=74;y=78;)
+MOVE(gadget=WavOscillograph1;x=346;y=57;)
+MOVE(gadget=WavSpectrum1;x=219;y=218;)
+MOVE(gadget=PlotGraph1;x=393;y=159;)
+FLOATWND(name=Float\bwindow\b2;x=3086;y=519;w=737;h=712;Selected=PlotGraph1;)
+GRAPHVIEW(name=GraphView;x=0.0135005;y=0.020202;w=0.778206;h=0.66811;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+SHSTUDIOVIEW(name=SHStudioView;x=2770;y=22;w=1249;h=993;)
+END_VIEW_SECTION
+

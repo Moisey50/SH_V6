@@ -1,0 +1,57 @@
+FindStraights FindStraights1(MinLength_pix=20;Tolerance_mrad=20;DiffFromLine_pix=3;NMaxDeviated=5;RemoveOrigin=2;_OUTPUTMODE=1;_GADGET_OUTPUT1=Name\eLines+Origin\s;_GADGET_OUTPUT2=Name\eDiagnostics\s;_GADGET_INPUT1=Name\eFigureInput\s;)
+CheckBoxCtrl CheckBoxCtrl1(Name=_inplace;ButtonName=Enable;Set=false;)
+CheckBoxCtrl CheckBoxCtrl2(Name=_inplace;ButtonName=Process;Set=true;)
+Basler Basler1(Camera=40067266;StreamState=0;Format=17301505;Shutter_us=5000;Gain_dBx10=0;Brightness=31.25;Gamma=1;ExposureMode=0;Trig_Selector=3;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Frame_rate=20;ROI=0,0,1920,1200;
+Line1=(LineMode_=Input;LineInverter_=1;);
+Line2=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line3=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);LineSelect=0;LineInvert=1;
+Timer1=(TimerTriggerSource_=Off;TimerDuration_=10;TimerDelay_=0;);
+Timer2=(TimerTriggerSource_=Off;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=9.99912;TimerTrigger=0;OutputSelector=0;OutputValue=0;)
+VideoHighPass1DV VideoHighPass1DV1(ConvParameter=991;)
+VideoHighPass VideoHighPass1(ConvParameter=990;)
+TVObjects TVObjects1(Template=spot(name=edge;type=4;contrast=0;placement=0;xoffset=660;yoffset=202;width=803;height=508;width_min=50;height_min=10;width_max=1000;height_max=1000;area_min=500;area_max=1000000;xdiffr=0;ydiffr=0;detailed=0x8000403;multi=1;min_ampl=20; thres= 0.200;rotation_thres=0.500;donttouchedge=1;timeout_ms=100.0;max_n_objects=500;color=255;textsize=10;xtextoffset=5;ytextoffset=-5;extendforw_perc=50;view_roi=1;view_pos=1;view_coords=1;view_angle=0;view_dia=0;view_contur=1;view_details=0;view_profx=0;view_profy=0;view_mgraph=0;view_scaled=0;meas_pos=1;meas_area=1;meas_perim=0;meas_anglew=0;meas_angle=0;meas_subpix=0;meas_ratio=0;meas_xprof=0;meas_diffr=0;meas_yprof=0;meas_contur=1;meas_sub_sides=0;meas_diam=0;meas_weight=0;meas_runs=0;)
+line(name=layers;type=1;contrast=0;placement=0;xoffset=590;yoffset=500;width=20;height=400;dir=0;thick_min=0;thick_max=10;debounce=2;detailed=0x105;multi=1;min_ampl=20; thres= 0.800;timeout_ms=100.0;max_n_objects=500;color=8388736;textsize=10;xtextoffset=5;ytextoffset=-5;extendforw_perc=50;view_roi=1;view_pos=1;view_coords=1;view_angle=0;view_profx=0;view_profy=1;view_scaled=0;meas_pos=1;meas_thick=1;meas_angle=0;meas_xprof=1;meas_yprof=0;meas_sub_sides=0;)
+spot(name=edgeup;type=4;contrast=0;placement=0;xoffset=300;yoffset=300;width=877;height=500;width_min=30;height_min=30;width_max=1000;height_max=1000;area_min=1000;area_max=1000000;xdiffr=0;ydiffr=0;detailed=0x8000403;multi=0;min_ampl=20; thres= 0.150;rotation_thres=0.500;donttouchedge=1;timeout_ms=100.0;max_n_objects=500;color=65280;textsize=10;xtextoffset=5;ytextoffset=-5;extendforw_perc=50;view_roi=1;view_pos=0;view_coords=0;view_angle=0;view_dia=0;view_contur=1;view_details=0;view_profx=0;view_profy=0;view_mgraph=0;view_scaled=0;meas_pos=1;meas_area=1;meas_perim=0;meas_anglew=0;meas_angle=0;meas_subpix=0;meas_ratio=0;meas_xprof=0;meas_diffr=0;meas_yprof=0;meas_contur=1;meas_sub_sides=0;meas_diam=0;meas_weight=0;meas_runs=0;)
+Task(0,edge,edgeup)
+Task(2,edge)
+Task(1,layers)
+;ActiveTask=2;CaptionPeriod=0;ViewMode=-2147482624;Scaling=1,pix;gtimeout_ms=0;NObjectsMax=500;LastImageWidth=1920;LastImageHeight=1200;_OUTPUTMODE=1;_GADGET_OUTPUT2=Name\eDiagnostics\s;_GADGET_INPUT2=Name\eControl\s;_GADGET_INPUT3=Name\eScript\\bloading\\bpin\s;_GADGET_INPUT4=Name\eCoordinates\s;)
+RenderFrameRate RenderFrameRate3(Name=_inplace;)
+BMPRender BMPRender1(Name=_inplace;FileName=.\\BMP/MicroPointPro%06d<Counter>.bmp;FormatBMP=1;AddLabel=0;FolderPath=.\\BMP/;FileName_NoExt=MicroPointPro%06d;AddFileNameSuffix=0;)
+FRender FRender4(Name=Float\bwindow\b1;Monochrome=1;offset=560,226;Scale=2;LineSelection=true;RectSelection=false;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0xD1052\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=0.601805,um;SaveImagesDir=;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=1;offset=461,745;Scale=0;LineSelection=false;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x4F1236\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+Switch Switch2(_OUTPUTMODE=1;SwitchOn=1;)
+Switch Switch1(_OUTPUTMODE=1;SwitchOn=0;)
+
+Connect(FindStraights1>>0,FRender1<<0)
+Connect(CheckBoxCtrl1>>0,Switch1<>0)
+Connect(CheckBoxCtrl2>>0,Switch2<>0)
+Connect(Basler1>>0,RenderFrameRate3<<0)
+Connect(Basler1>>0,Switch2<<0)
+Connect(Basler1>>0,Switch1<<0)
+Connect(VideoHighPass1DV1>>0,FRender4<<0)
+Connect(VideoHighPass1>>0,FRender4<<0)
+Connect(TVObjects1>>0,FRender4<<0)
+Connect(FRender4>>0,TVObjects1<<3)
+Connect(Switch2>>0,TVObjects1<<0)
+Connect(Switch1>>0,BMPRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=RenderFrameRate3;x=427;y=19;)
+MOVE(gadget=FRender4;x=346;y=198;)
+MOVE(gadget=VideoHighPass1;x=156;y=217;)
+MOVE(gadget=TVObjects1;x=198;y=140;)
+MOVE(gadget=FRender1;x=486;y=233;)
+MOVE(gadget=TextRender1;x=429;y=405;)
+MOVE(gadget=Switch1;x=225;y=320;)
+MOVE(gadget=CheckBoxCtrl1;x=91;y=372;)
+MOVE(gadget=Basler1;x=34;y=27;)
+MOVE(gadget=Switch2;x=68;y=105;)
+MOVE(gadget=CheckBoxCtrl2;x=18;y=163;)
+MOVE(gadget=VideoHighPass1DV1;x=89;y=284;)
+MOVE(gadget=FindStraights1;x=344;y=262;)
+MOVE(gadget=BMPRender1;x=397;y=339;)
+FLOATWND(name=Float\bwindow\b1;x=0.462277;y=0.0597222;w=0.529018;h=0.929167;Selected=FRender4;)
+GRAPHVIEW(name=GraphView;x=0.0340776;y=0.0466238;w=0.737955;h=0.876206;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

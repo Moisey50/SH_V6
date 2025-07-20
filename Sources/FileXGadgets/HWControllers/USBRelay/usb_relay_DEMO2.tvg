@@ -1,0 +1,37 @@
+ControlPinTester ControlPinTester1(Name=_inplace;)
+TextCaptureCtrl TextCaptureCtrl2(Name=_inplace;Text=Chan\e1\sValue\e0\s;Quantity=0;NoSync=0;Manual=1;FrameRate=1;FramePeriod_ms=1000.00;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+TextCaptureCtrl TextCaptureCtrl1(Name=_inplace;Text=Chan\e1\sValue\e1\s;Quantity=0;NoSync=0;Manual=1;FrameRate=1;FramePeriod_ms=1000.00;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+TextCaptureCtrl TextCaptureCtrl3(Name=_inplace;Text=Send;Quantity=0;NoSync=0;Manual=1;FrameRate=1;FramePeriod_ms=1000.00;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+GenericCapture BY_ID_OFF(Name=_inplace;Message=Quantity\e0\s;Attributes=;Label=off;NoSync=0;SetEOS=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=11;IgnoreInConnect=0;)
+GenericCapture BY_IDs_TOGGLE(Name=_inplace;Message=TextData\eChan\e0\bToggle\b\s\s;Attributes=;Label=toggle;NoSync=0;SetEOS=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+GenericCapture BY_MASK_ON(Name=_inplace;Message=TextData\e0xffff\s;Attributes=;Label=on;NoSync=0;SetEOS=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+GenericCapture BY_MASK_OFF(Name=_inplace;Message=TextData\e0xffff\s;Attributes=;Label=off;NoSync=0;SetEOS=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+GenericCapture BY_ID_ON(Name=_inplace;Message=TextData\eChan\e1\s;Attributes=;Label=on;NoSync=0;SetEOS=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+GenericCapture BY_MASK_TOGGLE(Name=_inplace;Message=TextData\e0xffff\s;Attributes=;Label=toggle;NoSync=0;SetEOS=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+UsbRelayGadget UsbRelayGadget3(_OUTPUTMODE=1;Mode=2;Port=1;PortName=COM4;BaudRate=9600;DataBits=3;Parity=0;StopBits=0;XonXoff=0;DtrDsr=0;RtsCts=0;WantsCR=1;AppendLF=0;BlockSize=0;LineDelay_ms=0;BlockWaitTime_ms=0;)
+TextRender TextRender1(Name=_inplace;ViewLabel=0;ViewTiming=0;)
+Null Null2
+
+Connect(TextCaptureCtrl2>>0,Null2<<0)
+Connect(TextCaptureCtrl1>>0,Null2<<0)
+Connect(TextCaptureCtrl3>>0,Null2<<0)
+Connect(UsbRelayGadget3>>0,TextRender1<<0)
+Connect(Null2>>0,UsbRelayGadget3<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=BY_MASK_TOGGLE;x=5;y=10;)
+MOVE(gadget=ControlPinTester1;x=475;y=368;)
+MOVE(gadget=TextRender1;x=502;y=11;)
+MOVE(gadget=BY_MASK_ON;x=4;y=345;)
+MOVE(gadget=BY_MASK_OFF;x=4;y=417;)
+MOVE(gadget=BY_IDs_TOGGLE;x=12;y=282;)
+MOVE(gadget=BY_ID_ON;x=22;y=89;)
+MOVE(gadget=BY_ID_OFF;x=12;y=231;)
+MOVE(gadget=TextCaptureCtrl1;x=141;y=278;)
+MOVE(gadget=TextCaptureCtrl2;x=139;y=387;)
+MOVE(gadget=UsbRelayGadget3;x=300;y=122;)
+MOVE(gadget=TextCaptureCtrl3;x=142;y=500;)
+MOVE(gadget=Null2;x=364;y=267;)
+GRAPHVIEW(name=GraphView;x=0.0362998;y=0.0304288;w=0.642857;h=0.886584;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

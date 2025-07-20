@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b747bef0-0cb1-46ad-83ec-f722a727aff1}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c68884f9-e786-4382-8f52-5b857495d7df}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c20cc0bb-d09d-4e59-a47e-2b7015d49585}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tvhelp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="tvhelp.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tvhelp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\GIFS\10101.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\10102.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\10103.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\10111.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\tvhelp.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10000.htm" />
+    <None Include="res\1001.css" />
+    <None Include="res\10010.htm" />
+    <None Include="res\1002.htm" />
+    <None Include="res\10020.htm" />
+    <None Include="res\10030.htm" />
+    <None Include="res\10100.htm" />
+    <None Include="res\10110.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

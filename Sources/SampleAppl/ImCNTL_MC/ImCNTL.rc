@@ -1,0 +1,641 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ImCNTL.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ImCNTL.ico"
+
+IDI_RENDER              ICON                    "res\\icon1.ico"
+
+IDC_OPEN                ICON                    "res\\icon1.ico"
+
+IDC_RUN                 ICON                    "res\\ico00001.ico"
+
+IDC_STOP                ICON                    "res\\ico00002.ico"
+
+IDC_SETUP               ICON                    "res\\ico00003.ico"
+
+IDC_VIEW_GRAPH          ICON                    "res\\ico00004.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 94
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About ImCNTL"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "ImCNTL Version 5.3.3",IDC_STATIC,41,15,119,8,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "Copyright (C) HP Indigo Division and File X Ltd. 1999 - 2013 POB 3349, Rishon Le Zion, 75132, ISRAEL                         Tel. +972-54-984366 Fax. +972-3-9503980                   E-mail: moisey@TheFileX.com",IDC_STATIC,34,41,188,37
+END
+
+IDD_IMCNTL_DIALOG DIALOGEX 0, 0, 320, 63
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Image Processing Server"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,260,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,260,23,50,14
+    PUSHBUTTON      "&Help",ID_HELP,260,41,50,14
+    LTEXT           "Version",IDC_VERSION,7,7,216,11
+END
+
+IDD_FFT_FILTER DIALOG 0, 0, 308, 65
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FFT Filter Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,251,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,251,24,50,14
+    EDITTEXT        IDC_RECTANGLE1,57,16,141,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RECTANGLE2,57,34,141,13,ES_AUTOHSCROLL
+    LTEXT           "Put Zero Into",IDC_STATIC,10,18,42,8
+    LTEXT           "Put Zero Into",IDC_STATIC,10,35,42,8
+END
+
+IDD_GRABBER_CONTROL DIALOG 0, 0, 340, 220
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Meteor-2/Digital Grabber Control"
+FONT 10, "System"
+BEGIN
+    CONTROL         "Trigger Disable",IDC_TRIGGER,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,19,60,8
+    CONTROL         "Trigger Enable",IDC_TRIGGER2,"Button",BS_AUTORADIOBUTTON,13,30,60,8
+    CONTROL         "Trigger Auto",IDC_TRIGGER3,"Button",BS_AUTORADIOBUTTON,13,41,60,8
+    CONTROL         "Inactive",IDC_TRIGGER_SOURCE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,67,59,8
+    CONTROL         "Software",IDC_TRIGGER_SOURCE2,"Button",BS_AUTORADIOBUTTON,13,77,59,8
+    CONTROL         "Opto (Pis 2-7)",IDC_TRIGGER_SOURCE3,"Button",BS_AUTORADIOBUTTON,13,87,59,8
+    CONTROL         "TTL (Pin 1)",IDC_TRIGGER_SOURCE4,"Button",BS_AUTORADIOBUTTON,13,97,59,8
+    CONTROL         "Continuous",IDC_TRIGGER_SOURCE5,"Button",BS_AUTORADIOBUTTON,13,107,59,8
+    CONTROL         "Rise",IDC_TRIGGER_MODE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,131,39,8
+    CONTROL         "Fall",IDC_TRIGGER_MODE2,"Button",BS_AUTORADIOBUTTON,13,142,43,8
+    CONTROL         "Low Level",IDC_TRIGGER_MODE3,"Button",BS_AUTORADIOBUTTON,13,153,46,8
+    CONTROL         "High Level",IDC_TRIGGER_MODE4,"Button",BS_AUTORADIOBUTTON,13,164,48,8
+    DEFPUSHBUTTON   "OK",IDOK,283,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,283,24,50,14
+    GROUPBOX        "External Synchro",IDC_STATIC,7,7,70,45
+    GROUPBOX        "Trigger Source",IDC_STATIC,7,57,70,62
+    GROUPBOX        "Trigger Start",IDC_STATIC,7,121,70,55
+END
+
+IDD_IM_PARAM_DIALOG DIALOGEX 0, 0, 187, 358
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Processing Parameters"
+FONT 10, "System", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,138,7,42,14
+    PUSHBUTTON      "Cancel",IDCANCEL,138,24,42,14
+    LTEXT           "Bin Thresnold",IDC_STATIC,13,11,36,8
+    EDITTEXT        IDC_BIN_THRES,50,8,33,12,ES_CENTER | ES_AUTOHSCROLL
+    CONTROL         "FFT Filter",IDC_USE_FFT_FILTER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,73,41,8
+    LTEXT           "Meas Exp.",IDC_STATIC,13,22,36,8
+    EDITTEXT        IDC_MEAS_EXPANSION,50,21,33,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "FFT Xc",IDC_STATIC,64,73,22,8
+    LTEXT           "FFT Yc",IDC_STATIC,124,74,23,8
+    EDITTEXT        IDC_FFT_XC,89,71,26,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_FFT_YC,150,71,26,12,ES_CENTER | ES_AUTOHSCROLL
+    GROUPBOX        "FFT Parameters",IDC_STATIC,7,64,173,23
+    GROUPBOX        "Power Measurement Parameters",IDC_STATIC,7,87,173,38
+    LTEXT           "Radius",IDC_STATIC,12,97,25,9
+    EDITTEXT        IDC_POWER_RADIUS,43,96,30,12,ES_CENTER | ES_AUTOHSCROLL
+    CONTROL         "Save",IDC_SAVE_POWER_GRADES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,111,29,10
+    LTEXT           "File Name",IDC_STATIC,58,112,35,8
+    EDITTEXT        IDC_POWER_SAVE_NAME,95,110,76,12,ES_AUTOHSCROLL
+    LTEXT           "Min Ampl.",IDC_STATIC,13,36,36,8
+    EDITTEXT        IDC_MIN_AMPLITUDE,50,34,33,12,ES_CENTER | ES_AUTOHSCROLL
+    GROUPBOX        "Shot Synchro",IDC_STATIC,7,125,173,22
+    LTEXT           "Expose begin",IDC_STATIC,10,134,45,8
+    EDITTEXT        IDC_EXPOSURE_BEGIN,60,132,26,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Xc",IDC_STATIC,17,159,8,8
+    LTEXT           "Yc",IDC_STATIC,65,159,10,8
+    EDITTEXT        IDC_VIEW_CX,30,157,32,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_VIEW_CY,79,157,32,12,ES_CENTER | ES_AUTOHSCROLL
+    GROUPBOX        "Last Power Measurement Spot Position",IDC_STATIC,7,147,173,25
+    CONTROL         "Save Extended Info",IDC_SAVE_EXTENDED_INFO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,87,97,84,10
+    LTEXT           "Min Area",IDC_STATIC,13,50,36,8
+    EDITTEXT        IDC_MIN_AREA,50,47,33,12,ES_CENTER | ES_AUTOHSCROLL
+    GROUPBOX        "Diffraction Measurement",IDC_STATIC,7,173,173,74
+    LTEXT           "Rad, pix. X",IDC_STATIC,9,200,38,8
+    EDITTEXT        IDC_DIFFRACTION_RADIUS,47,198,23,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_SPOT_DIA,150,226,23,12,ES_AUTOHSCROLL
+    LTEXT           "Max spot diam on binarization ""Bin"", pix (Larger sizes disregarded) ",IDC_STATIC,10,227,134,19
+    CONTROL         "Diffr.max",IDC_DIFFRACTION_MAXIMUM_METOD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,114,186,50,9
+    CONTROL         "Area Averaging",IDC_DIFFRACTION_AREA_AVERAGING,"Button",BS_AUTORADIOBUTTON,114,199,59,9
+    LTEXT           "Y",IDC_STATIC,73,200,8,8
+    EDITTEXT        IDC_DIFFRACTION_RADIUS_Y,84,198,23,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Background dist, pix",IDC_STATIC,10,212,70,8
+    EDITTEXT        IDC_BACKGROUND_DIST,84,211,23,12,ES_AUTOHSCROLL
+    GROUPBOX        "Image Saving - Cam0",IDC_STATIC,7,247,173,31
+    CONTROL         "Crop Center of FOV",IDC_SAVE_MODE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,12,266,77,9
+    CONTROL         "Full Image",IDC_SAVE_FULL,"Button",BS_AUTORADIOBUTTON,91,267,44,8
+    CONTROL         "Auto Save",IDC_AUTO_SAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,256,43,8
+    CONTROL         "Zip",IDC_SAVE_DO_ZIP,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,71,316,22,8
+    LTEXT           "Dir",IDC_STATIC,72,255,12,8
+    EDITTEXT        IDC_IMAGE_SAVE_DIR,85,254,90,12,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "16 bits",IDC_SAVE_16_BITS,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,108,316,33,8
+    LTEXT           "Max Search Dist",IDC_STATIC,12,185,58,11
+    EDITTEXT        IDC_DIFFR_MAX_SEARCH_DIST,81,186,25,12,ES_CENTER | ES_AUTOHSCROLL
+    GROUPBOX        "Beam Rotation",IDC_STATIC,7,308,173,20
+    CONTROL         "By Sectors",IDC_BEAM_ROT_BY_SECTORS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,317,47,8
+    CONTROL         "View Direction",IDC_VIEW_DIR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,338,74,8
+    GROUPBOX        "Blob Parameters",IDC_BLOB_PAR,7,328,173,23
+    CONTROL         "Fix.Thres",IDC_FIXED_THRESHOLD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,41,42,8
+    EDITTEXT        IDC_THRESHOLD_VALUE,129,53,46,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Minus Back",IDC_MINUS_BACK,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,91,45,33,17
+    CONTROL         "Use Exposure",IDC_USE_EXPOSURE_FOR_BACKGROUND,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,91,19,42,17
+    CONTROL         "Low Pass",IDC_LOW_PASS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,91,37,40,8
+    GROUPBOX        "Video Saving",IDC_STATIC,7,279,173,27
+    CONTROL         "Save Video",IDC_SAVE_VIDEO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,294,50,10
+    CONTROL         "Cam1",IDC_VIDEO_CAM1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,71,294,35,10
+    CONTROL         "Cam0",IDC_VIDEO_CAM2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,108,294,35,10
+    LTEXT           "C:\\ATJ\\VideoData",IDC_STATIC,71,284,60,8
+END
+
+IDD_RIGHT_BUTTON_DLG DIALOGEX 0, 0, 199, 139
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Big View Control Dialog"
+FONT 7, "System", 0, 0, 0x0
+BEGIN
+    CONTROL         "No View",IDC_NOVIEW,"Button",BS_AUTORADIOBUTTON | WS_GROUP,16,19,60,8
+    CONTROL         "One Line Position",IDC_ONE_LINE_2,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,16,76,73,8
+    CONTROL         "Distance between lines",IDC_DIST_BTW_LINES_3,"Button",BS_AUTORADIOBUTTON,16,28,92,8
+    CONTROL         "Spot Parameters",IDC_SPOT_PARAMETERS_4,"Button",BS_AUTORADIOBUTTON,16,37,92,8
+    CONTROL         "Extended Data",IDC_EXTENDED_DATA,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,16,66,92,8
+    CONTROL         "Two Spots (Deskew)",IDC_TWO_SPOTS,"Button",BS_AUTORADIOBUTTON,16,46,92,8
+    CONTROL         "Full Frame Statistics",IDC_FULL_FRAME_STAT,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,70,85,85,8
+    CONTROL         "Linear deskew live",IDC_LINEAR_DESKEW_LIVE,"Button",BS_AUTORADIOBUTTON,16,55,77,10
+    CONTROL         "Show microns",IDC_SHOW_MICRONS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,129,68,55,8
+    CONTROL         "Save",IDC_AUTOMATIC_SAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,118,30,8
+    EDITTEXT        IDC_AUTOSAVE_FILE_NAME,95,115,91,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,142,7,50,11
+    PUSHBUTTON      "Cancel",IDCANCEL,142,20,50,11
+    GROUPBOX        "View Mode",IDC_STATIC,7,6,111,78
+    GROUPBOX        "Scales",IDC_STATIC,7,85,185,21
+    LTEXT           "",IDC_SCALES,17,94,166,8
+    GROUPBOX        "Automatic Save Results",IDC_STATIC,7,107,185,25
+    LTEXT           "File Name",IDC_STATIC,53,117,33,8
+    GROUPBOX        "Spot Coordinates",IDC_STATIC,122,58,70,26
+    CTEXT           "",IDC_SPOT_ON_VIEW_COORD,123,76,66,8,SS_CENTERIMAGE
+END
+
+IDD_GRAPH_VIEW_DLG DIALOGEX 0, 0, 140, 127
+STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TABVIEW,"SysTabControl32",0x0,0,0,140,95
+    PUSHBUTTON      "Run",IDC_RUN,1,113,38,14
+    PUSHBUTTON      "Stop",IDC_STOP,40,113,38,14
+    PUSHBUTTON      "Close tab",IDC_CLOSE_TAB,79,113,38,14,WS_DISABLED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "FileDescription", "ImCNTL MFC Application"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "InternalName", "ImCNTL"
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+            VALUE "OriginalFilename", "ImCNTL.EXE"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "ProductName", "ImCNTL Application"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+    IDD_IMCNTL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+    IDD_FFT_FILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 301
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+    IDD_GRABBER_CONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 333
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 213
+    END
+    IDD_IM_PARAM_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 351
+    END
+    IDD_RIGHT_BUTTON_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+END
+#endif    // APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT
+    VK_F1,          ID_HELP,                VIRTKEY 
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Load Graph",                 ID_FILE_LoadCamCfg
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "Save &Binary",                IDM_SAVE_BINARY
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Grabber Parameters",         ID_EDIT_GRABBER
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM "&ViewGraphSetup",             IDM_GRAPH_SETUP
+        MENUITEM "View&Graph",                  IDM_VIEW_GRAPH
+        MENUITEM "&Edit FFT Filter",            IDM_EDIT_FFT_FILTER
+        POPUP "&Work with external imaging"
+        BEGIN
+            MENUITEM "&Not using",                  IDM_NOT_USING_EXT_IMAGING
+            MENUITEM "&Send Images To LAN",         IDM_SEND_IMAGES_TO_LAN
+            MENUITEM "&Take Images from LAN",       IDM_TAKE_IMAGES_FROM_LAN
+        END
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About ImageCNTL...",         ID_APP_ABOUT
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    BUTTON      ID_GRAB_BUTTON
+    BUTTON      ID_LIVE_VIDEO
+    BUTTON      ID_GRAY_BINARY_DISP
+    BUTTON      ID_EDIT_PARAMETERS
+    BUTTON      ID_EXPOSURE_MINUS
+    BUTTON      ID_EXPOSURE_PLUS
+    BUTTON      ID_ASYNCHRONE
+    BUTTON      ID_CONTRASTING
+    BUTTON      ID_MINUS_BACKGROUND
+    SEPARATOR
+    BUTTON      ID_MEASURE_BLOB
+    BUTTON      ID_MEASURE_LINE
+    BUTTON      ID_MEASURE_POWER
+    BUTTON      ID_MEASURE_Y_DIST
+    BUTTON      ID_BUTTON512x512
+    SEPARATOR
+    BUTTON      ID_GAIN_MINUS
+    BUTTON      ID_GAIN_PLUS
+    BUTTON      ID_CHANNEL_CONNECTED
+    SEPARATOR
+    BUTTON      ID_BAD_PIXELS
+    BUTTON      ID_Draw_Line
+    BUTTON      ID_User_Dlg
+    BUTTON      ID_ASYNC_ON
+    BUTTON      ID_LIVE_VID_ON
+    BUTTON      ID_CONTRAST_ON
+    BUTTON      ID_BUTTON32816
+    BUTTON      ID_BUTTON1024x1024
+    BUTTON      ID_SHOW_RADIAL_DISTRIBUTION
+    BUTTON      ID_BUTTON32836
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDS_ABOUTBOX            "&About ImCNTL..."
+    ID_User_Dlg             "Open User Dialog\nOpen User Dialog"
+    ID_Draw_Line            "Init Exposure and Gain\nInit Exposure and Gain"
+END
+STRINGTABLE
+BEGIN
+    ID_GRAB_BUTTON          "Grab One Image\nGrab"
+    ID_LIVE_VIDEO           "Pseudo Live Video\nLive Video"
+    ID_EXPOSURE_MINUS       "Exposure -100 (^ -> -1000 )\nExpose -100/-1000"
+    ID_EXPOSURE_PLUS        "Exposure +100 (^ -> +1000 )\nExpose +100/+1000"
+    ID_MINUS_BACKGROUND     "Ctrl -> Grab Background, Ctrl+Shift -> Clear Background\nCtrl -> Grab Background, Ctrl+Shift -> Clear Background"
+    ID_MEASURE_BLOB         "Measure Blobs\nMeasure Blobs"
+    ID_MEASURE_LINE         "Measure Line\nMeasure Line"
+    ID_GRAY_BINARY_DISP     "Switch between Gray Scale and Binary Display\n Gray Scale/Binary Switch"
+END
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "ImageCNTL"
+    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "Opens Help\nHelp Topics"
+    ID_HELP_FINDER          "List Help topics\nHelp Topics"
+    ID_HELP_USING           "Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+END
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+STRINGTABLE
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+STRINGTABLE
+BEGIN
+    ID_EDIT_PARAMETERS      "Open parameters window\n Parameters window"
+    ID_ASYNCHRONE           "\nToggle Sync/Async mode"
+    ID_ASYNCH_MODE          "Toggle async mode\n Toggle asynchronous mode"
+    ID_MEASURE_POWER        "Measure Spot Energy\nMeasure Spot Energy"
+    ID_MEASURE_Y_DIST       "Measure vertical distance between blobs\nMeasure vertical distance between blobs\n"
+    ID_CONTRASTING          "Contrasting on/off\n Contrasting mode on/off"
+    ID_ASYNC_MODE           "Asynchronous mode\n Asynchronous mode on/off"
+    ID_ASYNC_ON             "\nToggle Sync/Async mode"
+    ID_BUTTON512x512        "Image size: 1024X1024/512X512\nImage size: 1024x1024/512x512"
+    ID_BUTTON1024x1024      "Image size: 1024X1024JX512\nImage size: 1024x1024/512x512"
+END
+STRINGTABLE
+BEGIN
+    ID_GAIN_MINUS           "Gain -\nGain-"
+    ID_GAIN_PLUS            "Gain +\nGain+"
+END
+STRINGTABLE
+BEGIN
+    ID_CHANNEL_CONNECTED    "Connect/Disconnect the channel\n Connect/Disconnect the channel"
+    ID_BAD_PIXELS           "Find bad pixels\n Find bad pixels"
+END
+STRINGTABLE
+BEGIN
+    ID_SHOW_RADIAL_DISTRIBUTION "Show/Hide Radial Power Distribution Graph"
+END
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ImCNTL.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

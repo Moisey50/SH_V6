@@ -1,0 +1,15 @@
+// CMDGadgets.h : main header file for the CMDGADGETS DLL
+//
+
+#if !defined(AFX_CMDGADGETS_H__3A0E5FCF_F1B5_49B6_9263_E86408A0CE01__INCLUDED_)
+#define AFX_CMDGADGETS_H__3A0E5FCF_F1B5_49B6_9263_E86408A0CE01__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+#include "resource.h"		// main symbols
+
+extern char TVDB400_PLUGIN_NAME[APP_NAME_MAXLENGTH];
+
+#endif // !defined(AFX_CMDGADGETS_H__3A0E5FCF_F1B5_49B6_9263_E86408A0CE01__INCLUDED_)

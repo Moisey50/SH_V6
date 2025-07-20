@@ -1,0 +1,83 @@
+Basler Basler4(Camera=40279804;StreamState=0;Format=17301505;Shutter_us=5000;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=0;Trig_Selector=3;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Frame_rate=160;ROI=8,8,1920,1200;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line3=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=Off;TimerDuration_=7;TimerDelay_=0;);
+Timer2=(TimerTriggerSource_=Off;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=6.99913;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+Basler Basler5(Camera=40282730;StreamState=0;Format=17301505;Shutter_us=4530;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=0;Trig_Selector=3;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Frame_rate=160;ROI=8,8,1920,1200;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line3=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=Off;TimerDuration_=1;TimerDelay_=0;);
+Timer2=(TimerTriggerSource_=Off;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=0.999875;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+CheckBoxCtrl CheckBoxCtrl1(Name=_inplace;ButtonName=Check\bme!;Set=false;)
+Basler Basler2(Camera=23126391;StreamState=0;Format=17301505;Shutter_us=10000;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=1;Trig_Selector=1;Trigger_mode=0;Trigger_source=1;Trigger_delay_us=0;Trigger_activate=0;Frame_rate=56.9995;ROI=0,0,3088,2064;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);
+Line3=(LineMode_=Input;LineInverter_=0;);
+Line4=(LineMode_=Input;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureStart;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=10;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+CheckBoxCtrl CheckBoxCtrl2(Name=_inplace;ButtonName=Check\bme!;Set=false;)
+Basler Basler3(Camera=-1;)
+Basler Basler1(Camera=22213456;StreamState=0;Format=17301505;Shutter_us=2480;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=1;Trig_Selector=1;Trigger_mode=0;Trigger_source=1;Trigger_delay_us=0;Trigger_activate=0;Frame_rate=59.9988;ROI=0,0,3088,2064;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);
+Line3=(LineMode_=Input;LineInverter_=0;);
+Line4=(LineMode_=Input;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureStart;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=10;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+FLWRender FLWRender2(filename=N:\\FLW_Test\\FLW2_%x_%X.flw;DoLog=0;NBuffers=30;BufferSize_KB=10000;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+RenderFrameRate RenderFrameRate2(Name=_inplace;)
+RenderFrameRate RenderFrameRate3(Name=_inplace;)
+RenderFrameRate RenderFrameRate4(Name=_inplace;)
+TextRender TextRender2(Name=Float\bwindow\b2;ViewLabel=0;ViewTiming=0;)
+TextRender TextRender1(Name=Float\bwindow\b1;ViewLabel=0;ViewTiming=0;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=0;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x6C1FAA\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=0.862600,um;SaveImagesDir=;)
+Switch Switch2(_OUTPUTMODE=1;SwitchOn=0;)
+Decimator Decimator1(DecimateFactor=10;BoolOut=0;)
+FLWRender FLWRender1(filename=N:\\FLW_Test\\FLW1_%x_%X.flw;DoLog=0;NBuffers=30;BufferSize_KB=8192;)
+Switch Switch1(_OUTPUTMODE=1;SwitchOn=0;)
+
+Connect(Basler4>>0,RenderFrameRate4<<0)
+Connect(Basler5>>0,RenderFrameRate3<<0)
+Connect(CheckBoxCtrl1>>0,Switch1<>0)
+Connect(Basler2>>0,RenderFrameRate2<<0)
+Connect(Basler2>>0,Switch1<<0)
+Connect(Basler2>>0,FLWRender1<<0)
+Connect(CheckBoxCtrl2>>0,Switch2<>0)
+Connect(Basler1>>0,RenderFrameRate1<<0)
+Connect(Basler1>>0,Decimator1<<0)
+Connect(Basler1>>0,FLWRender1<<0)
+Connect(Basler1>>0,Switch2<<0)
+Connect(FLWRender2>>0,TextRender2<<0)
+Connect(Switch2>>0,FLWRender1<<0)
+Connect(Decimator1>>0,FRender1<<0)
+Connect(FLWRender1>>0,TextRender1<<0)
+Connect(Switch1>>0,FLWRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Basler1;x=24;y=11;)
+MOVE(gadget=RenderFrameRate1;x=463;y=10;)
+MOVE(gadget=FRender1;x=525;y=148;)
+MOVE(gadget=FLWRender1;x=366;y=265;)
+MOVE(gadget=Basler2;x=22;y=105;)
+MOVE(gadget=Basler3;x=16;y=284;)
+MOVE(gadget=Basler4;x=10;y=346;)
+MOVE(gadget=Basler5;x=19;y=438;)
+MOVE(gadget=Decimator1;x=297;y=72;)
+MOVE(gadget=RenderFrameRate2;x=297;y=145;)
+MOVE(gadget=RenderFrameRate3;x=274;y=476;)
+MOVE(gadget=RenderFrameRate4;x=277;y=330;)
+MOVE(gadget=TextRender1;x=511;y=297;)
+MOVE(gadget=FLWRender2;x=415;y=400;)
+MOVE(gadget=TextRender2;x=597;y=475;)
+MOVE(gadget=Switch1;x=156;y=261;)
+MOVE(gadget=CheckBoxCtrl1;x=99;y=334;)
+MOVE(gadget=CheckBoxCtrl2;x=15;y=200;)
+MOVE(gadget=Switch2;x=160;y=206;)
+FLOATWND(name=Float\bwindow\b1;x=1922;y=37;w=601;h=560;Selected=TextRender1;)
+FLOATWND(name=Float\bwindow\b2;x=1950;y=628;w=606;h=687;Selected=TextRender2;)
+GRAPHVIEW(name=GraphView;x=0.0245979;y=0.0491968;w=0.801325;h=0.74498;x_view_off=0;y_view_off=0;scale=1.1;Viewed=0;)
+SHSTUDIOVIEW(name=SHStudioView;x=898;y=65;w=1269;h=1296;)
+END_VIEW_SECTION
+

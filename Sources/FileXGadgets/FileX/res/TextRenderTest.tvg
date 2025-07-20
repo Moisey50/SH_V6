@@ -1,0 +1,14 @@
+TextRender TextRender2(Name=Float\bwindow\b1;)
+TextRender TextRender1(Name=_inplace;)
+FRender FRender2(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;)
+FRender FRender1(Name=_inplace;Monochrome=0;offset=0,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;)
+
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=FRender1;x=22;y=19;)
+MOVE(gadget=FRender2;x=424;y=78;)
+MOVE(gadget=TextRender1;x=99;y=304;)
+MOVE(gadget=TextRender2;x=563;y=319;)
+GRAPHVIEW(name=GraphView;x=-0.00856793;y=-0.0464396;w=1.01958;h=1.06037;Viewed=0;)
+END_VIEW_SECTION
+

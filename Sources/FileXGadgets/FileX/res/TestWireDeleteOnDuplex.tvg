@@ -1,0 +1,11 @@
+Basler Basler1(Camera=-1;)
+GenericCapture GenericCapture1(Name=_inplace;Message=;Attributes=;Label=;NoSync=0;SetEOS=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+
+Connect(GenericCapture1>>0,Basler1<>0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Basler1;x=228;y=99;)
+MOVE(gadget=GenericCapture1;x=125;y=200;)
+GRAPHVIEW(name=GraphView;x=0.00445434;y=0.00508259;w=0.702673;h=0.660737;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

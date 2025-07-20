@@ -1,0 +1,81 @@
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r">
+<link rel="stylesheet" type="text/css" href="1001.css">
+<title>The computer vision application development workbench. Overview.
+</title>
+</head>
+
+<body>
+
+<table width="100%" id="table1" class="pagelike">
+	<tr>
+		<th class="pg">S<span lang="en-us">HStudio - 
+		The computer vision application development workbench. Overview.</span></th>
+	</tr>
+	<tr>
+		<td height="113">
+		<dl>
+			<dd>
+			<div>
+				<table border="0" cellpadding="0" cellspacing="0" bordercolor="#EEEEFF">
+					<tr>
+						<td style="padding-left: 0">
+						&nbsp;<h3><span lang="en-us">The main problems of image 
+						processing</span></h3>
+						</td>
+					</tr>
+				</table>
+				<p><span lang="en-us">The streams of data in computer vision 
+				tasks </span>contain large amounts of data that must be processed very quickly. 
+				<p><span lang="en-us">In practical applications usually presents 
+				other types of streams, that must be included in processing. 
+				That can be audio, text streams, time marks, synch data, etc. 
+				During processing all that data must be converted to result 
+				streams - with format which can't be predicted&nbsp; for 
+				universal cases. </span>
+				<p>Streams can come from many various sources, including 
+				<span lang="en-us">local or remote devices (such as video 
+				cameras, GPS, position sensors etc.), </span>local media files, computer networks, and other media devices. 
+				<p>Streams come in a variety of formats<span lang="en-us">, from 
+				different devices, frequently in proprietary formats</span>. 
+				<h3><span lang="en-us">The SHStudio approach</span></h3>
+				<p><span lang="en-us">TVDB400</span> is designed to address each 
+				of these <span lang="en-us">problems</span>. Its main design 
+				goal is to simplify the task of creating <span lang="en-us">
+				computer vision</span> applications on the Windows platform by 
+				isolating applications from the complexities <span lang="en-us">
+				of the data processing multithreading, simplifying </span>data 
+				transports and synchronization issues.<span lang="en-us"> </span>
+				<p><span lang="en-us">The data processing multithreading issue 
+				is achieved by implementing of each elementary processing 
+				operation in independent module called <b>Gadget</b>. Each <b>
+				Gadget</b> has one processing thread and one or more <b>
+				Connectors</b>. <b>Connectors</b> are intended for data transfer 
+				and data queueing between <b>Gadgets</b>. This modular 
+				architecture in which <b>Gadgets</b> can be mixed and connected 
+				arbitrary - provides support for many different scenarios.</span><p>
+				<span lang="en-us">The simplifying data transport and 
+				synchronization issues are attained by data </span>encapsulating<span lang="en-us"> 
+				in </span>time-stamped <span lang="en-us">data frames</span>.<span lang="en-us"> 
+				Each data frames can be easily serialized&nbsp; for transport 
+				through networks.</span><p><span lang="en-us">Essentially, that TVDB400 system is 
+				designed in pure C++ and do not use COM approach, like other 
+				similar system - DirectShow by Microsoft. That allows quite 
+				simplify the new elements development and including in a system.
+				</span>
+				<p><span lang="en-us">It is supposed, that during development of 
+				new application the data processing graph is designed in visual 
+				development tool. It allows interactively build processing graph 
+				and estimate any intermediate results of processing.</span><p style="text-align: right">
+				<span lang="en-us"><a href="@INDEX">Back to Index</a></span></div>
+			</dd>
+		</dl>
+		</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

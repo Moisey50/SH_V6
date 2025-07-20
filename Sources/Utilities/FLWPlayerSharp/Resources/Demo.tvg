@@ -1,0 +1,10 @@
+FLWCapture FLWCaptureGadget1(FileName=E:\\06.30.11 17-19-24.flw;Loop=1;AutoRewind=1;ExtTrig=0;ConstRate=1;FrameRate=25;)
+VideoRender VideoRenderGadget1(Name=Float\bwindow\b1;Monochrome=false;Scale=-1;LineSelection=false;RectSelection=false;)
+
+Connect(FLWCaptureGadget1>>0,VideoRenderGadget1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=FLWCaptureGadget1;x=98;y=135;)
+MOVE(gadget=VideoRenderGadget1;x=503;y=191;)
+END_VIEW_SECTION
+

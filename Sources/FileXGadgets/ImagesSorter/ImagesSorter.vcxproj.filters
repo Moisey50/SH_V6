@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="ImagesSorter.cpp" />
+    <ClCompile Include="ImagesSorterGadget.cpp" />
+    <ClCompile Include="ColorChannelNode.cpp" />
+    <ClCompile Include="ColorChannelNodesList.cpp" />
+    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="ColorFrame.cpp" />
+    <ClCompile Include="RGBFrame.cpp" />
+    <ClCompile Include="RGBFramesSorter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="ImagesSorter.h" />
+    <ClInclude Include="ImagesSorterGadget.h" />
+    <ClInclude Include="ColorChannel.h" />
+    <ClInclude Include="Interfaces.h" />
+    <ClInclude Include="ColorChannelNode.h" />
+    <ClInclude Include="ColorChannelNodesList.h" />
+    <ClInclude Include="Program.h" />
+    <ClInclude Include="ColorFrame.h" />
+    <ClInclude Include="RGBFrame.h" />
+    <ClInclude Include="RGBFramesSorter.h" />
+    <ClInclude Include="..\Common\RGBContainerFrame\RGBHelper.h" />
+    <ClInclude Include="..\Common\RGBContainerFrame\RGB2ContainerFrame2RGBDeSerializer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ImagesSorter.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ImagesSorter.rc2">
+      <Filter>res</Filter>
+    </None>
+    <None Include="..\Common\Resources\retsight_vs17.tvg">
+      <Filter>res</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="res">
+      <UniqueIdentifier>{8eefd9b8-6c22-45d8-a558-98e65243109d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

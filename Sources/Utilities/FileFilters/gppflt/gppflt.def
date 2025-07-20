@@ -1,0 +1,8 @@
+; gppflt.def : Declares the module parameters for the DLL.
+
+LIBRARY      "gppflt"
+
+EXPORTS
+            DllMain                 PRIVATE
+            DllRegisterServer       PRIVATE
+            DllUnregisterServer     PRIVATE

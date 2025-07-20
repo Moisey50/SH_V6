@@ -1,0 +1,15 @@
+// CtrlGadgets.h : main header file for the CTRLGADGETS DLL
+//
+
+#if !defined(AFX_CTRLGADGETS_H__715D76F6_C545_4910_B70B_F6B3806E1819__INCLUDED_)
+#define AFX_CTRLGADGETS_H__715D76F6_C545_4910_B70B_F6B3806E1819__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+#include "resource.h"		// main symbols
+
+extern char TVDB400_PLUGIN_NAME[APP_NAME_MAXLENGTH];
+
+#endif // !defined(AFX_CTRLGADGETS_H__715D76F6_C545_4910_B70B_F6B3806E1819__INCLUDED_)

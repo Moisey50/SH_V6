@@ -1,0 +1,8 @@
+NWSocket LANControl(Mode=0;Port=5050;StopWhenGraphStoped=true;SetRegistered=0;NotSHClient=1;)
+
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=LANControl;x=134;y=83;)
+GRAPHVIEW(name=GraphView;x=0.00240819;y=0.00436681;w=0.187839;h=0.253275;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

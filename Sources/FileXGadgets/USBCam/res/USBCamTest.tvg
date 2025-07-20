@@ -1,0 +1,19 @@
+USBCamera USBCamera1(Camera=120;CaptureMode=2;OutputFormat=0;Exposure=-6;Brightness=-10;Contrast=0;Gamma=120;WhiteBalance=auto;Hue=0;Saturation=32;Sharpness=23;BackCompens=0;)
+TextCaptureCtrl TextCaptureCtrl1(Name=_inplace;Text=123456;Quantity=0;NoSync=0;Manual=0;FrameRate=1;FramePeriod_ms=1000.00;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=0;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0xBE2314\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+COMCapture COMCapture1(IOM_Hex1_CSV2_NoFlag3=-842150451;Port=1;PortName=COM3;BaudRate=9600;DataBits=3;Parity=0;StopBits=0;XonXoff=0;DtrDsr=0;RtsCts=0;WantsCR=1;AppendLF=1;BlockSize=0;LineDelay_ms=0;BlockWaitTime_ms=0;)
+
+Connect(USBCamera1>>0,FRender1<<0)
+Connect(USBCamera1>>0,RenderFrameRate1<<0)
+Connect(TextCaptureCtrl1>>0,COMCapture1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=FRender1;x=368;y=209;)
+MOVE(gadget=COMCapture1;x=308;y=310;)
+MOVE(gadget=TextCaptureCtrl1;x=88;y=295;)
+MOVE(gadget=USBCamera1;x=135;y=132;)
+MOVE(gadget=RenderFrameRate1;x=340;y=55;)
+GRAPHVIEW(name=GraphView;x=0.0390909;y=0.0479532;w=0.719091;h=0.65848;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

@@ -1,0 +1,677 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian (Russia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONNECT_DLG DIALOGEX 0, 0, 316, 64
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Connect to..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,43,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,259,43,50,14
+    GROUPBOX        "Host",IDC_STATIC,7,7,242,29
+    EDITTEXT        IDC_HOST,14,17,229,14,ES_AUTOHSCROLL
+    GROUPBOX        "Port",IDC_STATIC,256,7,53,29
+    EDITTEXT        IDC_PORT,262,17,42,14,ES_AUTOHSCROLL | ES_NUMBER
+END
+
+IDD_BROWSEREMOTEGRAPHS_DLG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Browse remote graphs"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Open",IDOK,205,162,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,259,162,50,14
+    CONTROL         "",IDC_GRAPHS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,302,149
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_CONNECT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 57
+    END
+
+    IDD_BROWSEREMOTEGRAPHS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian (Russia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_UNDO_DIALOG DIALOGEX 0, 0, 240, 84
+STYLE DS_SETFONT | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Undo/Redo Manager"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_UNDO_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SHAREIMAGELISTS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,0,240,84
+END
+
+IDD_AGGREGATE_DLG DIALOG 0, 0, 186, 57
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Aggregate as..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,36,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,63,36,50,14
+    EDITTEXT        IDC_BLOCK_NAME,7,7,172,14,ES_AUTOHSCROLL
+    CONTROL         "Add to library",IDC_ADD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,23,57,10
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 272, 146
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About SHStudio"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,16,20,20
+    LTEXT           "SHStudio Version ",IDC_STATIC,41,15,58,8,SS_NOPREFIX
+    LTEXT           "Copyright © 2007-2013 File X Ltd. ",IDC_STATIC,40,28,119,8
+    DEFPUSHBUTTON   "OK",IDOK,107,128,50,14,WS_GROUP
+    LTEXT           "Contains Ch(R), an embeddable C/C++ interpreter developed by SoftIntegration, Inc., http://www.softintegration.com. All Rights Reserved.",IDC_STATIC,19,83,238,20
+    LTEXT           "Unauthorized reproduction or distribution of this program or any portion of it, may result in serve civil and criminal penalties, and will be prosecuted to maximum extent possible under the law.",IDC_STATIC,19,54,237,27
+    LTEXT           "Licensed to:",IDC_STATIC,19,104,57,11
+    LTEXT           "",IDC_LICENSEDTO,61,104,158,11
+    LTEXT           "Days remain:",IDC_DAYSREMAINTITLE,19,116,57,11,NOT WS_VISIBLE
+    LTEXT           "",IDC_DAYSREMAIN,63,116,158,11
+    LTEXT           "Warning: This computer program is protected by international treaties.",IDC_STATIC,19,42,225,11
+    LTEXT           "",IDC_VERSION,115,15,74,8
+END
+
+IDD_LOGVIEWDLG DIALOG 0, 0, 186, 90
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LOGVIEW,"SysListView32",LVS_REPORT | LVS_SINGLESEL,0,0,186,90
+END
+
+IDD_LOGSETUP DIALOG 0, 0, 192, 177
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Log setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Slider1",IDC_LOGLEVEL,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,19,46,153,12
+    GROUPBOX        "Log level",IDC_STATIC,7,7,178,58
+    LTEXT           "",IDC_LOGLEVEL_COMMENT,13,20,162,12
+    GROUPBOX        "Log file",IDC_STATIC,7,71,178,51
+    EDITTEXT        IDC_EDIT_FILENAME,13,101,139,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "...",IDC_BROWSE,163,101,16,13,WS_DISABLED
+    CONTROL         "Write to file",IDC_CHECK_WRITEFILE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,84,84,11
+END
+
+IDD_WRKBNCHSETUP DIALOGEX 0, 0, 192, 177
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Workbench setup"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Gadget tree",IDC_STATIC,7,7,178,34
+    CHECKBOX        "Group types in Gadget tree",IDC_GROUPGADGETS,15,20,156,10
+    GROUPBOX        "Builder settings",IDC_STATIC,7,47,178,73
+    CONTROL         "Use common state for all builders",IDC_USEMASTEREXECUTIONSTATUS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,63,149,15
+    CONTROL         "Save float windows positions ",IDC_SAVEFLTWNDPOS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,93,149,15
+    CONTROL         "Save gadgets positions",IDC_SAVEGDGTPOS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,78,149,15
+END
+
+IDD_VIEWSETUP DIALOGEX 0, 0, 195, 137
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+CAPTION "View options"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_VIEWTYPE,15,44,87,56,CBS_DROPDOWN | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Choose your style of view:",IDC_STATIC_STLYE,11,32,173,54
+    CONTROL         "Show splash screen",IDC_SHOW_SPLASH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,17,87,10
+    COMBOBOX        IDC_OFFSET,152,63,28,57,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Distance between connector and gadget:",IDC_STATIC,16,65,131,8
+    CONTROL         "View activity",IDC_VIEWACTIVITY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,92,97,10
+    LTEXT           "Skin:",IDC_STATIC,21,108,21,8
+    COMBOBOX        IDC_SKINCOMBO,43,105,87,56,CBS_DROPDOWN | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_VIEW_PERFORANCEDLG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Performace Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_PERFORMACE_LST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,302,169
+END
+
+IDD_NEW_SPLASHDLG DIALOGEX 0, 0, 445, 307
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 10, "Century Gothic", 700, 0, 0xCC
+BEGIN
+    LTEXT           "The product is licensed to:",IDC_TEXTPOS,120,115,89,11,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_AGGREGATE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_LOGSETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_WRKBNCHSETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_VIEWSETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_VIEW_PERFORANCEDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_NEW_SPLASHDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 438
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 300
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BRSDLGICONS         BITMAP                  "res\\brsdlgi.bmp"
+
+IDB_UNDO_STATES         BITMAP                  "res\\bitmap1.bmp"
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+IDB_SPLASH              BITMAP                  "res\\splashWindow.bmp"
+
+IDB_SPLASHDEMO          BITMAP                  "res\\splashWindowDemo.bmp"
+
+IDB_NEWSPLASH           BITMAP                  "res\\SH studio splash screen800.bmp"
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\tvdb400.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\tvdb400.ico"
+
+IDI_ICON_DOC            ICON                    "res\\tvdb400_doc.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_NEWGRAPH
+    BUTTON      ID_FILE_LOADGRAPH
+    BUTTON      ID_FILE_SAVEGRAPH
+    SEPARATOR
+    BUTTON      ID_EDIT_UNDO
+    BUTTON      ID_VIEW_UNDOREDOMANAGER
+    BUTTON      ID_EDIT_REDO
+    SEPARATOR
+    BUTTON      ID_OPERATE_START
+    BUTTON      ID_OPERATE_PAUSE
+    BUTTON      ID_OPERATE_STEPFORWARD
+    BUTTON      ID_OPERATE_STOP
+    SEPARATOR
+    BUTTON      ID_OPERATE_DEBUG
+    BUTTON      IDC_SETTINGS
+    SEPARATOR
+    BUTTON      ID_VIEW_PERFORMANCEDIALOG2
+    SEPARATOR
+    BUTTON      ID_HELP_INDEX
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "New graph",                   ID_FILE_NEWGRAPH
+        MENUITEM "Load graph",                  ID_FILE_LOADGRAPH
+        MENUITEM "Save graph",                  ID_FILE_SAVEGRAPH
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "Undo\tCtrl+Z",                ID_EDIT_UNDO
+        MENUITEM "Redo\tCtrl+Y",                ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Copy\tCtrl+C",                ID_EDIT_COPY
+        MENUITEM "Paste\tCtrl+V",               ID_EDIT_PASTE
+        MENUITEM "&Delete\tdel",                ID_EDIT_DELETE
+        MENUITEM "Clear all",                   ID_EDIT_CLEARALL
+        MENUITEM "Select all\tCtrl+A",          ID_EDIT_SELECTALL
+        MENUITEM SEPARATOR
+        MENUITEM "Aggregate...\t+",             ID_EDIT_AGGREGATE
+        MENUITEM "Expand\t-",                   ID_EDIT_EXPAND
+        MENUITEM SEPARATOR
+        MENUITEM "Reset affinity",              ID_EDIT_RESETAFFINITY
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM "&Gadgets Panel",              ID_VIEW_GADGETSBAR
+        MENUITEM "&Log panel",                  ID_VIEW_LOGVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "Undo/Redo Manager\tCtrl+U",   ID_VIEW_UNDOREDOMANAGER
+        MENUITEM "Performance Counter Dialog",  ID_VIEW_PERFORMANCEDIALOG2
+        MENUITEM SEPARATOR
+        MENUITEM "Options",                     ID_OPTION
+        MENUITEM "Settings",                    IDC_SETTINGS
+        MENUITEM SEPARATOR
+        MENUITEM "Toggle view type",            ID_VIEW_TOGGLEVIEWTYPE
+    END
+    POPUP "&Operate"
+    BEGIN
+        MENUITEM "Start",                       ID_OPERATE_START
+        MENUITEM "Stop",                        ID_OPERATE_STOP
+        MENUITEM "Pause",                       ID_OPERATE_PAUSE
+        MENUITEM "Step forward",                ID_OPERATE_STEPFORWARD
+        MENUITEM SEPARATOR
+        MENUITEM "Debug",                       ID_OPERATE_DEBUG
+        POPUP "Used Gadgets"
+        BEGIN
+            MENUITEM "View",                        ID_USEDGADGETS_VIEW
+            MENUITEM "Form List",                   ID_USEDGADGETS_FORMLIST
+            MENUITEM "Form Batch",                  ID_FORM_COPY_BATCH_FILE
+        END
+    END
+    POPUP "&Remote"
+    BEGIN
+        MENUITEM "New graph",                   ID_REMOTE_NEWGRAPH, GRAYED
+        MENUITEM "Load graph",                  ID_REMOTE_LOADGRAPH, GRAYED
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "Cl&ose",                      ID_MDI_CLOSE
+        MENUITEM "Close &All",                  ID_MDI_CLOSEALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "Cascade float windows",       ID_VIEW_CASCADEFLOATWINDOWS
+        MENUITEM "Tile &Horizontally",          ID_WINDOW_TILE_HORZ
+        MENUITEM "Tile &Vertically",            ID_WINDOW_TILE_VERT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Index...",                    ID_HELP_INDEX
+        MENUITEM "&About SHStudio...",          ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    VK_F4,          ID_APP_EXIT,            VIRTKEY, ALT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_TAB,         ID_VIEW_TOGGLEVIEWTYPE, VIRTKEY, SHIFT, NOINVERT
+    VK_F5,          ID_OPERATE_STARTSTOP,   VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "FileDescription", "SHStudio MFC IDE"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "InternalName", "SHStudio"
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+            VALUE "OriginalFilename", "SHStudio.EXE"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "ProductName", "SHSTudio Application"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+IDD_VIEWSETUP DLGINIT
+BEGIN
+    IDC_VIEWTYPE, 0x403, 8, 0
+0x6c43, 0x7361, 0x6973, 0x0063, 
+    IDC_VIEWTYPE, 0x403, 7, 0
+0x6f4d, 0x6564, 0x6e72, "\000" 
+    IDC_OFFSET, 0x403, 2, 0
+0x0035, 
+    IDC_OFFSET, 0x403, 2, 0
+0x0037, 
+    IDC_OFFSET, 0x403, 2, 0
+0x0039, 
+    IDC_OFFSET, 0x403, 3, 0
+0x3131, "\000" 
+    0
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+STRINGTABLE
+BEGIN
+//    IDR_MAINFRAME           "SHStudio"
+#ifdef _DEBUG
+      IDR_MAINFRAME       "SHStudioD"
+#else
+      IDR_MAINFRAME       "SHStudioR"
+#endif
+          END
+STRINGTABLE
+BEGIN
+#ifdef _DEBUG
+AFX_IDS_APP_TITLE       "SHStudioD"
+#else
+AFX_IDS_APP_TITLE       "SHStudioR"
+#endif
+AFX_IDS_IDLEMESSAGE     "Ready"
+END
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "Help index\nHelp"
+END
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy selection\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Paste selection\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo recent action(s)\nUndo"
+    ID_EDIT_REDO            "Redo recently undone action(s)\nRedo"
+END
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+STRINGTABLE
+BEGIN
+    ID_BMPFILE              "Load single image file\nSingle image file"
+    ID_RENDERFFILTERS_DISPLAY "Show stream on display\nDisplay"
+    ID_START                "Start rendering\nStart"
+    ID_STOP                 "Stop rendering\nStop"
+    ID_PAUSE                "Pause rendering\nPause"
+    ID_INSERT_FILTER        "Insert filter\nInsert filter"
+    ID_INSERT_RENDERER      "Insert render\nInsert render"
+    ID_INSERT_RENDERER_IDRENDERER "Insert ID renderer\nInsert ID renderer"
+    ID_INSERT_CAPTURE       "Insert capture\nInsert capture"
+    ID_OPERATE_START        "Start graph\nStart"
+    ID_OPERATE_STOP         "Stop graph\nStop"
+END
+STRINGTABLE
+BEGIN
+    ID_FILE_LOADGRAPH       "Load graph\nLoad..."
+    ID_FILE_SAVEGRAPH       "Save graph\nSave..."
+    ID_INSERT_FORK          "Insert fork\nInsert fork"
+    ID_EDIT_DELETE          "Delete selected objects\nDelete"
+    ID_EDIT_CLEARALL        "Delete graph and clear contents\nClear all"
+    ID_EDIT_INSERTGADGET    "Insert gadget tothe graph\nInsert gadget"
+    ID_VIEW_GADGETSBAR      "Show or hide gadgets bar\nToggle gadgets bar"
+    ID_OPERATE_PAUSE        "Pause graph\nPause"
+    ID_OPERATE_STEPFORWARD  "All captures pulse one frame\nStep forward"
+    ID_EDIT_AGGREGATE       "Aggregate selected gadgets\nAggregate"
+    ID_EDIT_EXPAND          "Expand selected blocks\nExpand"
+    ID_VIEW_LOGVIEW         "Show or hide log view\nToggle log view"
+    ID_EDIT_SELECTALL       "Select the entire graph\nSelect all"
+    ID_FILE_NEWGRAPH        "Create an empty graph\nNew graph"
+END
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_TIME       "00:00:00.000 000"
+    ID_GADGET_NAME          "Very very very very very long gadget name some more words required"
+END
+STRINGTABLE
+BEGIN
+    IDC_SETTINGS            "Call setup dialog for gadgets\nSetup"
+END
+STRINGTABLE
+BEGIN
+    ID_VIEW_UNDOREDOMANAGER "View undo/redo manager\nUndo/Redo"
+    ID_OPERATE_DEBUG        "Switch debugging mode on/off\nToggle debug"
+    ID_FILE_ADDTOLIBRARY    "Add current graph to library of complex gadgets\nAdd to library"
+    ID_VIEW_TOGGLEVIEWTYPE  "Toggle current view type\nToggle view"
+END
+STRINGTABLE
+BEGIN
+    ID_VIEW_CASCADEFLOATWINDOWS "Cascade float windows"
+    ID_VIEW_PERFORMANCEDIALOG "View Performance Dialog\nPeroformance Dialog"
+    ID_VIEW_PERFORMANCEDIALOG2 "Performance counter\nPerformance counter"
+    ID_REMOTE_NEWGRAPH      "Createa a new remote graph\nNew remote graph"
+    ID_REMOTE_LOADGRAPH     "Load a remote graph\nLoad remote graph"
+END
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\tvdb400.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

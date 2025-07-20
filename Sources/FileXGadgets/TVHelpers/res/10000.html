@@ -1,0 +1,144 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<b>Subtitle gadget usage manual</b><br>
+		Gadget parameters:
+		<table border=1>
+			<tr>
+				<td>FormatString</td>
+				<td>Text to paint, may consist of format values (see further)</td>
+			</tr>
+			<tr>
+				<td>XOffset</td>
+				<td>X-offset of text, where the text should be painted</td>
+			</tr>
+			<tr>
+				<td>YOffset</td>
+				<td>Y-offset of text, where the text should be painted</td>
+			</tr>
+			<tr>
+				<td>Size</td>
+				<td>Size of the text</td>
+			</tr>
+			<tr>
+				<td>Color</td>
+				<td>Color of the text, written if HEX-format, e.g. FF0000</td>
+			</tr>
+		</table>
+		<br><i>String formatting:</i><br>
+		One can write ordinary text. In addition, one can put formatting string, which will result in the following:
+		<table border=1>
+			<tr>
+				<td>%a</td>
+				<td>Abbreviated weekday name</td>
+			</tr>
+			<tr>
+				<td>%A</td>
+				<td>Full weekday name</td>
+			</tr>			
+			<tr>
+				<td>%b</td>
+				<td>Abbreviated month name</td>
+			</tr>	
+			<tr>
+				<td>%B</td>
+				<td>Full month name</td>
+			</tr>	
+			<tr>
+				<td>%c</td>
+				<td>Date and time representation appropriate for locale</td>
+			</tr>	
+			<tr>
+				<td>%d</td>
+				<td>Day of month as decimal number (01 – 31)</td>
+			</tr>	
+			<tr>
+				<td>%H</td>
+				<td>Hour in 24-hour format (00 – 23)</td>
+			</tr>	
+			<tr>
+				<td>%I</td>
+				<td>Hour in 12-hour format (01 – 12)</td>
+			</tr>	
+			<tr>
+				<td>%j</td>
+				<td>Day of year as decimal number (001 – 366)</td>
+			</tr>	
+			<tr>
+				<td>%k</td>
+				<td>Processing frame time stamp</td>
+			</tr>	
+			<tr>
+				<td>%l</td>
+				<td>Processing frame ID</td>
+			</tr>	
+			<tr>
+				<td>%L</td>
+				<td>Processing frame label</td>
+			</tr>				
+			<tr>
+				<td>%m</td>
+				<td>Month as decimal number (01 – 12)</td>
+			</tr>	
+			<tr>
+				<td>%M</td>
+				<td>Minute as decimal number (00 – 59)</td>
+			</tr>	
+			<tr>
+			    <td>%N</td>
+			    <td>Insert string, passed to second input of gadget</td>
+			</tr>	
+			<tr>
+				<td>%p</td>
+				<td>Current locale’s A.M./P.M. indicator for 12-hour clock</td>
+			</tr>	
+			<tr>
+				<td>%S</td>
+				<td>Second as decimal number (00 – 59)</td>
+			</tr>	
+			<tr>
+				<td>%T</td>
+				<td>Difference, in seconds, of the input frames (timestamp difference of current and previous packet</td>
+			</tr>				
+			<tr>
+				<td>%U</td>
+				<td>Week of year as decimal number, with Sunday as first day of week (00 – 53)</td>
+			</tr>	
+			<tr>
+				<td>%w</td>
+				<td>Weekday as decimal number (0 – 6; Sunday is 0)</td>
+			</tr>	
+			<tr>
+				<td>%W</td>
+				<td>Week of year as decimal number, with Monday as first day of week (00 – 53)</td>
+			</tr>	
+			<tr>
+				<td>%x</td>
+				<td>Date representation for current locale</td>
+			</tr>	
+			<tr>
+				<td>%X</td>
+				<td>Time representation for current locale</td>
+			</tr>	
+			<tr>
+				<td>%y</td>
+				<td>Year without century, as decimal number (00 – 99)</td>
+			</tr>	
+			<tr>
+				<td>%Y</td>
+				<td>Year with century, as decimal number</td>
+			</tr>	
+			<tr>
+				<td>%z, %Z</td>
+				<td>Time-zone name or abbreviation; no characters if time zone is unknown</td>
+			</tr>	
+			<tr>
+				<td>%%</td>
+				<td>Percent sign</td>
+			</tr>			
+		</table>
+		<br><b>Samples:</b>&nbsp %x_%X gives 05.03.09_21-51-03
+		
+	</body>
+</html>

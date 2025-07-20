@@ -1,0 +1,13 @@
+GenericCapture GenericCapture1(Name=_inplace;Message=;Attributes=;Label=;NoSync=0;SetRegistered=0;Manual=0;Replace=0;FrameRate=1;DataType=3;IgnoreInConnect=0;)
+Phidget_0_16_16 Phidget_0_16_161(_OUTPUTMODE=1;Phidget_Device=-1;Input_State_As_Mask=false;Output_State_As_Mask=false;Output_Cmmnd_As_Mask=false;_GADGET_OUTPUT1=Name\eDigitalState\s;_GADGET_INPUT1=Name\eDigOutCmd\s;_GADGET_DUPLEX1=Name\eControl\s;)
+TextRender TextRender1(Name=_inplace;)
+
+Connect(GenericCapture1>>0,Phidget_0_16_161<<0)
+Connect(Phidget_0_16_161>>0,TextRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Phidget_0_16_161;x=327;y=205;)
+MOVE(gadget=TextRender1;x=633;y=86;)
+MOVE(gadget=GenericCapture1;x=99;y=202;)
+END_VIEW_SECTION
+

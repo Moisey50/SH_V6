@@ -1,0 +1,41 @@
+Complex Block1({Complex WDMSubgraph({WDMCapture WDMCapture1(useframerate=1;outputformat=961893977;VideoDevice2=406465766963653a706e703a5c5c3f5c757362237669645f30343664267069645f30383235266d695f3030233726333831356131663726302630303030237b36356538373733642d386635362d313164302d613362392d3030613063393232333139367d5c7b62626566623663372d326663342d343133392d626238622d6135386262613732343038337d00;AM_MEDIA_TYPE=7669647300001000800000aa00389b717deb36e44f52ce119f530020af0ba770010000000000000000100e00809f580556c3ce11bf0100aa0055595a0000000058000000b0431306;pbFormat=000000000000000000000000000000000000000000000000000000000000000000002f0d0000000015160500000000002800000080020000e0010000010018000000000000100e0000000000000000000000000000000000;)
+Delay Delay1(Delay=1;)
+
+Connect(WDMCapture1>>0,Delay1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=WDMCapture1;x=367;y=178;)
+MOVE(gadget=Delay1;x=533;y=174;)
+GRAPHVIEW(name=GraphView;x=0;y=0;w=0;h=0;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+
+})
+
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=WDMSubgraph;x=399;y=193;)
+GRAPHVIEW(name=GraphView;x=0.12355;y=0.347032;w=0.819606;h=0.644977;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+
+})
+VideoNegative VideoNegative1(_OUTPUTMODE=1;)
+TextRender TextRender2(Name=Float\bwindow\b2;ViewLabel=0;ViewTiming=0;)
+FRender FRender4(Name=Float\bwindow\b2;Monochrome=0;offset=0,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0xD1980\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;)
+FRender FRender3(Name=Float\bwindow\b2;Monochrome=0;offset=0,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0xF19B0\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;)
+
+Connect(Block1>>0,VideoNegative1<<0)
+Connect(Block1>>0,TextRender2<<0)
+Connect(Block1>>0,FRender3<<0)
+Connect(VideoNegative1>>0,FRender4<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Block1;x=63;y=62;)
+MOVE(gadget=VideoNegative1;x=185;y=170;)
+MOVE(gadget=TextRender2;x=208;y=29;)
+MOVE(gadget=FRender3;x=198;y=100;)
+MOVE(gadget=FRender4;x=300;y=170;)
+FLOATWND(name=Float\bwindow\b2;x=0.357292;y=0.133333;w=0.307292;h=0.424167;Selected=FRender4;)
+FLOATWND(name=Float\bwindow\b1;x=0.359375;y=0.155;w=0.328646;h=0.39;Selected=TextRender1;)
+GRAPHVIEW(name=GraphView;x=0.0104408;y=0.0205479;w=0.272042;h=0.641553;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

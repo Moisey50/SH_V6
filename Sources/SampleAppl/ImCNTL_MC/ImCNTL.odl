@@ -1,0 +1,75 @@
+// ImCNTL.odl : type library source for ImCNTL.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (ImCNTL.tlb).
+
+[ uuid(A7F453B6-3255-11D3-8D4E-000000000000), version(1.0) ]
+library ImCNTL
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CImCNTLDoc
+	
+	[ uuid(A7F453B7-3255-11D3-8D4E-000000000000) ]
+	dispinterface IImCNTL
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CImCNTLDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CImCNTLDlgAutoProxy)
+			[id(1)] long GrabBack();
+			[id(2)] long Grab(long bSubstrBack);
+			[id(3)] long MeasureBlobs(double dNormThreshold);
+			[id(4)] BSTR GetBlobParam(long iBlobNumber);
+			[id(5)] void SetFFTFlag(long bDoFFT);
+			[id(6)] void SetCameraScale(double dScaleXmicronPerPixel, double dScaleYmicronPerPixel);
+			[id(7)] double GetCameraScale(long iAxeNumber);
+			[id(8)] long InitOperation(long InitValue);
+			[id(9)] long GetExposure();
+			[id(10)] long SetExposure(long iNewExposureInScans);
+			[id(11)] long MeasureLines(double dNormThres);
+			[id(12)] BSTR GetLineParam(long LineNumber);
+			[id(13)] long GetLastMinIntensity();
+			[id(14)] long GetLastMaxIntensity();
+			[id(15)] void SetFFTZone(long iXc, long iYc);
+			[id(16)] long DoFFTFiltration();
+			[id(17)] long SaveRestoreImage(long bSave);
+			[id(18)] double SetGetMeasAreaExpansion(long bSet, double dExp_in_um);
+			[id(19)] double GetMaxIntensity();
+			[id(20)] long SetWinPos(long lx, long ly);
+			[id(21)] void SetExposureStartPosition(long iExpStartPos);
+			[id(22)] long GetExposureStartPosition();
+			[id(23)] long MeasurePower();
+			[id(24)] BSTR GetPowerData(long iBlobNumber);
+			[id(25)] void SetIntegrationRadius(long iRadius);
+			[id(26)] long GetIntegrationRadius();
+			[id(27)] double MeasLinePower(long iLineDirection, long iMeasureHalfWidth, long iCompensationWidth);
+			[id(28)] void SetMinArea(long iMinArea);
+			[id(29)] double AbstractCall(long iCallID, BSTR pszParameters, long iPar, double dPar);
+			[id(30)] long SetSyncMode(long bAsuncMode);
+			[id(31)] long SetMarkerPosisiton(long iMarkerType, long iXPos, long iYPos, long dwMarkerColor);
+			[id(32)] BSTR GetDiffractionMeasPar();
+			[id(33)] BSTR SetDiffractionMeasPar(long iMeasMode, long iXDist_pix, long iYDist_pix, long iBackgoundDist_pix);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CImCNTLDoc
+	
+	[ uuid(A7F453B5-3255-11D3-8D4E-000000000000) ]
+	coclass ImCNTL
+	{
+		[default] dispinterface IImCNTL;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

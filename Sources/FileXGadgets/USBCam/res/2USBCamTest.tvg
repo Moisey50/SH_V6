@@ -1,0 +1,21 @@
+USBCamera USBCamera1(Camera=2;CaptureMode=0;OutputFormat=0;Focus=7;Brightness=20;Contrast=15;Gamma=120;WhiteBalance=auto;Hue=0;Saturation=32;Sharpness=15;BackCompens=1;_GADGET_OUTPUT1=Name\eOutVideo\s;)
+USBCamera USBCamera2(Camera=1;CaptureMode=2;OutputFormat=0;Exposure=-7;_GADGET_OUTPUT1=Name\eOutVideo\s;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+FRender FRender2(Name=Float\bwindow\b2;Monochrome=0;offset=0,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x8912E4\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=594,650;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x614AC\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+
+Connect(USBCamera1>>0,FRender1<<0)
+Connect(USBCamera1>>0,RenderFrameRate1<<0)
+Connect(USBCamera2>>0,FRender2<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=USBCamera1;x=142;y=169;)
+MOVE(gadget=FRender1;x=337;y=183;)
+MOVE(gadget=RenderFrameRate1;x=240;y=57;)
+MOVE(gadget=USBCamera2;x=122;y=275;)
+MOVE(gadget=FRender2;x=391;y=330;)
+FLOATWND(name=Float\bwindow\b1;x=0.793164;y=0.196528;w=0.161914;h=0.442361;Selected=FRender1;)
+FLOATWND(name=Float\bwindow\b2;x=0.748047;y=0.351389;w=0.166602;h=0.418056;Selected=FRender2;)
+GRAPHVIEW(name=GraphView;x=0.015361;y=0.0204918;w=0.736559;h=0.648566;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

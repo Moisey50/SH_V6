@@ -1,0 +1,14 @@
+BMPCapture BMPCapture1(FileName=*.jpg;Directory=T:/Photos/Family/WhenI64;FrameRate=1;Loop=1;LabelFullPath=1;WatchNew=0;Output=1;DeleteRead=0;Remove#=0;IterationMode=0;)
+BMPRender BMPRender1(Name=_inplace;FileName=./OutImages/Imagep<Counter>.png;FormatBMP=4;AddLabel=0;FolderPath=./OutImages/;FileName_NoExt=Imagep;AddFileNameSuffix=0;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=3;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x51BA2\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,um;SaveImagesDir=;)
+
+Connect(BMPCapture1>>0,FRender1<<0)
+Connect(BMPCapture1>>0,BMPRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=BMPCapture1;x=186;y=75;)
+MOVE(gadget=FRender1;x=401;y=91;)
+MOVE(gadget=BMPRender1;x=280;y=164;)
+GRAPHVIEW(name=GraphView;x=0.0114155;y=0.0149425;w=0.85997;h=0.664368;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

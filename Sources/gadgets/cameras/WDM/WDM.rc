@@ -1,0 +1,179 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\WDM.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "FileDescription", "WDM DLL"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "InternalName", "WDM"
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "OriginalFilename", "WDM.DLL"
+            VALUE "ProductName", "WDM Dynamic Link Library"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+IDD_SETUPDIALOG DIALOGEX 0, 0, 340, 133
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,225,111,50,14
+    LTEXT           "Capture device:",IDC_STATIC,7,7,60,10
+    COMBOBOX        IDC_CAP_DEVICELIST,56,7,277,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "",IDC_SETUP1,17,36,105,11
+    PUSHBUTTON      "",IDC_SETUP3,17,49,105,11
+    PUSHBUTTON      "",IDC_SETUP5,17,62,105,11
+    PUSHBUTTON      "",IDC_SETUP7,17,75,105,11
+    GROUPBOX        "Video device setup",IDC_STATIC,7,26,250,81
+    PUSHBUTTON      "",IDC_SETUP2,139,36,105,11
+    PUSHBUTTON      "",IDC_SETUP4,139,49,105,11
+    PUSHBUTTON      "",IDC_SETUP6,139,62,105,11
+    PUSHBUTTON      "",IDC_SETUP8,139,75,105,11
+    PUSHBUTTON      "",IDC_SETUP9,17,88,105,11
+    PUSHBUTTON      "",IDC_SETUP10,139,88,105,11
+    PUSHBUTTON      "Cancel",IDCANCEL,283,111,50,14
+    GROUPBOX        "Output formats",IDC_STATIC,265,27,66,81
+    CONTROL         "YUV9",IDC_OUT_YUV9,"Button",BS_AUTORADIOBUTTON | WS_GROUP,272,39,35,10
+    CONTROL         "YUV12",IDC_OUT_YUV12,"Button",BS_AUTORADIOBUTTON,272,49,39,10
+    CONTROL         "Y8",IDC_OUT_Y8,"Button",BS_AUTORADIOBUTTON,272,59,25,10
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SETUPDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 333
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+END
+#endif    // APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+IDR_10001               HTML                    "res\\10001.htm"
+IDR_1001                HTML                    "res\\1001.css"
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIFS
+//
+IDR_12001               GIFS                    "res\\GIFS\\12001.gif"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\WDM.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

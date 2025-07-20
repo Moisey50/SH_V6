@@ -1,0 +1,15 @@
+MatVis MatVis1(Camera=205317;StreamState=0;PixelFormat=4;AcqMode=0;FrameRate=20.00;Shutt_uS=10000;Gain_dBx10=40;ROI=0,0,1024,1024;Grab=-1;TriggerMode=0;TriggerSource=0;TriggerDelay=0;Tr.Polarity=0;Binning=1;Decimation=2;ADCGain=48;VRamp=104;BlackLevel=-3.8;DigitaGainOffset=0;SaveCalibData=0;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=1000,1000;Scale=1;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x42E5E\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+
+Connect(MatVis1>>0,RenderFrameRate1<<0)
+Connect(MatVis1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=MatVis1;x=131;y=145;)
+MOVE(gadget=RenderFrameRate1;x=349;y=48;)
+MOVE(gadget=FRender1;x=448;y=267;)
+FLOATWND(name=Float\bwindow\b1;x=0.247852;y=0.121528;w=0.236719;h=0.804167;Selected=FRender1;)
+GRAPHVIEW(name=GraphView;x=0.0453149;y=0.0604508;w=0.893241;h=0.786885;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

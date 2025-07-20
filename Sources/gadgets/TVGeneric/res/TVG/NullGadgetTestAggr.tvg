@@ -1,0 +1,26 @@
+TextCaptureCtrl TextCaptureCtrl1(Name=_inplace;Text=text;Quantity=0;NoSync=0;Manual=0;FrameRate=1;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+Complex Block1({Null Null2(_GADGET_OUTPUT1=Label\eLab2\s;)
+Null Null3(_GADGET_OUTPUT1=Label\eLab3\s;)
+
+Connect(Null2>>0,Null3<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Null2;x=455;y=235;)
+MOVE(gadget=Null3;x=624;y=235;)
+END_VIEW_SECTION
+
+})
+TextRender TextRender1(Name=_inplace;)
+Null Null1(_GADGET_OUTPUT1=Label\eLab1\s;)
+
+Connect(TextCaptureCtrl1>>0,Null1<<0)
+Connect(Block1>>0,TextRender1<<0)
+Connect(Null1>>0,Block1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Null1;x=274;y=235;)
+MOVE(gadget=TextRender1;x=877;y=121;)
+MOVE(gadget=TextCaptureCtrl1;x=41;y=277;)
+MOVE(gadget=Block1;x=455;y=235;)
+END_VIEW_SECTION
+

@@ -1,0 +1,192 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\WavGadgets.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "FileDescription", "WavGadgets DLL"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "InternalName", "WavGadgets"
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+            VALUE "OriginalFilename", "WavGadgets.DLL"
+            VALUE "ProductName", "WavGadgets Dynamic Link Library"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+IDD_WAVSRCSETUPDLG DIALOGEX 0, 0, 248, 65
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Wave file capture setup dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,133,44,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,191,44,50,14
+    GROUPBOX        "File name",IDC_STATIC,8,7,233,32
+    EDITTEXT        IDC_FILENAME,17,17,191,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE_FILENAME,209,17,26,14
+    CONTROL         "Loop",IDC_LOOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,41,32,10
+END
+IDD_SPEAKERSETUPDLG DIALOG  0, 0, 248, 82
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Wave file capture setup dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,133,61,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,191,61,50,14
+    GROUPBOX        "Wave out device",IDC_STATIC,8,7,233,48
+    COMBOBOX        IDC_SPEAKERCOMBO,21,25,156,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_WAVSRCSETUPDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+    IDD_SPEAKERSETUPDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+END
+#endif    // APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+IDR_10001               HTML                    "res\\10001.htm"
+IDR_1001                HTML                    "res\\1001.css"
+IDR_10002               HTML                    "res\\10002.htm"
+IDR_10003               HTML                    "res\\10003.htm"
+IDR_10004               HTML                    "res\\10004.htm"
+IDR_10005               HTML                    "res\\10005.htm"
+IDR_10006               HTML                    "res\\10006.htm"
+IDR_10007               HTML                    "res\\10007.htm"
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIFS
+//
+IDR_4003                GIFS                    "res\\GIFS\\4003.gif"
+IDR_4005                GIFS                    "res\\GIFS\\4005.GIF"
+IDR_4006                GIFS                    "res\\GIFS\\4006.GIF"
+IDR_4007                GIFS                    "res\\GIFS\\4007.GIF"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\WavGadgets.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

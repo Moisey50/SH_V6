@@ -1,0 +1,6 @@
+; stdsetup.def : Declares the module parameters for the DLL.
+
+LIBRARY      "stdsetup"
+
+EXPORTS
+    ; Explicit exports can go here

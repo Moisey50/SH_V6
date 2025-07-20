@@ -1,0 +1,11 @@
+GenericCapture BY_MASK_TOGGLE(Name=_inplace;Message=TextData\e0xffff\s;Attributes=;Label=toggle;NoSync=0;SetEOS=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+UsbRelayGadget UsbRelayGadget1(_OUTPUTMODE=1;USBRelay_Device=172052160;State_As_Mask=true;Cmmnd_As_Mask=false;_GADGET_OUTPUT1=Name\eDigitalState\s;_GADGET_INPUT1=Name\eDigOutCmd\s;_GADGET_DUPLEX1=Name\eControl\s;)
+
+Connect(BY_MASK_TOGGLE>>0,UsbRelayGadget1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=BY_MASK_TOGGLE;x=237;y=60;)
+MOVE(gadget=UsbRelayGadget1;x=946;y=40;)
+GRAPHVIEW(name=GraphView;x=0.00240674;y=0.00522193;w=0.854994;h=0.929504;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

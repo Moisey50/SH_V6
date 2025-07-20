@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="FXController.cpp" />
+    <ClCompile Include="FXControllerGadget.cpp" />
+    <ClCompile Include="ControllerCommandFactory.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigurationFactory.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="ModeConfigRepository.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="FXController.h" />
+    <ClInclude Include="FXControllerGadget.h" />
+    <ClInclude Include="ConfigurationFactory.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerCommandFactory.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="ModeConfigRepository.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerOperSettingVal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FXController.rc2">
+      <Filter>res</Filter>
+    </None>
+    <None Include="..\Common\Resources\retsight_vs17.tvg">
+      <Filter>res</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{31a05181-5a30-4359-a084-46ae0a699288}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{6227cad1-3780-4d77-9fb4-b3b225dc7755}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FXController.rc" />
+  </ItemGroup>
+</Project>

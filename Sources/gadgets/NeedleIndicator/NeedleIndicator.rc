@@ -1,0 +1,208 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\NeedleIndicator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "NeedleIndicator DLL"
+            VALUE "InternalName", "NeedleIndicator"
+            VALUE "OriginalFilename", "NeedleIndicator.DLL"
+            VALUE "ProductName", "NeedleIndicator Dynamic Link Library"
+             VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+IDD_VIDEO_LOCATOR DIALOGEX 0, 0, 263, 277
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Locator Setup "
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,206,255,50,14
+    GROUPBOX        "Central point location",IDC_STATIC,7,7,150,26
+    LTEXT           "X:",IDC_STATIC,14,18,8,11
+    EDITTEXT        IDC_EDIT_XPOS,24,17,58,12,ES_AUTOHSCROLL
+    LTEXT           "Y:",IDC_STATIC,84,18,8,11
+    EDITTEXT        IDC_EDIT_YPOS,94,17,58,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_VIEW,"Static",SS_BLACKFRAME,7,64,249,187
+    COMBOBOX        IDC_ANGLE,39,43,61,59,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Angle",IDC_STATIC,14,44,20,11
+    LTEXT           "Radius",IDC_STATIC,124,43,24,12
+    EDITTEXT        IDC_EDIT_RADIUS,162,43,65,12,ES_AUTOHSCROLL
+    GROUPBOX        "Locator params",IDC_STATIC,7,33,234,27
+END
+IDD_NEEDLE_SETUP DIALOG  0, 0, 262, 254
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "CNeedleDetecor Setup "
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,195,15,50,14
+    GROUPBOX        "Detector line position",IDC_STATIC,7,7,169,26
+    LTEXT           "Y Position:",IDC_STATIC,14,18,54,11
+    EDITTEXT        IDC_EDIT_LINEPOSITION,71,17,58,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_VIEW,"Static",SS_BLACKFRAME,7,97,248,149
+    GROUPBOX        "First point",IDC_STATIC,7,34,248,26
+    LTEXT           "X Position:",IDC_STATIC,14,45,54,11
+    EDITTEXT        IDC_EDIT_FSTPOINT_X,71,44,58,12,ES_AUTOHSCROLL
+    LTEXT           "Value:",IDC_STATIC,134,45,54,11
+    EDITTEXT        IDC_EDIT_FSTPOINT_VALUE,191,44,58,12,ES_AUTOHSCROLL
+    GROUPBOX        "Second point",IDC_STATIC,7,63,248,26
+    LTEXT           "X Position:",IDC_STATIC,14,74,54,11
+    EDITTEXT        IDC_EDIT_SDPOINT_X,71,73,58,12,ES_AUTOHSCROLL
+    LTEXT           "Value:",IDC_STATIC,134,74,54,11
+    EDITTEXT        IDC_EDIT_SDPOINT_VALUE,191,73,58,12,ES_AUTOHSCROLL
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_VIDEO_LOCATOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 269
+    END
+    IDD_NEEDLE_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 246
+    END
+END
+#endif    // APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+IDR_1001                HTML                    "res\\1001.css"
+IDR_HTML_10000          HTML                    "res\\10000.htm"
+IDR_HTML_10001          HTML                    "res\\10001.htm"
+/////////////////////////////////////////////////////////////////////////////
+//
+// JPGS
+//
+IDR_10001               JPGS                    "res\\JPGS\\10001.jpg"
+IDR_10002               JPGS                    "res\\JPGS\\10002.jpg"
+IDR_10003               JPGS                    "res\\JPGS\\10003.jpg"
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIFS
+//
+IDR_GIFS_1000           GIFS                    "res\\GIFS\\1000.gif"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\NeedleIndicator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

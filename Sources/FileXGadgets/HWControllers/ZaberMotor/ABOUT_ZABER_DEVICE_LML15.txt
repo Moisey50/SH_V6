@@ -1,0 +1,18 @@
+https://www.zaber.com/support/?tab=Device+Settings&device=T-MCA&peripheral=LML15&version=5.35&protocol=Binary - Device Default settings (DDSt)
+MicrostepsPerStep =>                    64
+MaximalPositionInMicrosteps =>      192000
+============
+MaximalPositionInMicrons (Travel Range<from DSp> * 1000 µm per mm) => 15 * 1000 = 15000 µm
+Microstep Size [relative to MicrostepsPerStep<from DDSt>] (MaximalPositionInMicrons<calc. before> / MaximalPositionInMicrosteps<from DSp>) => 15000 / 192000 = 0.078125 µm
+
+
+https://www.zaber.com/products/product_detail.php?detail=LML15 - Device specifications (DSp)
+Microstep Size (Default Resolution) =>   0.078125 µm
+Travel Range =>                         15 mm
+Motor Steps Per Rev =>                 200 
+=============================
+Travel Range In Microns (Travel Range<from DSp> * 1000 µm per mm) => 15 * 1000 = 15000 µm
+Microsteps Per Rev (Default Resolution) => 200 * 64 = 12800 microsteps Per Rev
+Microns Per Rev (Default Resolution) => 12800 * 0.078125 = 1000 µm Per Rev
+Revolutions Per Travel Range => 15000(µm) / 1000(µm/Rev) = 15 Revs
+Microsteps Per Travel Range => 15(Revs) * 12800(microsteps/Rev) = 192000 microsteps Per Travel Range

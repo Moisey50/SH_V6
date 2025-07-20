@@ -1,0 +1,294 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian (Russia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TVVideo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian (Russia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIDEO_CAPTURE_DLG DIALOG 0, 0, 277, 66
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Video capture setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Close",IDCANCEL,220,45,50,14
+    GROUPBOX        "Driver",IDC_STATIC,7,7,263,29
+    EDITTEXT        IDC_DRIVER_PATH,13,17,221,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE_DRIVER,240,17,23,14
+    PUSHBUTTON      "Settings",IDC_SETTINGS,108,45,50,14
+    PUSHBUTTON      "OK",IDOK,164,45,50,14
+    CONTROL         "Software trigger",IDC_SOFTWARE_TRIGGER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,47,65,10
+END
+
+IDD_VIDEO_CUTRECT_DIALOG DIALOGEX 0, 0, 206, 206
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Cut rectangle"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,146,13,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,146,28,50,14
+    GROUPBOX        "Rectangle placement:",IDC_STATIC,7,7,192,50
+    LTEXT           "left:",IDC_STATIC,10,19,12,8
+    EDITTEXT        IDC_LEFT,25,17,28,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "top:",IDC_STATIC,10,39,13,8
+    EDITTEXT        IDC_TOP,25,37,28,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "width:",IDC_STATIC,56,19,17,8
+    EDITTEXT        IDC_WIDTH,77,17,24,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "height:",IDC_STATIC,57,39,19,8
+    EDITTEXT        IDC_HEIGHT,76,37,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_VIEW,"Static",SS_BLACKFRAME,7,62,192,137
+    CONTROL         "4 pixels step",IDC_4PIXELS_ROUNDING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,147,44,49,8
+    CONTROL         "Allow ROI by input",IDC_ALLOW_CONTROL_FROM_INPUT,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,105,21,35,24
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_VIDEO_CUTRECT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 199
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+            VALUE "FileDescription", "TVVideo DLL"
+            VALUE "InternalName", "TVVideo"
+            VALUE "OriginalFilename", "TVVideo.DLL"
+            VALUE "ProductName", "TVVideo Dynamic Link Library"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+IDR_10001               HTML                    "res\\10001.htm"
+IDR_1001                HTML                    "res\\1001.css"
+IDR_10002               HTML                    "res\\10002.htm"
+IDR_10003               HTML                    "res\\10003.htm"
+IDR_10004               HTML                    "res\\10004.htm"
+IDR_10005               HTML                    "res\\10005.htm"
+IDR_10006               HTML                    "res\\10006.htm"
+IDR_10007               HTML                    "res\\10007.htm"
+IDR_10008               HTML                    "res\\10008.htm"
+IDR_10009               HTML                    "res\\10009.htm"
+IDR_10010               HTML                    "res\\10010.htm"
+IDR_10011               HTML                    "res\\10011.htm"
+IDR_10012               HTML                    "res\\10012.htm"
+IDR_10013               HTML                    "res\\10013.htm"
+IDR_10014               HTML                    "res\\10014.htm"
+IDR_10015               HTML                    "res\\10015.htm"
+IDR_10016               HTML                    "res\\10016.htm"
+IDR_10017               HTML                    "res\\10017.htm"
+IDR_10018               HTML                    "res\\10018.htm"
+IDR_10019               HTML                    "res\\10019.htm"
+IDR_10020               HTML                    "res\\10020.htm"
+IDR_10021               HTML                    "res\\10021.htm"
+IDR_10022               HTML                    "res\\10022.htm"
+IDR_10023               HTML                    "res\\10023.htm"
+IDR_10024               HTML                    "res\\10024.htm"
+IDR_10025               HTML                    "res\\10025.htm"
+IDR_10026               HTML                    "res\\10026.htm"
+IDR_10027               HTML                    "res\\10027.htm"
+IDR_10028               HTML                    "res\\10028.htm"
+IDR_10029               HTML                    "res\\10029.htm"
+IDR_10030               HTML                    "res\\10030.htm"
+IDR_10031               HTML                    "res\\10031.htm"
+IDR_10032               HTML                    "res\\10032.htm"
+IDR_10033               HTML                    "res\\10033.htm"
+IDR_10034               HTML                    "res\\10034.htm"
+IDR_10035               HTML                    "res\\10035.htm"
+IDR_10036               HTML                    "res\\10036.htm"
+IDR_10037               HTML                    "res\\10037.htm"
+IDR_10038               HTML                    "res\\10038.htm"
+IDR_10039               HTML                    "res\\10039.htm"
+IDR_10040               HTML                    "res\\10040.htm"
+IDR_10041               HTML                    "res\\10041.htm"
+IDR_10042               HTML                    "res\\10042.htm"
+IDR_10043               HTML                    "res\\10043.htm"
+IDR_10044               HTML                    "res\\10044.htm"
+IDR_10045               HTML                    "res\\10045.htm"
+IDR_10046               HTML                    "res\\10046.htm"
+IDR_10047               HTML                    "res\\10047.htm"
+IDR_10048               HTML                    "res\\10048.htm"
+IDR_10049               HTML                    "res\\10049.htm"
+IDR_10050               HTML                    "res\\10050.htm"
+IDR_10051               HTML                    "res\\10051.htm"
+IDR_10052               HTML                    "res\\10052.htm"
+IDR_10053               HTML                    "res\\10053.htm"
+IDR_10054               HTML                    "res\\10054.htm"
+IDR_10055               HTML                    "res\\10055.htm"
+IDR_10056               HTML                    "res\\10056.htm"
+IDR_10057               HTML                    "res\\10057.htm"
+IDR_10058               HTML                    "res\\10058.htm"
+IDR_10059               HTML                    "res\\10059.htm"
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIFS
+//
+IDR_GIFS_1000           GIFS                    "res\\Gifs\\1000.gif"
+IDR_GIFS_1001           GIFS                    "res\\GIFS\\1001.gif"
+IDR_GIFS_1002           GIFS                    "res\\GIFS\\1002.gif"
+IDR_GIFS_1003           GIFS                    "res\\GIFS\\1003.gif"
+IDR_GIFS_1004           GIFS                    "res\\GIFS\\1004.gif"
+IDR_GIFS_1005           GIFS                    "res\\GIFS\\1005.gif"
+IDR_GIFS_1006           GIFS                    "res\\GIFS\\1006.gif"
+IDR_GIFS_1007           GIFS                    "res\\GIFS\\1007.gif"
+IDR_GIFS_1008           GIFS                    "res\\GIFS\\1008.gif"
+IDR_GIFS_1009           GIFS                    "res\\GIFS\\1009.gif"
+IDR_GIFS_1010           GIFS                    "res\\GIFS\\1010.gif"
+IDR_GIFS_1011           GIFS                    "res\\GIFS\\1011.gif"
+IDR_GIFS_1012           GIFS                    "res\\GIFS\\1012.gif"
+IDR_GIFS_1013           GIFS                    "res\\GIFS\\1013.gif"
+IDR_GIFS_1014           GIFS                    "res\\GIFS\\1014.gif"
+IDR_GIFS_1015           GIFS                    "res\\GIFS\\1015.gif"
+IDR_GIFS_1016           GIFS                    "res\\GIFS\\1016.gif"
+IDR_GIFS_1017           GIFS                    "res\\GIFS\\1017.gif"
+/////////////////////////////////////////////////////////////////////////////
+//
+// JPGS
+//
+IDR_JPGS_1000           JPGS                    "res\\Jpgs\\1000.jpg"
+IDR_JPGS_1001           JPGS                    "res\\Jpgs\\1001.jpg"
+IDR_JPGS_1002           JPGS                    "res\\Jpgs\\1002.jpg"
+IDR_JPGS_1003           JPGS                    "res\\Jpgs\\1003.jpg"
+IDR_JPGS_1004           JPGS                    "res\\Jpgs\\1004.jpg"
+IDR_JPGS_1005           JPGS                    "res\\Jpgs\\1005.jpg"
+IDR_JPGS_1006           JPGS                    "res\\Jpgs\\1006.jpg"
+IDR_JPGS_1007           JPGS                    "res\\Jpgs\\1007.jpg"
+/////////////////////////////////////////////////////////////////////////////
+//
+// TVG
+//
+IDR_TVG_1000            TVG                     "res\\tvg\\1000.tvg"
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\TVVideo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b5946df3-489f-44e8-8e2b-f7182b8021f9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0def0d1d-1b66-450d-a8c5-1b17da80a65f}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{5d6dba92-03eb-4047-add3-05fe7bc828cb}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\gadgets\1394Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ptgrey1_8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PtGrey1_8Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gifs1.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="gifs2.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ptgrey1_8.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10000.htm" />
+    <None Include="res\1001.css" />
+    <None Include="res\ptgrey_1_8_help.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ptgrey1_8.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\gadgets\1394Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\cameraerrors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ptgrey1_8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PtGrey1_8Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\GIFS\12001.GIF">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1000.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\1001.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GIFS\12002.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="DLL_DEPENDENCIES.txt" />
+  </ItemGroup>
+</Project>

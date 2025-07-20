@@ -1,0 +1,39 @@
+<<<<<<< HEAD
+WDMCapture WDMCapture1(useframerate=1;outputformat=808596553;VideoDevice2=406465766963653a706e703a5c5c3f5c757362237669645f31626366267069645f32323834266d695f3030233626313363383136373926312630303030237b36356538373733642d386635362d313164302d613362392d3030613063393232333139367d5c676c6f62616c00;AM_MEDIA_TYPE=7669647300001000800000aa00389b715955593200001000800000aa00389b71010000000000000000483f00809f580556c3ce11bf0100aa0055595a0000000058000000d8fbd90e;pbFormat=00000000000000000000000000000000000000000000000000000000000000000040e3090000000080841e0000000000280000008007000038040000010010005955593200483f0000000000000000000000000000000000;)
+TVObjects TVObjects1(Template=line(name=horiz_edge;type=1;contrast=1;placement=0;xoffset=910;yoffset=210;width=100;height=700;dir=1;thick_min=50;thick_max=10;debounce=2;detailed=0x1005;multi=1;min_ampl=20; thres= 0.300;timeout_ms=100.0;max_n_objects=100;color=255;textsize=20;xtextoffset=5;ytextoffset=-5;extendforw_perc=50;view_roi=1;view_pos=1;view_coords=1;view_angle=0;view_profx=0;view_profy=1;view_scaled=0;meas_pos=1;meas_thick=1;meas_angle=0;meas_xprof=0;meas_yprof=1;meas_sub_sides=0;)
+=======
+WDMCapture WDMCapture1(useframerate=1;outputformat=808596553;VideoDevice2=406465766963653a706e703a5c5c3f5c757362237669645f30343664267069645f30383235266d695f3030233726333831356131663726302630303030237b36356538373733642d386635362d313164302d613362392d3030613063393232333139367d5c7b62626566623663372d326663342d343133392d626238622d6135386262613732343038337d00;AM_MEDIA_TYPE=7669647300001000800000aa00389b717deb36e44f52ce119f530020af0ba770010000000000000000403800809f580556c3ce11bf0100aa0055595a0000000058000000786dfe03;pbFormat=00000000000000000000000000000000000000000000000000000000000000000000bc340000000015160500000000002800000000050000c003000001001800000000000040380000000000000000000000000000000000;)
+TVObjects TVObjects1(Template=edge(name=horiz_edge;type=7;contrast=3;placement=0;xoffset=910;yoffset=210;width=100;height=700;dir=1800;debounce=2;multi=0;min_ampl=20; thres= 0.500;timeout_ms=100.0;max_n_objects=100;color=255;textsize=20;xtextoffset=5;ytextoffset=-5;extendforw_perc=50;view_roi=1;view_pos=1;view_coords=1;view_angle=0;view_contur=0;view_details=0;view_profx=0;view_profy=1;view_scaled=0;meas_pos=1;meas_angle=0;meas_xprof=0;meas_yprof=1;meas_sub_sides=0;edge_as_contur=0;)
+>>>>>>> 3e0007006ffc208fad7ec51d81aeebddea15dc16
+edge(name=vert_edge;type=7;contrast=3;placement=0;xoffset=1450;yoffset=450;width=100;height=100;dir=2100;debounce=2;multi=0;min_ampl=20; thres= 0.500;timeout_ms=100.0;max_n_objects=10;color=255;textsize=20;xtextoffset=5;ytextoffset=-5;extendforw_perc=50;view_roi=1;view_pos=1;view_coords=1;view_angle=0;view_contur=0;view_details=0;view_profx=0;view_profy=0;view_scaled=0;meas_pos=1;meas_angle=0;meas_xprof=0;meas_yprof=0;meas_sub_sides=0;edge_as_contur=0;)
+Task(2,vert_edge)
+Task(1,horiz_edge)
+;ActiveTask=1;CaptionPeriod=0;ViewMode=-1073733631;Scaling=1,pix;gtimeout_ms=0;NObjectsMax=500;LastImageWidth=1280;LastImageHeight=960;_OUTPUTMODE=1;_GADGET_OUTPUT2=Name\eDiagnostics\s;_GADGET_INPUT2=Name\eControl\s;_GADGET_INPUT3=Name\eScriptLoad\s;_GADGET_INPUT4=Name\eCoordinates\s;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+RenderID RenderID1(Name=_inplace;)
+<<<<<<< HEAD
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=396,157;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x20880\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+=======
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=772,382;Scale=3;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x10D3C\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+>>>>>>> 3e0007006ffc208fad7ec51d81aeebddea15dc16
+
+Connect(WDMCapture1>>0,RenderFrameRate1<<0)
+Connect(WDMCapture1>>0,RenderID1<<0)
+Connect(WDMCapture1>>0,TVObjects1<<0)
+Connect(TVObjects1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=WDMCapture1;x=16;y=36;)
+MOVE(gadget=RenderFrameRate1;x=148;y=9;)
+MOVE(gadget=RenderID1;x=39;y=165;)
+MOVE(gadget=FRender1;x=651;y=36;)
+MOVE(gadget=TVObjects1;x=381;y=50;)
+<<<<<<< HEAD
+FLOATWND(name=Float\bwindow\b1;x=0.0703125;y=0.263194;w=0.431473;h=0.865278;Selected=FRender1;)
+GRAPHVIEW(name=GraphView;x=0.0192171;y=0.011254;w=0.713167;h=0.940514;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+=======
+FLOATWND(name=Float\bwindow\b1;x=0.015625;y=0.322917;w=0.290234;h=0.55;Selected=FRender1;)
+GRAPHVIEW(name=GraphView;x=0.019403;y=0.0111248;w=0.712687;h=0.941904;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+>>>>>>> 3e0007006ffc208fad7ec51d81aeebddea15dc16
+END_VIEW_SECTION
+

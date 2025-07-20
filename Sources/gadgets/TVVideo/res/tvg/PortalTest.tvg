@@ -1,0 +1,16 @@
+Port Port1(PortalName=Portal0;_OUTPUTMODE=1;)
+Port Port2(PortalName=Portal0;_OUTPUTMODE=1;)
+Port Port3(PortalName=Portal1;_OUTPUTMODE=1;)
+Port Port4(PortalName=Default;_OUTPUTMODE=1;)
+GMarking GMarking1(#Markings=5;Type1=1;Params1=color\e0xFF00\sSz\e10\sthickness\e1\sclose\e0\s;Coords1=\o500,500\c\s;Type2=0;Params2=color\e0xFF\sback\e0x1\sSz\e10\s;Coords2=\o0.5,0.6\c\s;Text2=Text2;Type3=1;Params3=color\e0xFFFF\sthickness\e1\sclose\e1\s;Coords3=\o0.5,0.7\c,\o0.5,0.3\c,\o0.7,0.3\c\s;Type4=0;Params4=color\e0xFF00\sback\e0x808080\sSz\e10\s;Coords4=\o0.8,0.5\c\s;Text4=Unfilled;Type5=2;Params5=color\e0xFF\sthick\e1\srad\e100\sbeg_deg\e0\send_deg\e360\s;Coords5=\o0.5,0.5\c,\o0.6,0.2\c,\o0.1,0.4\c\s;_OUTPUTMODE=1;)
+
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=GMarking1;x=281;y=30;)
+MOVE(gadget=Port1;x=230;y=118;)
+MOVE(gadget=Port2;x=232;y=187;)
+MOVE(gadget=Port3;x=233;y=258;)
+MOVE(gadget=Port4;x=144;y=319;)
+GRAPHVIEW(name=GraphView;x=0.0483351;y=0.0893333;w=0.928034;h=0.749333;x_view_off=0;y_view_off=0;scale=0.826446;Viewed=0;)
+END_VIEW_SECTION
+

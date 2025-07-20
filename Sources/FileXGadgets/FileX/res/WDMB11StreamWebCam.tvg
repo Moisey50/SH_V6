@@ -1,0 +1,20 @@
+WDMCapture WDMCapture1(useframerate=1;outputformat=961893977;VID_PID_MI=VID_1BCF&PID_0215&MI_00;Location=/R1.H3.P1/;VideoDevice2s=@device:pnp:\\\\?\\usb#vid_1bcf&pid_0215&mi_00#8&6864d7d&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global;VideoDevice2=406465766963653a706e703a5c5c3f5c757362237669645f31626366267069645f30323135266d695f30302338263638363464376426302630303030237b36356538373733642d386635362d313164302d613362392d3030613063393232333139367d5c676c6f62616c00;AM_MEDIA_TYPE=7669647300001000800000aa00389b714d4a504700001000800000aa00389b71010000000000000000ec5e00809f580556c3ce11bf0100aa0055595a000000005800000048d33c0e;pbFormat=00000000000000000000000000000000000000000000000000000000000000000040fd58000000001516050000000000280000008007000038040000010018004d4a504700ec5e0000000000000000000000000000000000;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+VideoAverage VideoAverage1(Mode=2;FramesRange=1;ComplementOut=0;)
+RenderID RenderID1(Name=_inplace;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=396,157;Scale=0;LineSelection=0;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x301966\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+
+Connect(WDMCapture1>>0,RenderFrameRate1<<0)
+Connect(WDMCapture1>>0,RenderID1<<0)
+Connect(WDMCapture1>>0,VideoAverage1<<0)
+Connect(VideoAverage1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=WDMCapture1;x=12;y=35;)
+MOVE(gadget=RenderFrameRate1;x=204;y=17;)
+MOVE(gadget=RenderID1;x=177;y=152;)
+MOVE(gadget=FRender1;x=488;y=138;)
+MOVE(gadget=VideoAverage1;x=322;y=114;)
+GRAPHVIEW(name=GraphView;x=0.0616438;y=0.0494253;w=0.497717;h=0.436782;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

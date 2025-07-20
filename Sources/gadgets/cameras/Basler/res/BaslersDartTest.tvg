@@ -1,0 +1,19 @@
+TextCaptureCtrl TextCaptureCtrl2(Name=_inplace;Text=set\bFireSoftTrigger\o1\c\s;Quantity=0;NoSync=0;Manual=1;FrameRate=1;FramePeriod_ms=1000.00;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+TextCaptureCtrl TextCaptureCtrl1(Name=_inplace;Text=Dummy;Quantity=0;NoSync=0;Manual=1;FrameRate=1;FramePeriod_ms=1000.00;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;_GADGET_OUTPUT1=Label\eCameraReset\s;)
+Basler Basler1(Camera=22986781;StreamState=0;Format=17301505;Shutter_us=auto\b35602;Gain_dBx10=0;Brightness=1.25;Gamma=1;ExposureMode=1;Trig_Selector=3;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_activate=16;Frame_rate=10;ROI=0,0,1280,960;
+Line1=(LineMode_=Input;LineSource_=UserOutput1;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);LineSelect=1;LineMode=1;LineSource=16384;LineInvert=0;OutputSelector=0;OutputValue=1;UserSetSelect=0;)
+FRender FRender1(Name=_inplace;Monochrome=0;offset=0,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x25035A\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+
+Connect(TextCaptureCtrl2>>0,Basler1<>0)
+Connect(TextCaptureCtrl1>>0,Basler1<>0)
+Connect(Basler1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Basler1;x=243;y=79;)
+MOVE(gadget=TextCaptureCtrl1;x=58;y=130;)
+MOVE(gadget=FRender1;x=451;y=11;)
+MOVE(gadget=TextCaptureCtrl2;x=60;y=243;)
+GRAPHVIEW(name=GraphView;x=0.0421179;y=0.0816583;w=0.818291;h=0.649497;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

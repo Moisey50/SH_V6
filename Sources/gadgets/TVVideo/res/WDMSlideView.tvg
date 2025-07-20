@@ -1,0 +1,19 @@
+WDMCapture WDMCapture1(useframerate=1;outputformat=961893977;VideoDevice2s=@device:pnp:\\\\?\\usb#vid_046d&pid_0825&mi_00#7&3815a1f7&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\{bbefb6c7-2fc4-4139-bb8b-a58bba724083};VideoDevice2=406465766963653a706e703a5c5c3f5c757362237669645f30343664267069645f30383235266d695f3030233726333831356131663726302630303030237b36356538373733642d386635362d313164302d613362392d3030613063393232333139367d5c7b62626566623663372d326663342d343133392d626238622d6135386262613732343038337d00;AM_MEDIA_TYPE=7669647300001000800000aa00389b717deb36e44f52ce119f530020af0ba770010000000000000000100e00809f580556c3ce11bf0100aa0055595a000000005800000078dce009;pbFormat=000000000000000000000000000000000000000000000000000000000000000000002f0d0000000015160500000000002800000080020000e0010000010018000000000000100e0000000000000000000000000000000000;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x3D1980\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+SlideView SlideView1(Name=Float\bwindow\b2;ShiftMode=false;Rescale=true;Monochrome=false;Scale=1;TargetWidth=200;FramesLen=16;FramesInRow=4;ShowMetafiles=false;IntegrRadius=-1;FigureLabel=NameNotSet;)
+
+Connect(WDMCapture1>>0,FRender1<<0)
+Connect(WDMCapture1>>0,RenderFrameRate1<<0)
+Connect(WDMCapture1>>0,SlideView1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=WDMCapture1;x=131;y=94;)
+MOVE(gadget=FRender1;x=351;y=94;)
+MOVE(gadget=RenderFrameRate1;x=236;y=3;)
+MOVE(gadget=SlideView1;x=240;y=169;)
+FLOATWND(name=Float\bwindow\b1;x=0.70625;y=0.0368056;w=0.302344;h=0.580556;Selected=FRender3;)
+FLOATWND(name=Float\bwindow\b2;x=0.278906;y=0.259028;w=0.157422;h=0.418056;Selected=SlideView1;)
+GRAPHVIEW(name=GraphView;x=0.0106132;y=0.0137174;w=0.785377;h=0.66941;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

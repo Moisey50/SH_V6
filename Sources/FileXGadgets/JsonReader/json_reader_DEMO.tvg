@@ -1,0 +1,31 @@
+TextCaptureCtrl TC_Instruction(Name=_inplace;Text=HOW\bTO\bUSE\b'JsonGadget'\\n\r\n\\n\r\n1.\bFor\bnow\b\o20171219\c\bthe\b'JsonGadget'\bshould\bbe\bused\\n\r\n\b\b\bwith\bcollection\bof\bfigures\bserialized\bto\bthe\bJSON\bformat.\\n\r\nJSON\bfor\bexample\\n\r\n"../Sources/FileXGadgets/JsonReader/res/FiguresCollection.json"\\n\r\n\\n\r\n2.\bDrag-n-Drop\bthe\b"JsonGadget"\bto\bthe\bgraph\bfrom\bthe\b"Generic"\bsection.\\n\r\n\\n\r\n3.\bDefine\bFULL\bpath\bto\bthe\bJSON\bfile\bin\bthe\b"JSON_Path"\bproperty\\n\r\n\b\b\bof\bthe\b"JsonGadget".\\n\r\n\\n\r\n4.\bInput\bpin\bof\bthe\b"JsonGadget"\bmay\breceive:\\n\r\n	a\c\bSingle\bword\bas\bFigure\bId\b-->\bto\brequest\bFigure\bdata,\\n\r\n	b\c\bAll\bdata\b\oinclude\bId\c\bof\bspecific\bFigure\bserialized\bas\bJSON\bstring\\n\r\n	\b\b\b-->\bto\bupdate\bor\binsert\bFigure\bin\bthe\b"live"\bcollection\bONLY\s\\n\r\n\\n\r\n5.\bOutput\bpin\bof\bthe\b"JsonGadget"\bmay\bsend:\\n\r\n	a\c\bAll\bdata\b\oinclude\bId\c\bof\bspecific\bFigure\bserialized\bas\bJSON\bstring\\n\r\n\b\b\b\b\b\b\brequested\bby\bId\bfrom\bthe\binput\bpin\b\o4.a\c\s\\n\r\n	b\c\bDebug/Trace\bdata\babout\bupdating\bor\badding\bof\bthe\bcollection\bby\\n\r\n\b\b\b\b\b\b\bthe\bFigure\bsent\bto\bthe\binput\bpin\b\o4.b\c\s\\n\r\n\\n\r\n6.\bReceiving\bthe\bFigure\bdata\bin\bother\bgadgets:\\n\r\n\b\b\b\ba\c\bTransfer\bprotocol\bfrom\bthe\b"JsonGadget"\bto\byour\bgadget\bis\\n\r\n\b\b\b\b\b\b\ba\bJSON\bformated\bstring.\\n\r\n	b\c\bTo\bdeserialize\bthe\bdata\breceived\bfrom\bthe\b"JsonGadget"\bat\byour\bside:\\n\r\n		I.\bInclude\bthe\b"json/JFigures.h"\bfile\bin\byour\bproject,\\n\r\n\b\b\b\b\b\b\b\b\b\b\bfrom\bthe\b"../Sources/Common/json"\bfolder,\\n\r\n		II.\bDefine\bempty\bFigure\bobject\b\ofor\bexample:\bJFigure\bjf\o""\c\s\c\\n\r\n		III.\bAt\bthe\bhandling\bfunction\bof\bthe\binput\bpin\bthat\bconnected\bto\\n\r\n		\b\b\b\b\bthe\boutput\bpin\bof\bthe\b"JsonGadget"	call\bto\\n\r\n\b\b\b\b\b\b\b\b\b\b\b\b\bthe\b"DeserializeFromTransfer"\bfunction\bwhen\barguments\bare:\\n\r\n				>>\bAll\bdata\b\oinclude\bId\c\bof\bspecific\bFigure\bserialized\bas\bJSON\bstring\\n\r\n				\b\b\brequested\bby\bId\bfrom\bthe\binput\bpin\b\o4.a\c\s\\n\r\n				>>\bWrapper\bfor\btwo\bSendLogMessage\bfunctions\\n\r\n				\b\b\b\ofor\bexample:\\n\r\n				\b\b\bvoid\bJSNSendLogMessage\oconst\bstring&\bmessage,\bbool\bisError\c\\n\r\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b{\\n\r\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bif\b\oisError\c\\n\r\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bJSN_SENDERR_0\omessage.c_str\o\c\c\s\\n\r\n					else\\n\r\n					\b\bJSN_SENDINFO_0\omessage.c_str\o\c\c\s\\n\r\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b}\\n\r\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\c,\\n\r\n\b\b\b\b\b\b\b\b\b\b\b\b\b\odeserializator\bcalling\bexample:\\n\r\n\b\b\b\b\b\b\b\b\b\b\b\b\b\bjf.DeserializeFromTransfer\ojsonReceived.c_str\o\c,\bJSNSendLogMessage\c\s\c\\n\r\n\\n\r\nFor\bany\bquestions:\b0544239193\\n;Quantity=0;NoSync=0;Manual=1;FrameRate=1;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+TextCaptureCtrl TC_AddNewFigure(Name=_inplace;Text={"id":"4","X":40.0,"Y":55.0,"Z":60.0,"dX":140.0,"dY":190.0,"dZ":240.0};Quantity=0;NoSync=0;Manual=1;FrameRate=1;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+TextCaptureCtrl TC_UpdateFigure(Name=_inplace;Text={"id":"1","X":10.1,"Y":15.1,"Z":20.1,"dX":100.1,"dY":150.1,"dZ":200.1};Quantity=0;NoSync=0;Manual=1;FrameRate=1;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+TextCaptureCtrl TC_ParseSingleFigure(Name=_inplace;Text={"id":"1","X":10.0,"Y":15.0,"Z":20.0,"dX":100.0,"dY":150.0,"dZ":200.0};Quantity=0;NoSync=0;Manual=1;FrameRate=1;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+TextCaptureCtrl TC_RequestFigureById(Name=_inplace;Text=1;Quantity=0;NoSync=0;Manual=1;FrameRate=1;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+JsonGadget JsonGadget2(_OUTPUTMODE=1;JSON_Path=D:\\Workspace\\FileX\\Sources\\Local\\GIT\\StreamHandler\\Sources\\FileXGadgets\\JsonReader\\res\\FiguresCollection.json;_GADGET_OUTPUT1=Name\eBinaryCmdOut\s;_GADGET_INPUT1=Name\eTxtCmdIn\s;_GADGET_DUPLEX1=Name\eControl\s;)
+JsonGadget JsonGadget1(_OUTPUTMODE=1;JSON_Path=D:\\Workspace\\FileX\\Sources\\Local\\GIT\\StreamHandler\\Sources\\FileXGadgets\\JsonReader\\res\\FiguresCollection.json;_GADGET_OUTPUT1=Name\eBinaryCmdOut\s;_GADGET_INPUT1=Name\eTxtCmdIn\s;_GADGET_DUPLEX1=Name\eControl\s;)
+TextRender TextRender2(Name=Float\bwindow\b1;)
+TextRender TextRender1(Name=Float\bwindow\b1;)
+
+Connect(TC_Instruction>>0,TextRender2<<0)
+Connect(TC_AddNewFigure>>0,JsonGadget2<<0)
+Connect(TC_UpdateFigure>>0,JsonGadget2<<0)
+Connect(TC_ParseSingleFigure>>0,JsonGadget1<<0)
+Connect(TC_RequestFigureById>>0,JsonGadget1<<0)
+Connect(JsonGadget2>>0,TextRender1<<0)
+Connect(JsonGadget1>>0,TextRender1<<0)
+Connect(JsonGadget1>>0,JsonGadget2<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=JsonGadget1;x=358;y=239;)
+MOVE(gadget=TC_RequestFigureById;x=77;y=194;)
+MOVE(gadget=TextRender1;x=709;y=292;)
+MOVE(gadget=TC_ParseSingleFigure;x=76;y=315;)
+MOVE(gadget=JsonGadget2;x=492;y=403;)
+MOVE(gadget=TC_UpdateFigure;x=196;y=464;)
+MOVE(gadget=TC_AddNewFigure;x=195;y=639;)
+MOVE(gadget=TextRender2;x=734;y=643;)
+MOVE(gadget=TC_Instruction;x=529;y=668;)
+END_VIEW_SECTION
+

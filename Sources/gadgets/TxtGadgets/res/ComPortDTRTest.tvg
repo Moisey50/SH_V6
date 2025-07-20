@@ -1,0 +1,11 @@
+TextCaptureCtrl TextCaptureCtrl1(Name=_inplace;Text=Test;Quantity=0;NoSync=0;Manual=0;FrameRate=1;FramePeriod_ms=1000.00;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+COMCapture COMCapture1(Port=2;PortName=COM4;BaudRate=9600;DataBits=3;Parity=0;StopBits=0;XonXoff=0;DtrDsr=0;RtsCts=0;WantsCR=1;AppendLF=1;HexMode=0;BlockSize=0;LineDelay_ms=0;BlockWaitTime_ms=0;)
+
+Connect(TextCaptureCtrl1>>0,COMCapture1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=COMCapture1;x=306;y=141;)
+MOVE(gadget=TextCaptureCtrl1;x=101;y=142;)
+GRAPHVIEW(name=GraphView;x=0.0185357;y=0.0362416;w=0.826691;h=0.651007;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

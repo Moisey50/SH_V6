@@ -1,0 +1,20 @@
+Knob Knob1(Name=_inplace;ButtonName=Press\bme!;Value=;Mode=0;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+USBCamera USBCamera1(Camera=40204;CaptureMode=10;OutputFormat=0;Focus=0;Brightness=20;Contrast=15;Gamma=120;WhiteBalance=auto;Hue=0;Saturation=32;Sharpness=15;BackCompens=1;_GADGET_OUTPUT1=Name\eOutVideo\s;_GADGET_INPUT1=Name\eTrigger\s;_GADGET_DUPLEX1=Name\eProperties\s;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=594,650;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x450C1E\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+
+Connect(Knob1>>0,USBCamera1<<0)
+Connect(USBCamera1>>0,FRender1<<0)
+Connect(USBCamera1>>0,RenderFrameRate1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=USBCamera1;x=142;y=169;)
+MOVE(gadget=FRender1;x=337;y=183;)
+MOVE(gadget=RenderFrameRate1;x=240;y=57;)
+MOVE(gadget=Knob1;x=21;y=52;)
+FLOATWND(name=Float\bwindow\b1;x=0.792969;y=0.196528;w=0.161719;h=0.441667;Selected=FRender1;)
+FLOATWND(name=Float\bwindow\b2;x=0.707227;y=0.377778;w=0.166602;h=0.418056;Selected=FRender2;)
+FLOATWND(name=Float\bwindow\b3;x=0.604883;y=0.497917;w=0.167383;h=0.441667;Selected=FRender3;)
+GRAPHVIEW(name=GraphView;x=0.0215054;y=0.0286885;w=0.727343;h=0.63627;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

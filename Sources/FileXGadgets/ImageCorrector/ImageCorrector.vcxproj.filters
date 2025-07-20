@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="ImageCorrector.cpp" />
+    <ClCompile Include="ImageCorrectorGadget.cpp" />
+    <ClCompile Include="RGBChannel.cpp" />
+    <ClCompile Include="RGBMixer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="ImageCorrector.h" />
+    <ClInclude Include="ImageCorrectorGadget.h" />
+    <ClInclude Include="RGBChannel.h" />
+    <ClInclude Include="RGBMixer.h" />
+    <ClInclude Include="..\Common\RGBContainerFrame\RGBHelper.h" />
+    <ClInclude Include="..\Common\RGBContainerFrame\RGB2ContainerFrame2RGBDeSerializer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ImageCorrector.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ImageCorrector.rc2">
+      <Filter>res</Filter>
+    </None>
+    <None Include="..\Common\Resources\retsight_vs17.tvg">
+      <Filter>res</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="res">
+      <UniqueIdentifier>{8eefd9b8-6c22-45d8-a558-98e65243109d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{d25d9254-540b-464a-a14c-fa830e798895}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

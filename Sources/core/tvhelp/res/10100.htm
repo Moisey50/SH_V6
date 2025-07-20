@@ -1,0 +1,139 @@
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r">
+<link rel="stylesheet" type="text/css" href="1001.css">
+<title>The computer vision application development workbench. Simulating application.
+</title>
+</head>
+
+<body>
+
+<table width="100%" id="table1" class="pagelike">
+	<tr>
+		<th class="pg"><span lang="en-us">SHSt</span>udio<span lang="en-us"> - The 
+		computer vision application development workbench. Simulating application.</span></th>
+	</tr>
+	<tr>
+		<td height="113">
+		<dl>
+			<dd>
+			<div>
+				<h4>Overview of<span lang="en-us"> &quot;SHStudio.exe&quot;s</span>imulating<span lang="en-us"> 
+				application.</span></h4>
+				<p><span lang="en-us">The SHStudio.exe is a visual tool for assembling 
+				and testing data processing graph.&nbsp; Using SHStudio, you can 
+				experiment with structure of the graph before you write any application 
+				code. There are possibility to load and save the processing graph 
+				on the disc for future usage in your application. That gives the 
+				possibility to correct the data processing chain in already written 
+				application. </span></p>
+				<p><span lang="en-us">If you plan to develop your one gadget, 
+				SHStudio 
+				provides an easy and quick way to test and debug it. </span></p>
+				<p><span lang="en-us">If you want to become familiar with 
+				SHStudio 
+				technology - you can play with gadgets. This is an easiest way to 
+				understand how that approach works.</span></p>
+				<p><span lang="en-us">The following illustration represents an interface 
+				of SHStudio simulating application.</span></p>
+				<p>
+				<img border="0" src="GIFS/10101.gif" width="855" height="781"></p>
+				<p><span lang="en-us">In the left window you can see a tree of all 
+				available gadgets. They are grouping by type: or by function for 
+				rendering, capture and universal gadgets, or by type (text, video 
+				etc.) for specific types gadgets.</span></p>
+				<p><span lang="en-us">In the main window you can see processing 
+				graph. Each gadget is represented&nbsp; as a rectangle. Smaller 
+				squares along the edges of the gadgets rectangles represent connectors. 
+				Input connectors are on the left side of the gadget rectangle, while 
+				output connectors are on the right. The lines represent the connections 
+				(wires) between connectors.</span></p>
+				<p><span lang="en-us">In the toolbar are placed buttons which allows 
+				control the sate of the graph: Run, pause and stop processing.</span></p>
+				<p><span lang="en-us">In the menu you can find other control functions, 
+				namely: Load and save graph and some group operations.</span></p>
+				<p><span lang="en-us">Right click on the gadget rectangles calls 
+				the setup dialog for gadget, if this possibility is allowed.</span></p>
+				<h4><span lang="en-us">Building a custom Graph.</span></h4>
+				<p><span lang="en-us">SHStudio allows to build a custom processing 
+				graph, using any of the gadgets existed in your system. To add new 
+				gadget to system, simply copy it to &quot;Plugins&quot; directory of your 
+				SHStudio application. After restarting SHStudio new gadget will be 
+				available. </span></p>
+				<p><span lang="en-us">To add a gadget to the graph, select any gadget 
+				in the left panel and &quot;drag and drop&quot; it to main window. After you 
+				have added the gadgets, you can connect two gadgets by dragging 
+				the mouse from one gadget&#39;s connector to another. If the connectors 
+				accept the connection, the gadgets will be connected with a line.</span></p>
+				<p><span lang="en-us">Let&#39;s see on the picture above. We can see 
+				two capture gadgets for FireFly cameras. Input connectors of capture 
+				gadgets are not connected to another gadget, because we plan free 
+				capture process without synchronization.&nbsp; Output connectors 
+				are connected to ForkGadget which allow split a data stream onto 
+				two streams - one for data saving into avi file, another for displaying 
+				on the monitor.</span></p>
+				<p><span lang="en-us">So, after starting this graph we can both 
+				watch two video streams from two video cameras and save two video 
+				streams to avi file at the same time. </span></p>
+				<h4><span lang="en-us">View Gadget Setup Dialog</span></h4>
+				<p><span lang="en-us">Some gadgets support setup dialog, which provide 
+				an user interface for setting properties for the gadget. To view 
+				a setup dialog in SHStudio, right click into the gadget rectangle 
+				in the main window. Setup dialogs are implemented usually for capture 
+				and render gadgets. In the future it will be possible to invoke 
+				setup dialogs for connectors - to see available formats and, probably, 
+				for format conversions.</span></p>
+				<h4><span lang="en-us">Graph loading and saving</span></h4>
+				<p><span lang="en-us">SHStudio can load and save processing graph. 
+				To save your graph click <b>Save graph</b> from <b>File</b> menu, 
+				select file name in File dialog and click <b>OK</b>. The default 
+				extension for graph file is <b>tvg</b>. It is text file which describe 
+				used gadgets and the connections between them.</span></p>
+				<p><span lang="en-us">To load saved graph click <b>Load graph</b> 
+				from <b>File</b> menu, choose graph file, and click <b>OK</b>.</span></p>
+				<h4><span lang="en-us">Features of render gadgets</span></h4>
+				<p><span lang="en-us">The render gadgets. The render gadgets can 
+				be two types. Some renders can display something in the window (text 
+				or video), other - none (like audio renderer). The display type 
+				renderer can be two types as well - one so called &quot;in-place&quot;, other 
+				windowed. In-place renderer show content in the gadget&#39;s rectangle, 
+				while windowed one - make display window in tab control of floating 
+				window. The floating window can change the size, so quality of the 
+				image can be much better then in case of &quot;in-place&quot; renderer.</span></p>
+				<p><span lang="en-us">The following illustration shows &quot;in-place&quot; 
+				render gadget connected to capture gadget. The video is displayed 
+				directly in the gadget&#39;s rectangle.</span></p>
+				<p>
+				<img border="0" src="GIFS/10102.gif" width="638" height="412"></p>
+				<p>&nbsp;</p>
+				<p><span lang="en-us">Now, the windowed renderers is presented in 
+				the next illustration. Here, we render two streams - the first is 
+				a text stream, the second - a video stream. Both are directed to 
+				resizable float window with a tab. It is significant - there is 
+				no display window in the renderer gadget rectangle.</span></p>
+				<p>
+				<img border="0" src="GIFS/10103.gif" width="810" height="429"></p>
+				<p>&nbsp;</p>
+				<h4><span lang="en-us">Universal gadgets</span></h4>
+				<p><span lang="en-us">Some of gadgets can serve data with any types 
+				of data, they handle data stream, not a data in data frame. One 
+				of them is ForkGadget - it split the stream on two streams. Other 
+				sample of that kind of gadgets is DelayGadget - it just delay data 
+				packet transmition.</span></p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+			</div>
+			</dd>
+		</dl>
+		</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

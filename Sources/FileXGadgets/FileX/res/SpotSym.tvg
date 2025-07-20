@@ -1,0 +1,8 @@
+SpotSymmetry SpotSymmetry1(ProcessingMode=View;ProfileWidth_pix=6;ImageSaveDir=./Images;ImageSavePrefix=Result;LowPassArea=;TargetSpotAmpl=200;MaxHDistortion_perc=4;MaxVDistortion_perc=4;SOSZone=;_OUTPUTMODE=1;)
+
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=SpotSymmetry1;x=282;y=132;)
+GRAPHVIEW(name=GraphView;x=0.00371058;y=0.0055325;w=0.776438;h=0.666667;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

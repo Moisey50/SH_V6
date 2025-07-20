@@ -1,0 +1,207 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TVObjects.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "FileDescription", "TVObjects DLL"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "InternalName", "TVObjects"
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "OriginalFilename", "TVObjects.DLL"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "ProductName", "TVObjects Dynamic Link Library"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+IDD_SETUPDLG DIALOGEX 0, 0, 371, 203
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_NOPARENTNOTIFY
+CAPTION "Template edit dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,204,174,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,314,174,50,14
+    PUSHBUTTON      "Apply",IDC_APPLY,255,174,50,14
+    EDITTEXT        IDC_EDITNAME,106,71,70,15,ES_AUTOHSCROLL
+    LTEXT           "Name:",IDC_STATIC,82,73,20,12,WS_TABSTOP
+    PUSHBUTTON      "  Add Object",IDC_BUTTONADDOBJ,20,128,34,18,BS_MULTILINE
+    EDITTEXT        IDC_EDITTASKNUM,65,151,23,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Objects in Task",IDC_STATIC,94,153,52,8,WS_TABSTOP
+    EDITTEXT        IDC_EDITOBJNAMES,148,151,215,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Default",IDC_BUTTONCLEAR,98,128,34,18
+    PUSHBUTTON      "Update Task",IDC_BUTTONADDTASK,154,170,45,14
+    PUSHBUTTON      "Edit",IDC_BUTTONEDITOBJECT,136,128,32,18
+    CONTROL         "ROI",IDC_CHECKDISPROI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,255,116,25,10,WS_EX_RIGHT
+    CONTROL         "Pos",IDC_CHECKDISPPOS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,291,117,28,10,WS_EX_RIGHT
+    CONTROL         "Details",IDC_CHECKDISPDETAIL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,282,128,37,10,WS_EX_RIGHT
+    CONTROL         "mGraph",IDC_CHECKDISPMGRAPHICS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,283,139,36,10,WS_EX_RIGHT
+    CONTROL         "Coor",IDC_CHECKDISPCOOR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,250,127,31,10,WS_EX_RIGHT
+    CONTROL         "ProfX",IDC_CHECKDISPPROFX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,326,117,33,10,WS_EX_RIGHT
+    CONTROL         "ProfY",IDC_CHECKDISPPROFY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,326,128,33,10,WS_EX_RIGHT
+    PUSHBUTTON      "Delete Object",IDC_DELETE_OBJECT,58,128,36,18,BS_MULTILINE
+    LTEXT           "Active Task",IDC_STATIC,19,171,39,8
+    EDITTEXT        IDC_ACTIVE_TASK,65,169,23,14,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER,WS_EX_STATICEDGE
+    PUSHBUTTON      "Set Active",IDC_SET_ACTIVE_TASK,106,170,39,14
+    CONTROL         "Scaled",IDC_SHOW_SCALED_COORDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,248,138,33,10,WS_EX_RIGHT
+    CONTROL         "Contur",IDC_SHOW_CONTUR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,211,139,32,10,WS_EX_RIGHT
+    GROUPBOX        "Process and View Mode",IDC_STATIC,176,105,188,46
+    LTEXT           "Caption Period",IDC_STATIC,217,93,46,8
+    EDITTEXT        IDC_CAPTION_PERIOD,269,91,31,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "Form Mask",IDC_FORM_MASK,181,122,24,23,BS_MULTILINE
+    CONTROL         "Angle",IDC_CHECKDISPANGLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,213,116,30,10,WS_EX_RIGHT
+    CONTROL         "Dia",IDC_CHECKDIAMETERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,218,127,25,10,WS_EX_RIGHT
+    CONTROL         "Weight",IDC_CHECKDISPWEIGHTED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,322,138,37,10,WS_EX_RIGHT
+    CONTROL         "Binary Out",IDC_BINARY_OUT,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_MULTILINE | WS_TABSTOP,306,88,51,15
+    LISTBOX         IDC_OBJ_LIST,15,16,114,47,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Objects",IDC_STATIC,7,3,129,64
+    LISTBOX         IDC_TASK_LIST,149,16,208,47,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Tasks",IDC_STATIC,142,3,222,64
+    CONTROL         "Select Pos on Render",IDC_CHECKSELECT,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_MULTILINE | WS_TABSTOP,313,71,50,14
+    CONTROL         "Spot",IDC_TYPE_SPOT,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,25,77,31,10
+    CONTROL         "Line",IDC_TYPE_LINE,"Button",BS_AUTORADIOBUTTON,25,88,29,10
+    CONTROL         "Edge",IDC_TYPE_EDGE,"Button",BS_AUTORADIOBUTTON,25,99,33,10
+    CONTROL         "OCR",IDC_TYPE_OCR,"Button",BS_AUTORADIOBUTTON,25,110,31,10
+    GROUPBOX        "Type",IDC_STATIC,7,68,69,57
+    LTEXT           "Edit Task",IDC_STATIC,18,154,31,8
+    CONTROL         "Process Last Image",IDC_INJECT_LAST_IMAGE,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_MULTILINE | WS_TABSTOP,254,71,50,16
+    PUSHBUTTON      "Inject Last Image",IDC_REINJECT_IMAGE,197,68,50,21,BS_MULTILINE
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SETUPDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 364
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 196
+    END
+END
+#endif    // APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// OCRLIB
+//
+IDR_OCRLIB              OCRLIB                  "res\\ocrlib.bin"
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+IDD_SETUPDLG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\TVObjects.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

@@ -1,0 +1,82 @@
+CaptureTimer CaptureTimer1(FrameRate=10;FramePeriod_msec=100;NSendOnStart=0;)
+BMPRender BMPRender1(Name=_inplace;FileName=D:/ForProjects/SkewMeter/LeftDown<Counter>.bmp;FormatBMP=1;AddLabel=0;FolderPath=D:/ForProjects/SkewMeter/;FileName_NoExt=LeftDown;AddFileNameSuffix=0;)
+BMPCapture BMPCapture2(FileName=left-bottom.jpg;Directory=E:/ForProjects/SkewMeter/Film-on-Film/CW;FrameRate=2;Loop=1;LabelFullPath=0;WatchNew=0;Output=0;DeleteRead=0;Remove#=0;IterationMode=0;)
+BMPCapture BMPCapture3(FileName=right-top.jpg;Directory=E:/ForProjects/SkewMeter/Film-on-Film/CW;FrameRate=2;Loop=1;LabelFullPath=0;WatchNew=0;Output=0;DeleteRead=0;Remove#=0;IterationMode=0;)
+BMPCapture BMPCapture1(FileName=corner.jpg;Directory=E:/ForProjects/SkewMeter/Film-on-Film/CW;FrameRate=2;Loop=1;LabelFullPath=0;WatchNew=0;Output=0;DeleteRead=0;Remove#=0;IterationMode=0;)
+RenderFrameRate RenderFrameRate3(Name=_inplace;)
+RenderFrameRate RenderFrameRate2(Name=_inplace;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+VideoFlip VideoFlip1(Flip=1;)
+VideoFlip VideoFlip3(Flip=2;)
+VideoFlip VideoFlip2(Flip=2;)
+Basler Basler2(Camera=40361628;StreamState=0;Format=17301505;Shutter_us=1000;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=0;Trig_Selector=3;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Frame_rate=10;ROI=0,0,1456,1088;
+Line1=(LineMode_=Output;LineSource_=ExposureActive;LineInverter_=0;);
+Line2=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line3=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line4=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);LineSelect=0;LineMode=1;LineSource=6;LineInvert=0;
+Timer1=(TimerTriggerSource_=Off;TimerDuration_=1;TimerDelay_=0;);
+Timer2=(TimerTriggerSource_=Off;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=0.999875;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+Basler Basler3(Camera=40361626;StreamState=0;Format=17301505;Shutter_us=1000;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=0;Trig_Selector=3;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Frame_rate=10;ROI=8,4,1440,1080;
+Line1=(LineMode_=Output;LineSource_=ExposureActive;LineInverter_=0;);
+Line2=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line3=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line4=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);LineSelect=0;LineMode=1;LineSource=6;LineInvert=0;
+Timer1=(TimerTriggerSource_=Off;TimerDuration_=1;TimerDelay_=0;);
+Timer2=(TimerTriggerSource_=Off;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=0.999875;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+FRender FRender3(Name=Float\bwindow\b3;Monochrome=0;offset=0,0;Scale=0;LineSelection=3;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x1D0F08\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,um;SaveImagesDir=;)
+SkewMeter SkewMeterLU(GadgetMode=1;ViewMode=11;InitialDirection_deg=90;SquareSize_um=7000;VertDistBetweenRects_mm=240;HorDistBetweenSquares_mm=240;BaseDist_mm=240;Scale_um/pix=14.5625;Tolerance_um=100;SearchWidth_pix=40;_OUTPUTMODE=1;)
+SkewMeter SkewMeterRU(GadgetMode=2;ViewMode=11;InitialDirection_deg=90;SquareSize_um=7000;VertDistBetweenRects_mm=240;HorDistBetweenSquares_mm=240;BaseDist_mm=240;Scale_um/pix=14.6199;Tolerance_um=7;SearchWidth_pix=30;_OUTPUTMODE=1;)
+SkewMeter SkewMeterLD(GadgetMode=3;ViewMode=11;InitialDirection_deg=180;SquareSize_um=7000;VertDistBetweenRects_mm=240;HorDistBetweenSquares_mm=240;BaseDist_mm=240;Scale_um/pix=14.7421;Tolerance_um=7;SearchWidth_pix=30;_OUTPUTMODE=1;)
+Basler Basler1(Camera=40361627;StreamState=0;Format=17301505;Shutter_us=1000;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=0;Trig_Selector=3;Trigger_mode=1;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Burst_Length=1;Frame_rate=11;ROI=8,4,1440,1080;
+Line1=(LineMode_=Output;LineSource_=ExposureActive;LineInverter_=0;);
+Line2=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line3=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line4=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);LineSelect=0;LineMode=1;LineSource=6;LineInvert=0;
+Timer1=(TimerTriggerSource_=Off;TimerDuration_=1;TimerDelay_=0;);
+Timer2=(TimerTriggerSource_=Off;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=0.999875;TimerTrigger=0;OutputSelector=0;OutputValue=1;UserSetSelect=0;SaveSettings=0;)
+FRender FRender2(Name=Float\bwindow\b2;Monochrome=0;offset=0,0;Scale=0;LineSelection=3;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x3E1114\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,um;SaveImagesDir=;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=1;offset=0,0;Scale=0;LineSelection=1;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x2C081A\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=9.615050,um;SaveImagesDir=;)
+
+Connect(CaptureTimer1>>0,Basler1<<0)
+Connect(BMPCapture2>>0,VideoFlip3<<0)
+Connect(BMPCapture3>>0,VideoFlip2<<0)
+Connect(BMPCapture1>>0,VideoFlip1<<0)
+Connect(VideoFlip1>>0,SkewMeterLU<<0)
+Connect(VideoFlip3>>0,SkewMeterLD<<0)
+Connect(VideoFlip2>>0,SkewMeterRU<<0)
+Connect(Basler2>>0,SkewMeterRU<<0)
+Connect(Basler2>>0,RenderFrameRate2<<0)
+Connect(Basler2>>0,Basler3<<0)
+Connect(Basler3>>0,SkewMeterLD<<0)
+Connect(Basler3>>0,RenderFrameRate3<<0)
+Connect(SkewMeterLU>>0,FRender1<<0)
+Connect(SkewMeterRU>>0,FRender2<<0)
+Connect(SkewMeterLD>>0,FRender3<<0)
+Connect(Basler1>>0,SkewMeterLU<<0)
+Connect(Basler1>>0,RenderFrameRate1<<0)
+Connect(Basler1>>0,Basler2<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=BMPCapture1;x=22;y=102;)
+MOVE(gadget=FRender1;x=526;y=45;)
+MOVE(gadget=BMPCapture2;x=11;y=256;)
+MOVE(gadget=BMPCapture3;x=7;y=164;)
+MOVE(gadget=SkewMeterLU;x=314;y=81;)
+MOVE(gadget=SkewMeterRU;x=338;y=210;)
+MOVE(gadget=SkewMeterLD;x=345;y=313;)
+MOVE(gadget=VideoFlip1;x=189;y=89;)
+MOVE(gadget=VideoFlip2;x=206;y=193;)
+MOVE(gadget=VideoFlip3;x=205;y=285;)
+MOVE(gadget=Basler1;x=171;y=13;)
+MOVE(gadget=Basler2;x=201;y=127;)
+MOVE(gadget=Basler3;x=205;y=229;)
+MOVE(gadget=FRender2;x=525;y=148;)
+MOVE(gadget=FRender3;x=466;y=254;)
+MOVE(gadget=RenderFrameRate1;x=322;y=-13;)
+MOVE(gadget=RenderFrameRate2;x=327;y=119;)
+MOVE(gadget=RenderFrameRate3;x=334;y=220;)
+MOVE(gadget=CaptureTimer1;x=30;y=16;)
+MOVE(gadget=BMPRender1;x=762;y=144;)
+GRAPHVIEW(name=GraphView;x=0.0552764;y=0.0219966;w=0.747487;h=0.886633;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

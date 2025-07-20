@@ -1,0 +1,23 @@
+BMPCapture BMPCapture1(FileName=*.bmp;Directory=K:/Document/Indigo/Images_from\bProduction\bATJ;FrameRate=6;Loop=1;LabelFullPath=1;WatchNew=0;Output=1;DeleteRead=0;Remove#=0;IterationMode=0;)
+TVObjects TVObjects1(Template=spot(name=laser_spot;type=4;contrast=0;placement=1;relativeto=1;xoffset=-100;yoffset=-100;width=200;height=200;width_min=20;height_min=20;width_max=200;height_max=200;area_min=300;area_max=40000;xdiffr=30;ydiffr=25;detailed=0xb7633;multi=0;min_ampl=20; thres= 0.500;rotation_thres=0.500;donttouchedge=1;timeout_ms=0.0;max_n_objects=10;color=65535;textsize=10;xtextoffset=5;ytextoffset=-140;ocr_view=0;extendforw_perc=50;view_roi=1;view_pos=1;view_coords=1;view_angle=1;view_dia=1;view_contur=1;view_details=1;view_profx=1;view_profy=1;view_mgraph=1;view_scaled=0;out_csv=0;out_moments=0;meas_pos=1;meas_area=1;meas_perim=0;meas_anglew=0;meas_angle=1;meas_subpix=1;meas_ratio=1;meas_xprof=1;meas_diffr=1;meas_yprof=1;meas_contur=1;meas_sub_sides=0;meas_diam=1;meas_weight=1;meas_runs=0;)
+spot(name=spot_for_center;type=4;contrast=0;placement=0;xoffset=100;yoffset=100;width=800;height=800;width_min=20;height_min=20;width_max=200;height_max=200;area_min=200;area_max=40000;xdiffr=0;ydiffr=0;detailed=0x403;multi=0;min_ampl=20; thres= 0.400;rotation_thres=0.500;donttouchedge=1;timeout_ms=0.0;max_n_objects=10;color=255;textsize=10;xtextoffset=5;ytextoffset=65;ocr_view=0;extendforw_perc=50;view_roi=1;view_pos=1;view_coords=1;view_angle=0;view_dia=0;view_contur=0;view_details=0;view_profx=0;view_profy=0;view_mgraph=0;view_scaled=0;out_csv=0;out_moments=0;meas_pos=1;meas_area=1;meas_perim=0;meas_anglew=0;meas_angle=0;meas_subpix=0;meas_ratio=0;meas_xprof=0;meas_diffr=0;meas_yprof=0;meas_contur=1;meas_sub_sides=0;meas_diam=0;meas_weight=0;meas_runs=0;)
+Task(2,spot_for_center)
+Task(1,spot_for_center,laser_spot)
+;ActiveTask=1;CaptionPeriod=0;ViewMode=-536840687;Scaling=1,pix;gtimeout_ms=0;NObjectsMax=500;LastImageWidth=1024;LastImageHeight=1024;_OUTPUTMODE=1;)
+VideoY16toY8 VideoY16toY81(Shift=4;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,392;Scale=1;LineSelection=3;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x51A5A\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,um;SaveImagesDir=;)
+
+Connect(BMPCapture1>>0,VideoY16toY81<<0)
+Connect(TVObjects1>>0,FRender1<<0)
+Connect(VideoY16toY81>>0,TVObjects1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=BMPCapture1;x=73;y=112;)
+MOVE(gadget=FRender1;x=529;y=232;)
+MOVE(gadget=VideoY16toY81;x=88;y=215;)
+MOVE(gadget=TVObjects1;x=238;y=229;)
+FLOATWND(name=Float\bwindow\b1;x=3716;y=274;w=887;h=959;Selected=FRender1;)
+GRAPHVIEW(name=GraphView;x=0.0037843;y=0.00401606;w=0.698202;h=0.679719;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+SHSTUDIOVIEW(name=SHStudioView;x=2594;y=35;w=1269;h=1296;)
+END_VIEW_SECTION
+

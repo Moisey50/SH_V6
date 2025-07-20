@@ -1,0 +1,17 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\UIFor2Views.Application = UIFor2Views Application
+
+
+HKEY_CLASSES_ROOT\UIFor2Views.Application\CLSID = {8696a96f-4602-496e-bcc1-845efce89e34}
+
+HKEY_CLASSES_ROOT\CLSID\{8696a96f-4602-496e-bcc1-845efce89e34} = UIFor2Views Application
+HKEY_CLASSES_ROOT\CLSID\{8696a96f-4602-496e-bcc1-845efce89e34}\ProgId = UIFor2Views.Application
+
+
+HKEY_CLASSES_ROOT\CLSID\{8696a96f-4602-496e-bcc1-845efce89e34}\LocalServer32 = UIFor2Views.EXE

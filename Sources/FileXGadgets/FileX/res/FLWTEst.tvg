@@ -1,0 +1,22 @@
+Basler Basler1(Camera=22806223;StreamState=0;Format=17301505;Shutter_us=3000;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=1;Trig_Selector=1;Trigger_mode=0;Trigger_source=1;Trigger_delay_us=0;Trigger_activate=0;Frame_rate=1e+06;ROI=8,8,1920,1200;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);
+Line3=(LineMode_=Input;LineInverter_=0;);
+Line4=(LineMode_=Input;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureStart;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=10;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+FLWRender FLWRender1(filename=d:\\Cache\\%x\b%X.flw;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=0;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x20F08\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=0.862600,um;SaveImagesDir=;)
+
+Connect(Basler1>>0,RenderFrameRate1<<0)
+Connect(Basler1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Basler1;x=118;y=144;)
+MOVE(gadget=RenderFrameRate1;x=331;y=61;)
+MOVE(gadget=FRender1;x=373;y=188;)
+MOVE(gadget=FLWRender1;x=274;y=279;)
+GRAPHVIEW(name=GraphView;x=0.00946074;y=0.0150602;w=0.849574;h=0.670683;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+SHSTUDIOVIEW(name=SHStudioView;x=-2443;y=208;w=1269;h=1296;)
+END_VIEW_SECTION
+

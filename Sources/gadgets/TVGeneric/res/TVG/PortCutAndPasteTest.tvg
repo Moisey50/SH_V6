@@ -1,0 +1,8 @@
+Port Port1(PortalName=Default;PortMode=2;_OUTPUTMODE=1;)
+
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Port1;x=254;y=218;)
+GRAPHVIEW(name=GraphView;x=0.00345423;y=0.00623053;w=0.814335;h=0.665109;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

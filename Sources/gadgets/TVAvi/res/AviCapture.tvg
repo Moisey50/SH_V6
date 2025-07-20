@@ -1,0 +1,16 @@
+AviCapture AviCapture1(FileName=D:\\ForProjects\\optrix\bvideo\\tungsten2.avi;FrameRate=32;SWTrigger=false;LoopFilm=true;ReserveOutputs=true;ChunkMode=false;OutputsNumber=1;)
+RangeContrast RangeContrast1(Min=7000;Max=14530;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=584,385;Scale=0;LineSelection=3;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x81E6E\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,um;SaveImagesDir=;)
+
+Connect(AviCapture1>>0,RangeContrast1<<0)
+Connect(RangeContrast1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=AviCapture1;x=40;y=116;)
+MOVE(gadget=FRender1;x=485;y=106;)
+MOVE(gadget=RangeContrast1;x=232;y=98;)
+FLOATWND(name=Float\bwindow\b1;x=3885;y=203;w=1056;h=861;Selected=FRender1;)
+GRAPHVIEW(name=GraphView;x=0.00608519;y=0.0060241;w=0.673428;h=0.676707;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+SHSTUDIOVIEW(name=SHStudioView;x=2872;y=64;w=1198;h=1296;)
+END_VIEW_SECTION
+

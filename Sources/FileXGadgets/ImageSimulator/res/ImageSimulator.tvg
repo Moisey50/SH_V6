@@ -1,0 +1,29 @@
+CaptureTimer CaptureTimer1(FrameRate=25;FramePeriod_msec=40;NSendOnStart=0;)
+Knob StartProcess(Name=_inplace;ButtonName=Start;Value=StartProcess;Mode=0;)
+ImageSimulator SimuSide(WorkingMode=3;ImageSize=1280,1024;PinDia_um=300;HeadRadius_um=1000;PinLength_um=1000;SideScale_um/pix=1.5;SavePart=0;_OUTPUTMODE=1;)
+ImageSimulator SimuFront(WorkingMode=2;ImageSize=1280,1024;SubMode=10;Auto=1;SelectedPart=D130-25;LoadPart=0;ExtRadius_um=130;IntRadius_um=25;Depth_um=2000;SideAngle_deg=35;InternalAngle_deg=23;SideScale_um/pix=3.6;FrontScale_um/pix=0.913;ExtEccentricity_um=50.,20.;IntEccentricity_um=0.5,0.;SideSwipeUp_um=-6000;SideSwipeDown_um=1000;SideStonePos_um=1600;SideSwipeTime_rev=5.7;SideStoneSpeed_um/rev=20;FrontSwipeTime_rev=7.3;FrontStoneSpeed_um/cyc=1.5;SavePart=0;_OUTPUTMODE=1;)
+FRender SideView(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=3;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x4522684\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=3.600000,um;SaveImagesDir=;)
+Delay Delay1(Delay=10;)
+FRender FrontView(Name=Float\bwindow\b2;Monochrome=0;offset=0,0;Scale=0;LineSelection=1;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x3028DC\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=0.913000,um;SaveImagesDir=;)
+
+Connect(CaptureTimer1>>0,SimuSide<<0)
+Connect(CaptureTimer1>>0,SimuFront<<0)
+Connect(StartProcess>>0,Delay1<<0)
+Connect(SimuSide>>0,SideView<<0)
+Connect(SimuFront>>0,FrontView<<0)
+Connect(Delay1>>0,SimuSide<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=SimuSide;x=276;y=187;)
+MOVE(gadget=StartProcess;x=60;y=154;)
+MOVE(gadget=SideView;x=444;y=112;)
+MOVE(gadget=CaptureTimer1;x=53;y=62;)
+MOVE(gadget=SimuFront;x=245;y=287;)
+MOVE(gadget=FrontView;x=428;y=297;)
+MOVE(gadget=Delay1;x=164;y=196;)
+FLOATWND(name=Float\bwindow\b2;x=3246;y=525;w=737;h=712;Selected=FrontView;)
+FLOATWND(name=Float\bwindow\b1;x=3970;y=525;w=744;h=715;Selected=SideView;)
+GRAPHVIEW(name=GraphView;x=0.0703954;y=0.06;w=0.529412;h=0.716;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+SHSTUDIOVIEW(name=SHStudioView;x=2770;y=22;w=1249;h=800;)
+END_VIEW_SECTION
+

@@ -1,0 +1,92 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="1001.css">
+<title>TextFormat gadget</title>
+</head>
+
+<body>
+
+<table width="100%" id="table1" class="pagelike">
+	<tr>
+		<th class="pg">TextFormat gadget</th>
+	</tr>
+	<tr>
+		<td height="113">&nbsp;<table id="table2" class="pagelike" width="100%">
+			<tr>
+				<td height="113"><b>&nbsp;&nbsp; Input Formats:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				CTextFrame
+				<p><b>Outputs Formats:</b>&nbsp;&nbsp; CTextFrame</p>
+				<p><b>Duplex Formats:</b>&nbsp;&nbsp;&nbsp; NONE </p>
+				</td>
+			</tr>
+		</table>
+		<p></font>Gadget reformat input string with rules described in setup.
+		</p>
+		<p>There are two setup parameter strings: <i>InputFormat</i> and <i>OutputFormat</i>. 
+		First one describe how to parse input string, second how to format output.</p>
+		<p><b>InputFormat</b></p>
+		<p>InputFormat is very similar C scanf function format parameter. In difference 
+		of sscanf - every char, even whitespaces must be presented in input string. 
+		No size flags accepted. Data is case insencitive.</p>
+		<p>A format specification has the following form:</p>
+		<p>%type</p>
+		<p>where type is type field character, one of the following:</p>
+		<table border="1" width="60%">
+			<tr>
+				<td width="102">c,C</td>
+				<td>Character. <span lang="en-us">S</span>pecifies single-byte character;</td>
+			</tr>
+			<tr>
+				<td width="102"><span lang="en-us">d</span></td>
+				<td><span lang="en-us">Decimal integer</span></td>
+			</tr>
+			<tr>
+				<td width="102"><span lang="en-us">i</span></td>
+				<td>An integer. Hexadecimal if the input string begins with "0x" or "0X", octal if the string begins with "0", otherwise decimal.
+</td>
+			</tr>
+			<tr>
+				<td width="102">o</td>
+				<td>Octal integer</td>
+			</tr>
+			<tr>
+				<td width="102">u</td>
+				<td>Unsigned decimal integer</td>
+			</tr>
+			<tr>
+				<td width="102">x</td>
+				<td>Hexadecimal integer.</td>
+			</tr>
+			<tr>
+				<td width="102">e, E, f, g, G</td>
+				<td>Floating-point value consisting of optional sign (+ or –), series of one or more decimal digits containing decimal point, and optional exponent ("e" or "E") followed by an optionally signed integer value.</td>
+			</tr>
+			<tr>
+				<td width="102">s,S</td>
+				<td>Opposite-size character string, up to first character 
+				followed by typefield character. I.e. &quot;%s;&quot; will copy all chars 
+				till ';' char.</td>
+			</tr>
+		</table>
+		<p><b>OutputFormat</b></p>
+		<p>OutputFormat is much easier. It&#39;s a template of output string, where 
+		parameters which was get by parsing input string can be inserted with %&lt;parameter 
+		number&gt;</p>
+		<p>&nbsp;</p>
+		<p><b>Summary</b></p>
+		<p>For</p>
+		<p>InputFormat= &quot;Val0=%d;Val1=%c;Val2=%f;val3=%s;&quot;</p>
+		<p>and</p>
+		<p>OutputFormat= &quot;val0(%0), val1(%1), val2(%2), Val3(%3)&quot;</p>
+		<p>the input string: &quot;Val0=10;Val1=A;Val2=1.5;Val3=ABCD efgh;&quot; will be 
+		converted to &quot;val0(10), val1(A), val2(1.5), Val3(ABCD efgh)&quot;</p>
+		<p>&nbsp;</p>
+		</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

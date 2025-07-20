@@ -1,0 +1,276 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FLWGadget.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 6,0,0,1
+ PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "File X Ltd."
+            VALUE "FileDescription", "FLWGadget DLL"
+            VALUE "InternalName", "FLWGadget"
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023"
+            VALUE "OriginalFilename", "FLWGadget.DLL"
+            VALUE "ProductName", "FLWGadget Dynamic Link Library"
+            VALUE "FileVersion", "6.0.0.1"
+            VALUE "ProductVersion", "6.0.0.1"
+            VALUE "CompanyName", "File X Ltd."
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar"
+            VALUE "PrivateBuild", "File X Ltd."
+            VALUE "SpecialBuild", "File X Ltd."
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008"
+            VALUE "PrivateBuild", "File X Ltd."
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FLW_CAPTURE_DLG DIALOGEX 0, 0, 247, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FLW capture setup"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,193,175,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,193,191,50,14
+    GROUPBOX        "File name",IDC_STATIC,7,7,233,32
+    EDITTEXT        IDC_FILENAME,13,18,191,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE_FILENAME,208,18,26,14
+    CONTROL         "Software trigger",IDC_SOFTWARE_TRIGGER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,61,63,10
+    EDITTEXT        IDC_FRAMERATE,59,43,23,14,ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    LTEXT           "frames / s",IDC_STATIC,85,45,39,8
+    CONTROL         "Loop",IDC_LOOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,175,42,32,10
+    CONTROL         "Frame rate:",IDC_CONST_FRAME_RATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,44,51,10
+    CONTROL         "Auto rewind",IDC_AUTOREWIND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,78,55,10
+    CONTROL         "DoLog",IDC_DO_LOG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,175,58,37,10
+    GROUPBOX        "Archive Limits",IDC_STATIC,7,95,178,48
+    LTEXT           "Frame #",IDC_STATIC,9,115,27,8
+    LTEXT           "Time ms",IDC_STATIC,9,128,27,8
+    LTEXT           "Min",IDC_STATIC,54,104,12,8
+    LTEXT           "Max",IDC_STATIC,123,105,14,8
+    EDITTEXT        IDC_FRAME_NUMBER_MIN,44,113,41,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    EDITTEXT        IDC_FRAME_NUMBER_MAX,108,114,43,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    EDITTEXT        IDC_TIME_MIN,37,127,54,12,ES_CENTER | ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_TIME_MAX,101,127,57,12,ES_CENTER | ES_AUTOHSCROLL | WS_DISABLED
+    GROUPBOX        "Play",IDC_STATIC,7,143,178,64
+    LTEXT           "Frame #",IDC_STATIC,9,162,27,8
+    LTEXT           "Time ms",IDC_STATIC,9,178,27,8
+    LTEXT           "From",IDC_STATIC,53,152,16,8
+    LTEXT           "To",IDC_STATIC,123,153,10,8
+    EDITTEXT        IDC_PLAY_NUM_MIN,43,161,41,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PLAY_NUM_MAX,107,161,43,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PLAY_TIME_MIN,39,176,54,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_PLAY_TIME_MAX,101,176,57,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Time Zoom",IDC_STATIC,9,192,39,8
+    EDITTEXT        IDC_PLAY_TIME_ZOOM,51,191,34,12,ES_CENTER | ES_AUTOHSCROLL
+    PUSHBUTTON      "Apply",IDC_APPLY,193,132,50,14
+    CONTROL         "Radio1",IDC_ITERATE_BY_FRAMES,"Button",BS_AUTORADIOBUTTON | WS_GROUP,167,163,9,10
+    CONTROL         "Radio1",IDC_ITERATE_BY_TIME,"Button",BS_AUTORADIOBUTTON,167,178,9,10
+END
+
+IDD_FLW_RENDER_DLG DIALOGEX 0, 0, 247, 81
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FLW render setup"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,135,60,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,190,60,50,14
+    GROUPBOX        "File name",IDC_STATIC,7,7,233,46
+    EDITTEXT        IDC_FILENAME,13,18,191,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE_FILENAME,208,18,26,14
+    CONTROL         "Overwrite",IDC_OVERWRITE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,36,46,10
+    PUSHBUTTON      "Close file",IDC_CLOSE_FILE,80,60,50,14
+    CONTROL         "DoLog",IDC_DO_LOG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,37,37,10,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    EDITTEXT        IDC_N_PREALLOCATED_BUFFERS,84,35,22,14,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "# Buffers",IDC_STATIC,52,39,30,8
+    EDITTEXT        IDC_BUF_SZ_KB,149,35,40,14,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Buf Sz KB",IDC_STATIC,114,39,33,8
+END
+
+IDD_FNHELP DIALOG 0, 0, 302, 174
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Help dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,245,153,50,14
+    EDITTEXT        IDC_TOPIC,7,7,288,142,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_FLW_CAPTURE_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_FLW_RENDER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_FNHELP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+IDR_HTML_1001           HTML                    "res\\1001.css"
+
+IDR_HTML_10000          HTML                    "res\\10000.htm"
+
+IDR_HTML_10001          HTML                    "res\\10001.htm"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIFS
+//
+
+IDR_GIFS_1000           GIFS                    "res\\GIFS\\1000.gif"
+
+IDR_GIFS_1001           GIFS                    "res\\GIFS\\1001.gif"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_FLW_RENDER_DLG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_FLW_CAPTURE_DLG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\FLWGadget.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="DistortionCorrector.cpp" />
+    <ClCompile Include="DistortionCorrectorGadget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="DistortionCorrector.h" />
+    <ClInclude Include="DistortionCorrectorGadget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DistortionCorrector.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\DistortionCorrector.rc2" />
+    <None Include="res\retsight_vs17.tvg">
+      <Filter>res</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="res">
+      <UniqueIdentifier>{c9e8eb63-8746-454b-ba53-2c770b4d773d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\CorrB_0.47um.txt">
+      <Filter>res</Filter>
+    </Text>
+    <Text Include="res\CorrG_0.52um.txt">
+      <Filter>res</Filter>
+    </Text>
+    <Text Include="res\CorrR_0.63um.txt">
+      <Filter>res</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

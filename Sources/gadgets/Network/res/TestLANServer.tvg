@@ -1,0 +1,15 @@
+TextCaptureCtrl TextCaptureCtrl1(Name=_inplace;Text=ViewHandle\bh\e0\s\\n;Quantity=0;NoSync=0;Manual=1;FrameRate=1;FramePeriod_ms=1000.00;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+NWSocket NWSocket1(Mode=1;Port=55002;StopWhenGraphStoped=true;SetRegistered=0;ServerAddress=127.0.0.1;DataType=2;)
+TextRender TextRender1(Name=Float\bwindow\b1;ViewLabel=0;ViewTiming=0;)
+
+Connect(TextCaptureCtrl1>>0,NWSocket1<<0)
+Connect(NWSocket1>>0,TextRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=NWSocket1;x=256;y=94;)
+MOVE(gadget=TextCaptureCtrl1;x=49;y=57;)
+MOVE(gadget=TextRender1;x=386;y=172;)
+FLOATWND(name=Float\bwindow\b1;x=0.250977;y=0.593056;w=0.141016;h=0.327778;Selected=TextRender1;)
+GRAPHVIEW(name=GraphView;x=0.00471698;y=0.00548697;w=0.715802;h=0.66941;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

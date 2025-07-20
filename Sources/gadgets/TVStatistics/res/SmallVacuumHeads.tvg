@@ -1,0 +1,33 @@
+Basler Basler1(Camera=40069820;StreamState=0;Format=17301505;Shutter_us=2720;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=0;Trig_Selector=3;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Frame_rate=10;ROI=8,8,1920,1200;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=Timer1Active;LineInverter_=0;);
+Line3=(LineMode_=Output;LineSource_=Timer2Active;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureActive;TimerTriggerActivation=RisingEdge;TimerDuration_=1399;TimerDelay_=0;);
+Timer2=(TimerTriggerSource_=ExposureActive;TimerTriggerActivation=RisingEdge;TimerDuration_=1200;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=1399;TimerTrigger=5;TimerActivation=0;OutputSelector=0;OutputValue=0;)
+TVObjects TVObjects1(Template=spot(name=suction_edge;type=4;contrast=0;placement=0;xoffset=100;yoffset=100;width=1700;height=1000;width_min=10;height_min=10;width_max=800;height_max=800;area_min=100;area_max=50000;xdiffr=0;ydiffr=0;detailed=0x801041b;multi=0;min_ampl=80; thres= 0.300;rotation_thres=0.500;donttouchedge=1;timeout_ms=100.0;max_n_objects=100;color=255;textsize=12;xtextoffset=5;ytextoffset=-5;extendforw_perc=50;view_roi=1;view_pos=1;view_coords=1;view_angle=1;view_dia=0;view_contur=1;view_details=1;view_profx=0;view_profy=0;view_mgraph=0;view_scaled=0;meas_pos=1;meas_area=1;meas_perim=1;meas_anglew=0;meas_angle=1;meas_subpix=0;meas_ratio=0;meas_xprof=0;meas_diffr=0;meas_yprof=0;meas_contur=1;meas_sub_sides=0;meas_diam=0;meas_weight=0;meas_runs=0;)
+Task(1,suction_edge)
+;ActiveTask=1;CaptionPeriod=0;ViewMode=-1073740783;Scaling=1,pix;gtimeout_ms=0;NObjectsMax=500;LastImageWidth=1920;LastImageHeight=1200;_OUTPUTMODE=1;_GADGET_OUTPUT2=Name\eDiagnostics\s;_GADGET_INPUT2=Name\eControl\s;_GADGET_INPUT3=Name\eScriptLoad\s;_GADGET_INPUT4=Name\eCoordinates\s;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+PlotGraph PlotGraph1(Name=Float\bwindow\b2;RangeX=0.000000,600.000000;RangeY=0.000000,1000.000000;Labels=0.000000,600.000000,0.000000,0.000000;Fit=0;DataLength=600;ViewNames=1;ViewNet=6;ViewRanges=1;Clear=0;SamplePeriod_ms=1000;)
+LabelFilter LabelFilter1(Label=suction_edge;Available=-1;Compare=0;InverseRule=0;Attributes=use\ey\s;Type=4;_GADGET_OUTPUT1=Label\eInsert:X\s;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=328,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x21542\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+
+Connect(Basler1>>0,TVObjects1<<0)
+Connect(Basler1>>0,RenderFrameRate1<<0)
+Connect(TVObjects1>>0,FRender1<<0)
+Connect(TVObjects1>>0,LabelFilter1<<0)
+Connect(LabelFilter1>>0,PlotGraph1<<0)
+Connect(FRender1>>0,TVObjects1<<3)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Basler1;x=34;y=29;)
+MOVE(gadget=TVObjects1;x=163;y=25;)
+MOVE(gadget=FRender1;x=156;y=116;)
+MOVE(gadget=RenderFrameRate1;x=314;y=31;)
+MOVE(gadget=PlotGraph1;x=396;y=165;)
+MOVE(gadget=LabelFilter1;x=169;y=166;)
+FLOATWND(name=Float\bwindow\b1;x=0.708594;y=0.147917;w=0.129883;h=0.463889;Selected=FRender1;)
+FLOATWND(name=Float\bwindow\b2;x=0.589063;y=0.4625;w=0.144141;h=0.463889;Selected=PlotGraph1;)
+GRAPHVIEW(name=GraphView;x=0.0778302;y=0.090535;w=0.912736;h=0.648834;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

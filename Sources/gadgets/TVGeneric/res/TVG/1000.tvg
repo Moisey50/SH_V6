@@ -1,0 +1,10 @@
+CaptureTimer CaptureTimer1(FrameRate=25;Affinity=255;)
+TextRender TextRender1(Name=_inplace;Affinity=255;)
+
+Connect(CaptureTimer1>>0,TextRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=CaptureTimer1;x=127;y=167;)
+MOVE(gadget=TextRender1;x=361;y=85;)
+MOVE(gadget=CaptureTimer1>>0,TextRender1<<0;x=0;y=0;)
+END_VIEW_SECTION

@@ -1,0 +1,26 @@
+WDMCapture WDMCapture1(useframerate=1;outputformat=538982489;VID_PID_MI=VID_15AA&PID_1555&MI_00;Location=/R1.H1.P20/;VideoDevice2s=@device:pnp:\\\\?\\usb#vid_15aa&pid_1555&mi_00#6&b522205&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global;VideoDevice2=406465766963653a706e703a5c5c3f5c757362237669645f31356161267069645f31353535266d695f30302336266235323232303526302630303030237b36356538373733642d386635362d313164302d613362392d3030613063393232333139367d5c676c6f62616c00;AM_MEDIA_TYPE=7669647300001000800000aa00389b715955593200001000800000aa00389b71010000000000000000483f00809f580556c3ce11bf0100aa0055595a0000000000000000000000005800000000000000509be20c00000000;pbFormat=00000000000000000000000000000000000000000000000000000000000000000000a776000000000a8b020000000000280000008007000038040000010010005955593200483f0000000000000000000000000000000000;)
+Knob Knob1(Name=_inplace;ButtonName=Save;Value=1;Mode=1;)
+VideoY8toY16 VideoY8toY161(Shift=8;)
+Trigger Trigger1(_OUTPUTMODE=1;LastOnly=0;)
+BMPRender BMPRender1(Name=_inplace;FileName=./BMP/m16_<Counter>.tiff;FormatBMP=2;AddLabel=0;FolderPath=./BMP/;FileName_NoExt=m16_;AddFileNameSuffix=0;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=0;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x16D208A\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,um;SaveImagesDir=;)
+Decimator Decimator1(DecimateFactor=5;BoolOut=0;)
+
+Connect(WDMCapture1>>0,Decimator1<<0)
+Connect(WDMCapture1>>0,Trigger1<<0)
+Connect(Knob1>>0,Trigger1<>0)
+Connect(VideoY8toY161>>0,BMPRender1<<0)
+Connect(Trigger1>>0,VideoY8toY161<<0)
+Connect(Decimator1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=WDMCapture1;x=173;y=47;)
+MOVE(gadget=FRender1;x=596;y=43;)
+MOVE(gadget=Decimator1;x=400;y=24;)
+MOVE(gadget=Trigger1;x=340;y=98;)
+MOVE(gadget=Knob1;x=272;y=140;)
+MOVE(gadget=BMPRender1;x=625;y=123;)
+MOVE(gadget=VideoY8toY161;x=467;y=133;)
+GRAPHVIEW(name=GraphView;x=0.00787402;y=0.0224215;w=0.88189;h=0.672646;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

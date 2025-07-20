@@ -1,0 +1,47 @@
+enum ProcessingStage
+{
+  Stage_Unchanged = -1 ,
+  Stage_Inactive = 0 ,
+  Stage_PrepareMeasurement , // move edge to center
+  Stage_Focusing ,
+  Stage_EdgeToCenter ,
+  Stage_GetInternalBorder ,
+  Stage_GetExternalBorder ,
+  Stage_WaitForMotionEnd ,
+  Stage_WaitForMotionEndX ,
+  Stage_WaitForMotionEndY ,
+  Stage_ScanFinished ,
+  Stage_LeghtToCenter ,
+  Stage_LightFromCenter ,
+  Stage_FocusingPlus ,
+  Stage_FocusingMinus ,
+  Stage_GetCurrentPositions ,
+  Stage_ManualMotion ,
+  Stage_FullProcess1 , // Move XYZ to observation
+  Stage_FullProcess2 , // Measure conturs on observation
+  Stage_FullProcess3 , // Do autofocusing for +- 5 mm and
+                       // area on cutter body
+  Stage_FullProcess4 , // Measure observation conturs in focused state
+  Stage_FullProcess5 , // Calculate target coordinates and order XY motion
+                       // to initial edge measurement point
+  Stage_FullProcess6 , // Find edge and move edge to center
+  Stage_FullProcess7 , // Do focusing +- 500(?) microns on edge inspection station
+  Stage_FullProcess8 , // Get Internal border
+  Stage_FullProcess9 , // edge to center
+  Stage_FullProcess10 , // After edge to center => Get internal border
+  Stage_FullProcess11 , // Internal => Get external border
+  Stage_FullProcess12 , // External (real measurement) => Check for end; 
+						//	if not end then Move to next point ( stage 13 ) 
+						//	and push (IsFocusingNecessary? 
+						//    Stage 13 ( focusing ): Stage 14 (get internal image))
+  Stage_FullProcess13 , // Focusing on scan => Stage 14 ( Get internal image )
+  Stage_FullProcess14 , // Order internal image => Stage 11
+
+
+  Stage_DistCalib1 , //Go to Observation position
+  Stage_DistCalib2 , // Measure calib spot
+  Stage_DistCalib3 , // Go to Edge inspection position
+  Stage_DistCalib4 , // Measure Calib Spot
+  Stage_Adjust_Z ,
+  Stage_Observation_Focus ,
+};

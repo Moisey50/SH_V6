@@ -1,0 +1,39 @@
+CaptureTimer CaptureTimer1(FrameRate=25;FramePeriod_msec=2000;NSendOnStart=0;)
+CheckBoxCtrl CheckBoxCtrl1(Name=_inplace;ButtonName=Check\bme!;Set=true;)
+Knob Knob1(Name=_inplace;ButtonName=Pass;Value=1;Mode=1;)
+VideoHighPass VideoHighPass1(ConvParameter=990;)
+RenderFrameRate RenderFrameRate3(Name=_inplace;)
+Basler Basler3(Camera=22806223;StreamState=0;Format=17301505;Shutter_us=1040;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=1;Trig_Selector=1;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Trigger_activate=0;Frame_rate=5;ROI=8,8,1920,1200;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);
+Line3=(LineMode_=Input;LineInverter_=0;);
+Line4=(LineMode_=Input;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureStart;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=10;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+FRender FRender4(Name=Float\bwindow\b1;Monochrome=0;offset=506,536;Scale=0;LineSelection=false;RectSelection=false;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x90ED6\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+CrossFFT CrossFFT1(CrossPt=900,600;XCrossShift=0;YCrossShift=0;UseSpectrums=2;RemoveDC=1;RectHalfSize=;FFT_Order=6;HalfUsed=32;Resolution_um_per_pix=44.583;XMultiplier=1;YMultiplier=15;SpectrumShift=0;Ranges=\o0,1\c,\o2,3\c,\o4,10\c;_OUTPUTMODE=0;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=362,474;Scale=0;LineSelection=false;RectSelection=false;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x90F00\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;SaveImagesDir=;)
+Switch Switch1(_OUTPUTMODE=1;SwitchOn=1;)
+
+Connect(CaptureTimer1>>0,Basler3<<0)
+Connect(CheckBoxCtrl1>>0,Switch1<>0)
+Connect(VideoHighPass1>>0,FRender4<<0)
+Connect(Basler3>>0,RenderFrameRate3<<0)
+Connect(Basler3>>0,FRender4<<0)
+Connect(Basler3>>0,CrossFFT1<<0)
+Connect(Basler3>>1,Switch1<<0)
+Connect(CrossFFT1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=RenderFrameRate3;x=161;y=-76;)
+MOVE(gadget=Knob1;x=50;y=150;)
+MOVE(gadget=CheckBoxCtrl1;x=71;y=311;)
+MOVE(gadget=Basler3;x=47;y=43;)
+MOVE(gadget=FRender4;x=196;y=159;)
+MOVE(gadget=FRender1;x=437;y=115;)
+MOVE(gadget=VideoHighPass1;x=71;y=237;)
+MOVE(gadget=Switch1;x=203;y=109;)
+MOVE(gadget=CaptureTimer1;x=39;y=-33;)
+MOVE(gadget=CrossFFT1;x=182;y=43;)
+GRAPHVIEW(name=GraphView;x=-0.00570033;y=0.03125;w=0.69544;h=0.814145;x_view_off=0;y_view_off=83;scale=0.909091;Viewed=0;)
+END_VIEW_SECTION
+

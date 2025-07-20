@@ -1,0 +1,15 @@
+// TVRecognition.h : main header file for the TVRECOGNITION DLL
+//
+
+#if !defined(AFX_TVRECOGNITION_H__811C420C_9A13_4243_8019_504870403B04__INCLUDED_)
+#define AFX_TVRECOGNITION_H__811C420C_9A13_4243_8019_504870403B04__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+#include "resource.h"		// main symbols
+
+extern char TVDB400_PLUGIN_NAME[APP_NAME_MAXLENGTH];
+
+#endif // !defined(AFX_TVRECOGNITION_H__811C420C_9A13_4243_8019_504870403B04__INCLUDED_)

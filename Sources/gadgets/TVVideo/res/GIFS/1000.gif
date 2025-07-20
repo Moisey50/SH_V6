@@ -1,0 +1,385 @@
+stack_depth -= 1
+                if paren_stack_depth < 0:
+                    break
+            elif paren_stack_depth == 0:
+                break
+            self.pos = idx+1
+
+        rv = self.definition[rv_start:idx]
+        self.pos = idx
+        return rv
+
+    def _parse_signature(self):
+        if r'CvStatModel::train' in self.definition:
+            # hack to skip parsing of problematic definition
+            self.pos = self.end
+            return [ArgumentDefExpr("const Mat&", "train_data", None), ArgumentDefExpr(None, self.definition[self.definition.find("["):-1], None)], False, True
+
+        self.skip_ws()
+        if not self.skip_string('('):
+            self.fail('expected parentheses for function')
+
+        args = []
+        while 1:
+            self.skip_ws()
+            if self.eof:
+                self.fail('missing closing parentheses')
+            if self.skip_string(')'):
+                break
+            if args:
+                if not self.skip_string(','):
+                    self.fail('expected comma between arguments')
+                self.skip_ws()
+
+            argtype = self._parse_type()
+            self.skip_ws()
+            if unicode(argtype) == u"...":
+                if not self.skip_string(')'):
+                    self.fail("var arg must be the last argument")
+                args.append(ArgumentDefExpr(None, argtype, None))
+                break
+            argname = default = None
+            if self.skip_string('='):
+                self.pos += 1
+                default = self._parse_default_expr()
+            elif self.current_char not in ',)':
+                argname = self._parse_name()
+                self.skip_ws()
+                if self.skip_string('='):
+                    default = self._parse_default_expr()
+
+            args.append(ArgumentDefExpr(argtype, argname, default))
+        self.skip_ws()
+        const = self.skip_word('const')
+        if const:
+            self.skip_ws()
+        if self.skip_string('='):
+            self.skip_ws()
+            if not (self.skip_string('0') or \
+                    self.skip_word('NULL') or \
+                    self.skip_word('nullptr')):
+                self.fail('pure virtual functions must be defined with '
+                          'either 0, NULL or nullptr, other macros are '
+                          'not allowed')
+            pure_virtual = True
+        else:
+            pure_virtual = False
+        return args, const, pure_virtual
+
+    def _parse_visibility_static(self):
+        visibility =  'public'
+        if self.match(_visibility_re):
+            visibility = self.matched_text
+        static = self.skip_word('static')
+        return visibility, static
+
+    def parse_type(self):
+        return self._parse_type()
+
+    def parse_type_object(self):
+        visibility, static = self._parse_visibility_static()
+        typename = self._parse_type()
+        self.skip_ws()
+        if not self.eof:
+            name = self._parse_type()
+        else:
+            name = typename
+            typename = None
+        return TypeObjDefExpr(name, visibility, static, typename)
+
+    def parse_member_object(self):
+        visibility, static = self._parse_visibility_static()
+        typename = self._parse_type()
+        name = self._parse_type()
+        self.skip_ws()
+        if self.skip_string('='):
+            value = self.read_rest().strip()
+        else:
+            value = None
+        return MemberObjDefExpr(name, visibility, static, typename, value)
+
+    def parse_enum_member_object(self):
+        visibility, static = self._parse_visibility_static()
+        typename = None
+        name = self._parse_type()
+        self.skip_ws()
+        if self.skip_string('='):
+            value = self.read_rest().strip()
+        else:
+            value = None
+        return MemberObjDefExpr(name, visibility, static, typename, value)
+
+    def parse_function(self):
+        visibility, static = self._parse_visibility_static()
+        if self.skip_word('explicit'):
+            explicit = True
+            self.skip_ws()
+        else:
+            explicit = False
+        if self.skip_word('virtual'):
+            virtual = True
+            self.skip_ws()
+        else:
+            virtual = False
+        rv = self._parse_type()
+        self.skip_ws()
+        # some things just don't have return values
+        if self.current_char == '(':
+            name = rv
+            rv = None
+        else:
+            name = self._parse_type()
+        return FuncDefExpr(name, visibility, static, explicit,  rv,
+                           *self._parse_signature(), virtual = virtual)
+
+    def parse_class(self):
+        visibility, static = self._parse_visibility_static()
+        typename = self._parse_type()
+        parent = None
+        self.skip_ws()
+        parents = []
+        if self.skip_string(':'):
+            while not self.eof:
+                self.skip_ws()
+                classname_pos = self.pos
+                pvisibility, pstatic = self._parse_visibility_static()
+                if pstatic:
+                    self.fail('unsepected static keyword, got %r' %
+                          self.definition[self.classname_pos:])
+                parents.append(ClassDefExpr(self._parse_type(), pvisibility, pstatic))
+                if not self.skip_string(','):
+                    break
+        return ClassDefExpr(typename, visibility, static, parents)
+
+    def read_rest(self):
+        rv = self.definition[self.pos:]
+        self.pos = self.end
+        return rv
+
+    def assert_end(self):
+        self.skip_ws()
+        if not self.eof:
+            self.fail('expected end of definition, got %r' %
+                      self.definition[self.pos:])
+
+
+class OCVObject(ObjectDescription):
+    """Description of a C++ language object."""
+
+    langname = "C++"
+    ismember = False
+
+    doc_field_types = [
+        TypedField('parameter', label=l_('Parameters'),
+                   names=('param', 'parameter', 'arg', 'argument'),
+                   typerolename='type', typenames=('type',)),
+        Field('returnvalue', label=l_('Returns'), has_arg=False,
+              names=('returns', 'return')),
+        Field('returntype', label=l_('Return type'), has_arg=False,
+              names=('rtype',)),
+    ]
+
+    def attach_name(self, node, name):
+        owner, name = name.split_owner()
+        varname = unicode(name)
+        if owner is not None:
+            owner = unicode(owner) + '::'
+            node += addnodes.desc_addname(owner, owner)
+        node += addnodes.desc_name(varname, varname)
+
+    def attach_type(self, node, type):
+        # XXX: link to c?
+        text = unicode(type)
+        pnode = addnodes.pending_xref(
+            '', refdomain='ocv', reftype='type',
+            reftarget=text, modname=None, classname=None)
+        pnode['ocv:parent'] = self.env.temp_data.get('ocv:parent')
+        pnode += nodes.Text(text)
+        node += pnode
+
+    def attach_modifiers(self, node, obj):
+        if not self.__class__.ismember:
+            lname = self.__class__.langname
+            node += nodes.strong(lname + ":", lname + ":")
+            node += addnodes.desc_name(" ", " ")
+
+        if obj.visibility != 'public':
+            node += addnodes.desc_annotation(obj.visibility,
+                                             obj.visibility)
+            node += nodes.Text(' ')
+        if obj.static:
+            node += addnodes.desc_annotation('static', 'static')
+            node += nodes.Text(' ')
+
+    def add_target_and_index(self, sigobj, sig, signode):
+        theid = sig#obj.get_id()
+        theid = re.sub(r" +", " ", theid)
+        if self.objtype == 'emember':
+            theid = re.sub(r" ?=.*", "", theid)
+        theid = re.sub(r"=[^,()]+\([^)]*?\)[^,)]*(,|\))", "\\1", theid)
+        theid = re.sub(r"=\w*[^,)(]+(,|\))", "\\1", theid)
+        theid = theid.replace("( ", "(").replace(" )", ")")
+        name = unicode(sigobj.name)
+        if theid not in self.state.document.ids:
+            signode['names'].append(theid)
+            signode['ids'].append(theid)
+            signode['first'] = (not self.names)
+            self.state.document.note_explicit_target(signode)
+
+            #self.env.domaindata['ocv']['objects'].setdefault(name,
+                #(self.env.docname, self.objtype, theid))
+            self.env.domaindata['ocv']['objects'].setdefault(theid,
+                (self.env.docname, self.objtype, theid))
+            self.env.domaindata['ocv']['objects2'].setdefault(name,
+                (self.env.docname, self.objtype, theid))
+
+        indextext = self.get_index_text(name)
+        if indextext:
+            self.indexnode['entries'].append(('single', indextext, theid, name))
+
+    def before_content(self):
+        lastname = self.names and self.names[-1]
+        if lastname and not self.env.temp_data.get('ocv:parent'):
+            assert isinstance(lastname, NamedDefExpr)
+            self.env.temp_data['ocv:parent'] = lastname.name
+            self.parentname_set = True
+        else:
+            self.parentname_set = False
+
+    def after_content(self):
+        if self.parentname_set:
+            self.env.temp_data['ocv:parent'] = None
+
+    def parse_definition(self, parser):
+        raise NotImplementedError()
+
+    def describe_signature(self, signode, arg):
+        raise NotImplementedError()
+
+    def handle_signature(self, sig, signode):
+        parser = DefinitionParser(sig)
+        try:
+            rv = self.parse_definition(parser)
+            parser.assert_end()
+        except DefinitionError, e:
+            self.env.warn(self.env.docname,
+                          e.description, self.lineno)
+            raise ValueError
+        self.describe_signature(signode, rv)
+
+        parent = self.env.temp_data.get('ocv:parent')
+        if parent is not None:
+            rv = rv.clone()
+            rv.name = rv.name.prefix(parent)
+        return rv
+
+
+class OCVClassObject(OCVObject):
+    object_annotation = "class "
+    object_long_name = "class"
+
+    def attach_modifiers(self, node, obj, skip_visibility = 'public'):
+        if obj.visibility != skip_visibility:
+            node += addnodes.desc_annotation(obj.visibility,
+                                             obj.visibility)
+            node += nodes.Text(' ')
+        if obj.static:
+            node += addnodes.desc_annotation('static', 'static')
+            node += nodes.Text(' ')
+
+    def get_index_text(self, name):
+        return _('%s (C++ %s)') % (name, self.__class__.object_long_name)
+
+    def parse_definition(self, parser):
+        return parser.parse_class()
+
+    def describe_signature(self, signode, cls):
+        self.attach_modifiers(signode, cls)
+        signode += addnodes.desc_annotation(self.__class__.object_annotation, self.__class__.object_annotation)
+        self.attach_name(signode, cls.name)
+        first_parent = True
+        for p in cls.parents:
+            if first_parent:
+                signode += nodes.Text(' : ')
+                first_parent = False
+            else:
+                signode += nodes.Text(', ')
+            self.attach_modifiers(signode, p, None)
+            self.attach_name(signode, p.name)
+
+class OCVStructObject(OCVClassObject):
+    object_annotation = "struct "
+    object_long_name = "structure"
+
+class OCVTypeObject(OCVObject):
+
+    def get_index_text(self, name):
+        if self.objtype == 'type':
+            return _('%s (C++ type)') % name
+        return ''
+
+    def parse_definition(self, parser):
+        return parser.parse_type_object()
+
+    def describe_signature(self, signode, obj):
+        self.attach_modifiers(signode, obj)
+        signode += addnodes.desc_annotation('type ', 'type ')
+        if obj.typename is not None:
+            self.attach_type(signode, obj.typename)
+            signode += nodes.Text(' ')
+        self.attach_name(signode, obj.name)
+
+class OCVEnumObject(OCVObject):
+
+    def get_index_text(self, name):
+        if self.objtype == 'enum':
+            return _('%s (enum)') % name
+        return ''
+
+    def parse_definition(self, parser):
+        return parser.parse_type_object()
+
+    def describe_signature(self, signode, obj):
+        self.attach_modifiers(signode, obj)
+        signode += addnodes.desc_annotation('enum ', 'enum ')
+        if obj.typename is not None:
+            self.attach_type(signode, obj.typename)
+            signode += nodes.Text(' ')
+        self.attach_name(signode, obj.name)
+
+
+class OCVMemberObject(OCVObject):
+    ismember = True
+
+    def get_index_text(self, name):
+        if self.objtype == 'member':
+            return _('%s (C++ member)') % name
+        return ''
+
+    def parse_definition(self, parser):
+        parent_class = self.env.temp_data.get('ocv:parent')
+        if parent_class is None:
+            parser.fail("missing parent structure/class")
+        return parser.parse_member_object()
+
+    def describe_signature(self, signode, obj):
+        self.attach_modifiers(signode, obj)
+        if obj.typename:
+            self.attach_type(signode, obj.typename)
+            signode += nodes.Text(' ')
+        self.attach_name(signode, obj.name)
+        if obj.value is not None:
+            signode += nodes.Text(u' = ' + obj.value)
+
+class OCVEnumMemberObject(OCVMemberObject):
+    def parse_definition(self, parser):
+        # parent_class = self.env.temp_data.get('ocv:parent')
+        # if parent_class is None:
+        #     parser.fail("missing parent structure/class")
+        return parser.parse_enum_member_object()
+
+class OCVFunctionObject(OCVObject):
+
+    def attach_function(self, node, func):
+        owner, name = func.name.split_owner()
+      

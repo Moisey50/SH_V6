@@ -1,0 +1,349 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Tuner.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Tuner.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_TUNER_ACCELERATOR ACCELERATORS MOVEABLE PURE 
+BEGIN
+    VK_END,         IDC_END,                VIRTKEY, NOINVERT
+    VK_HOME,        IDC_HOME,               VIRTKEY, NOINVERT
+    VK_LEFT,        IDC_FILE_PREVIOUS,      VIRTKEY, NOINVERT
+    VK_RIGHT,       IDC_FILE_NEXT,          VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_NAME            "Tuner (%s)"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ID_FEATUREDETECTOR DIALOGEX 0, 0, 186, 225
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_FEATUREDISPLAY,"Static",SS_BLACKFRAME,7,7,172,120,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_HISTORGAMVIEW DIALOGEX 0, 0, 202, 195
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_DISPVIEW,"Static",SS_BLACKFRAME,7,7,188,114,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_DIFFERENCEVIEW DIALOGEX 0, 0, 226, 233
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_DISPVIEW,"Static",SS_BLACKFRAME,7,7,181,109,
+                    WS_EX_STATICEDGE
+    CONTROL         "Progress1",IDC_LEVELVIEW,"msctls_progress32",
+                    PBS_VERTICAL | PBS_SMOOTH | WS_BORDER,192,7,10,87
+    LTEXT           "",IDC_VALUE,192,101,26,9,0,WS_EX_RIGHT | 
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_TIMELINE,"Static",SS_BLACKFRAME,7,134,182,86,
+                    WS_EX_CLIENTEDGE
+    CONTROL         "Progress1",IDC_LEVELVIEW2,"msctls_progress32",
+                    PBS_VERTICAL | PBS_SMOOTH | WS_BORDER,208,7,10,87
+END
+
+IDD_OCRLEARN_DIALOG DIALOGEX 0, 0, 298, 142
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "OCR Learn dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Done",IDOK,241,121,50,14
+    CONTROL         "",IDC_HIPVIEWFRAME,"Static",SS_BLACKRECT,7,7,284,58,
+                    WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_CLVIEWFRAME,"Static",SS_BLACKRECT,7,70,59,65,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "<<",IDC_PREVIOUSHIP,240,76,14,12
+    GROUPBOX        "Zone",IDC_STATIC,204,68,87,23
+    PUSHBUTTON      ">>",IDC_NEXTHIP,270,76,14,12
+    LTEXT           "Static",IDC_CRNTHIP,255,76,14,12,0,WS_EX_CLIENTEDGE
+    LTEXT           "Static",IDC_ZONESNMB,211,78,23,9
+    PUSHBUTTON      "<<",IDC_PREVIOUSCLUSTER,240,102,14,12
+    GROUPBOX        "Clusters",IDC_STATIC,204,94,87,23
+    PUSHBUTTON      ">>",IDC_NEXTCLUSTER,270,102,14,12
+    LTEXT           "Static",IDC_CRNTCLUSTER,255,102,14,12,0,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "Static",IDC_CLUSTERSNMB,211,104,23,9
+    EDITTEXT        IDC_CHAREDIT,73,70,59,65,ES_CENTER
+    PUSHBUTTON      "Add to base",IDC_ADDTOBASE,141,87,46,21
+    PUSHBUTTON      "Add to lib",IDC_ADDTOLIB,141,114,46,21
+    LTEXT           "Error:",IDC_STATIC,141,70,20,10
+    LTEXT           "",IDC_RECERROR,161,69,26,12,0,WS_EX_CLIENTEDGE
+END
+
+ID_UPCREADER DIALOGEX 0, 0, 275, 324
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_UPCREADERDISPLAY,"Static",SS_BLACKFRAME,7,7,261,
+                    198,WS_EX_CLIENTEDGE
+    LTEXT           "Found objects:",IDC_STATIC,15,278,55,12
+    LTEXT           "",IDC_OBJCKTSNMB,77,278,56,12,0,WS_EX_STATICEDGE
+    LTEXT           "Time spent:",IDC_STATIC,15,298,55,12
+    LTEXT           "",IDC_TIMESPENT,77,298,56,12,0,WS_EX_STATICEDGE
+    CONTROL         "",IDC_DATAVIEW,"Static",SS_BLACKFRAME,7,212,261,27
+    PUSHBUTTON      "Run tvDB",IDC_RUN_TVDB,211,254,42,16
+    LTEXT           "Result:",IDC_STATIC,17,255,55,12
+    LTEXT           "",IDC_RESULTSTR,79,255,113,12,0,WS_EX_STATICEDGE
+END
+
+IDD_TUNER_DIALOG DIALOGEX 0, 0, 680, 402
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Tuner"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Feature detector",IDC_FEATUREDETECTORS,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,388,349,66,10
+    CONTROL         "Zone detector",IDC_ZONEDETECTOR,"Button",
+                    BS_AUTORADIOBUTTON,388,359,66,10
+    CONTROL         "Histogram",IDC_HISTOGRAM,"Button",BS_AUTORADIOBUTTON,
+                    388,369,66,10
+    CONTROL         "Difference",IDC_DIFFRENCE,"Button",BS_AUTORADIOBUTTON,
+                    388,379,66,10
+    CONTROL         "UPCReader",IDC_UPCREADER,"Button",BS_AUTORADIOBUTTON,
+                    500,348,66,10
+    CONTROL         "Code39",IDC_CODE39,"Button",BS_AUTORADIOBUTTON,500,359,
+                    66,10
+    CONTROL         "Code128",IDC_CODE128,"Button",BS_AUTORADIOBUTTON,500,
+                    369,66,10
+    CONTROL         "",IDC_VIEWFRAME,"Static",SS_BLACKFRAME,7,7,369,257,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "",IDC_PLUGINPARENT,387,7,286,325,NOT WS_GROUP
+    DEFPUSHBUTTON   "E&xit",IDOK,321,374,50,14
+    PUSHBUTTON      "&Open",IDC_FILEOPEN,13,290,42,15,BS_FLAT
+    PUSHBUTTON      "<<",IDC_FILE_PREVIOUS,36,308,23,11,BS_FLAT
+    PUSHBUTTON      ">>",IDC_FILE_NEXT,195,308,23,11,BS_FLAT
+    LTEXT           "",IDC_FNAME,13,277,74,9,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_FILE_NUMBER,161,277,57,9,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Run Tvdb",IDC_RUN_TVDB,136,290,54,15,BS_FLAT
+    GROUPBOX        "Files",IDC_STATIC,7,265,369,130
+    LTEXT           "Files #/Files number:",IDC_STATIC,92,277,67,9
+    PUSHBUTTON      "Home",IDC_HOME,13,308,23,11,BS_FLAT
+    PUSHBUTTON      "End",IDC_END,218,308,23,11,BS_FLAT
+    PUSHBUTTON      "Delete",IDC_FILE_DELETE,94,290,42,15,BS_FLAT
+    CONTROL         "Slider1",IDC_CLIPSLIDER,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,59,308,136,11,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "&Play",IDC_FILE_PLAY,55,290,39,15,BS_FLAT
+    PUSHBUTTON      "&SaveTo",IDC_SAVEAS1,14,324,42,11,BS_FLAT
+    EDITTEXT        IDC_SAVEFILENAME1,62,323,138,12,ES_AUTOHSCROLL
+    GROUPBOX        "Utils",IDC_STATIC,377,338,296,57
+    PUSHBUTTON      "Seek Number",IDC_SEEKNUMBER,190,290,54,15,BS_FLAT
+END
+
+ID_CODE39 DIALOGEX 0, 0, 275, 324
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_UPCREADERDISPLAY,"Static",SS_BLACKFRAME,7,7,261,
+                    198,WS_EX_CLIENTEDGE
+    LTEXT           "Found objects:",IDC_STATIC,15,278,55,12
+    LTEXT           "",IDC_OBJCKTSNMB,77,278,56,12,0,WS_EX_STATICEDGE
+    LTEXT           "Time spent:",IDC_STATIC,15,298,55,12
+    LTEXT           "",IDC_TIMESPENT,77,298,56,12,0,WS_EX_STATICEDGE
+    CONTROL         "",IDC_DATAVIEW,"Static",SS_BLACKFRAME,7,212,261,27
+    PUSHBUTTON      "Run tvDB",IDC_RUN_TVDB,211,254,42,16
+    LTEXT           "Result:",IDC_STATIC,17,255,55,12
+    LTEXT           "",IDC_RESULTSTR,79,255,113,12,0,WS_EX_STATICEDGE
+END
+
+ID_CODE128 DIALOGEX 0, 0, 275, 324
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_UPCREADERDISPLAY,"Static",SS_BLACKFRAME,7,7,261,
+                    198,WS_EX_CLIENTEDGE
+    LTEXT           "Found objects:",IDC_STATIC,15,278,55,12
+    LTEXT           "",IDC_OBJCKTSNMB,77,278,56,12,0,WS_EX_STATICEDGE
+    LTEXT           "Time spent:",IDC_STATIC,15,298,55,12
+    LTEXT           "",IDC_TIMESPENT,77,298,56,12,0,WS_EX_STATICEDGE
+    CONTROL         "",IDC_DATAVIEW,"Static",SS_BLACKFRAME,7,212,261,27
+    PUSHBUTTON      "Run tvDB",IDC_RUN_TVDB,211,254,42,16
+    LTEXT           "Result:",IDC_STATIC,17,255,55,12
+    LTEXT           "",IDC_RESULTSTR,79,255,113,12,0,WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_TUNER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 673
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 395
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x21L
+#else
+ FILEFLAGS 0x20L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "FileDescription", "Tuner MFC Application\0"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "InternalName", "Tuner\0"
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "OriginalFilename", "Tuner.EXE\0"
+            VALUE "ProductName", "Tuner Application\0"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+#endif    // !_MAC
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Tuner.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

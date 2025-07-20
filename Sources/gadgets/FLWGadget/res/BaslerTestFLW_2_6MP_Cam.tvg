@@ -1,0 +1,39 @@
+Basler Basler2(Camera=23126391;StreamState=0;Format=17301505;Shutter_us=5000;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=1;Trig_Selector=1;Trigger_mode=0;Trigger_source=1;Trigger_delay_us=0;Trigger_activate=0;Frame_rate=59.9988;ROI=0,0,3088,2064;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);
+Line3=(LineMode_=Input;LineInverter_=0;);
+Line4=(LineMode_=Input;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureStart;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=10;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+Basler Basler1(Camera=22213456;StreamState=0;Format=17301505;Shutter_us=15000;Gain_dBx10=215;Brightness=0;Gamma=1;ExposureMode=1;Trig_Selector=1;Trigger_mode=0;Trigger_source=1;Trigger_delay_us=0;Trigger_activate=0;Frame_rate=59.9988;ROI=0,0,3088,2064;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);
+Line3=(LineMode_=Input;LineInverter_=0;);
+Line4=(LineMode_=Input;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureStart;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=10;TimerTrigger=0;OutputSelector=0;OutputValue=0;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+TextRender TextRender1(Name=Float\bwindow\b1;ViewLabel=0;ViewTiming=0;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=0;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0xA1A94\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=0.862600,um;SaveImagesDir=;)
+FLWRender FLWRender1(filename=N:\\FLW_Test\\FLW1_%x_%X.flw;DoLog=0;NBuffers=30;BufferSize_KB=10000;)
+Decimator Decimator1(DecimateFactor=10;BoolOut=0;)
+
+Connect(Basler2>>0,FLWRender1<<0)
+Connect(Basler1>>0,RenderFrameRate1<<0)
+Connect(Basler1>>0,Decimator1<<0)
+Connect(Basler1>>0,FLWRender1<<0)
+Connect(FLWRender1>>0,TextRender1<<0)
+Connect(Decimator1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Basler1;x=24;y=11;)
+MOVE(gadget=RenderFrameRate1;x=463;y=10;)
+MOVE(gadget=FRender1;x=525;y=148;)
+MOVE(gadget=FLWRender1;x=359;y=155;)
+MOVE(gadget=Decimator1;x=297;y=72;)
+MOVE(gadget=TextRender1;x=528;y=224;)
+MOVE(gadget=Basler2;x=37;y=78;)
+FLOATWND(name=Float\bwindow\b1;x=1922;y=37;w=601;h=560;Selected=TextRender1;)
+FLOATWND(name=Float\bwindow\b2;x=1950;y=628;w=606;h=687;Selected=TextRender2;)
+GRAPHVIEW(name=GraphView;x=0.0113529;y=0.485944;w=0.804163;h=0.413655;x_view_off=0;y_view_off=0;scale=1.1;Viewed=0;)
+SHSTUDIOVIEW(name=SHStudioView;x=898;y=65;w=1269;h=1296;)
+END_VIEW_SECTION
+

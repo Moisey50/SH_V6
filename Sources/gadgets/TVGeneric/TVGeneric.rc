@@ -1,0 +1,278 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TVGeneric.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETUP_DLG DIALOGEX 0, 0, 243, 142
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Setup"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,137,122,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,187,122,50,14
+    EDITTEXT        IDC_PARAMS,6,13,231,104,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_LPTSETTUPDIALOG DIALOG  0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "LPT settings dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,78,69,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,69,50,14
+    LTEXT           "Port:",IDC_STATIC,21,28,21,12
+    COMBOBOX        IDC_LPTPORT,56,28,75,55,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_CTRLPIN_TESTDLG DIALOG  0, 0, 186, 145
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Send",IDC_SEND,130,7,49,13
+    EDITTEXT        IDC_EDIT_CMD,7,7,117,13,ES_AUTOHSCROLL
+    GROUPBOX        "Answer",IDC_STATIC,7,25,172,113
+    EDITTEXT        IDC_ANSWER,11,36,163,95,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SETUP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 237
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_LPTSETTUPDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_CTRLPIN_TESTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_LPTSETTUPDIALOG DLGINIT
+BEGIN
+    IDC_LPTPORT, 0x403, 5, 0
+0x504c, 0x3154, "\000" 
+    IDC_LPTPORT, 0x403, 5, 0
+0x504c, 0x3254, "\000" 
+    IDC_LPTPORT, 0x403, 7, 0
+0x7830, 0x4338, 0x3030, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+            VALUE "FileDescription", "TVGeneric DLL"
+            VALUE "InternalName", "TVGeneric"
+            VALUE "OriginalFilename", "TVGeneric.DLL"
+            VALUE "ProductName", "TVGeneric Dynamic Link Library"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// BIN
+//
+IDR_BIN1                BIN                     "hwinterface.sys"
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+IDR_1000                HTML                    "res\\1000.htm"
+IDR_1001                HTML                    "res\\1001.css"
+IDR_1010                HTML                    "res\\1010.htm"
+IDR_1020                HTML                    "res\\1020.htm"
+IDR_1030                HTML                    "res\\1030.htm"
+IDR_1040                HTML                    "res\\1040.htm"
+IDR_1050                HTML                    "res\\1050.htm"
+IDR_1060                HTML                    "res\\1060.htm"
+IDR_1070                HTML                    "res\\1070.htm"
+IDR_1080                HTML                    "res\\1080.htm"
+IDR_1090                HTML                    "res\\1090.htm"
+IDR_1100                HTML                    "res\\1100.htm"
+IDR_1110                HTML                    "res\\1110.htm"
+IDR_1120                HTML                    "res\\1120.htm"
+IDR_1130                HTML                    "res\\1130.htm"
+IDR_1140                HTML                    "res\\1140.htm"
+IDR_1150                HTML                    "res\\1150.htm"
+IDR_1160                HTML                    "res\\1160.htm"
+IDR_1170                HTML                    "res\\1170.htm"
+IDR_1180                HTML                    "res\\1180.htm"
+IDR_1190                HTML                    "res\\1190.htm"
+IDR_1200                HTML                    "res\\1200.htm"
+IDR_1210                HTML                    "res\\1210.htm"
+IDR_1220                HTML                    "res\\1220.htm"
+IDR_1230                HTML                    "res\\1230.htm"
+/////////////////////////////////////////////////////////////////////////////
+//
+//  MHTML
+//
+IDR_LabelFilter         MHTML                   "res\\LabelFilter.mht"
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIFS
+//
+IDR_1011                GIFS                    "res\\GIFS\\1011.gif"
+IDR_1021                GIFS                    "res\\GIFS\\1021.gif"
+IDR_1041                GIFS                    "res\\GIFS\\1041.gif"
+IDR_1062                GIFS                    "res\\GIFS\\1062.gif"
+IDR_1061                GIFS                    "res\\GIFS\\1061.gif"
+IDR_1071                GIFS                    "res\\GIFS\\1071.gif"
+/////////////////////////////////////////////////////////////////////////////
+//
+// TVG
+//
+IDR_TVG1000             TVG                     "res\\TVG\\1000.tvg"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\TVGeneric.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

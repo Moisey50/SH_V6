@@ -1,0 +1,24 @@
+CaptureTimer CaptureTimer1(FrameRate=1;)
+TextCaptureCtrl TextCaptureCtrl1(Name=_inplace;Text=set\bDummy;Quantity=0;NoSync=0;Manual=1;FrameRate=1;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+TextRender TextRender2(Name=_inplace;ViewLabel=0;ViewTiming=0;)
+TextRender TextRender1(Name=_inplace;ViewLabel=0;ViewTiming=0;)
+Amplifier Amplifier1(KPlus=1;KMinus=0;Offset=0;Attributes=;TextFormat=Av\e%.3f\b;Average=20;CalcStd=1;_GADGET_INPUT1=Name\eInputPlus\s;_GADGET_INPUT2=Name\eInputMinus\s;)
+GaussGen GaussGen1(STD=1;Mean=0;_GADGET_OUTPUT1=Name\eOutputNumber\s;_GADGET_INPUT1=Name\eSourceName\s;_GADGET_DUPLEX1=Name\eFilter\s;)
+
+Connect(CaptureTimer1>>0,GaussGen1<<0)
+Connect(TextCaptureCtrl1>>0,Amplifier1<>0)
+Connect(Amplifier1>>0,TextRender2<<0)
+Connect(GaussGen1>>0,TextRender1<<0)
+Connect(GaussGen1>>0,Amplifier1<<0)
+Connect(GaussGen1>>0,Amplifier1<<1)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=GaussGen1;x=225;y=122;)
+MOVE(gadget=CaptureTimer1;x=69;y=110;)
+MOVE(gadget=TextRender1;x=412;y=21;)
+MOVE(gadget=Amplifier1;x=345;y=303;)
+MOVE(gadget=TextRender2;x=795;y=160;)
+MOVE(gadget=TextCaptureCtrl1;x=132;y=367;)
+GRAPHVIEW(name=GraphView;x=0.00303721;y=0.00501253;w=0.9347;h=0.665414;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

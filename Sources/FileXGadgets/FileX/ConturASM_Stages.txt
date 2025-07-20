@@ -1,0 +1,7 @@
+Stage_0_GetCurrPos
+Stage_1_MoveToObserv
+Stage_2_MeasOnObserv
+Stage_5_SendToEdgeMeasurement
+Stage_9_MoveEdgeToCenter
+Stage_Focusing ( m_StageBeforeFocusing = Stage_BeginToMax )
+

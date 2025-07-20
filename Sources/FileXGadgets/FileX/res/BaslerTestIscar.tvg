@@ -1,0 +1,34 @@
+AviCapture AviCapture1(FileName=M:\\Dev\\SH_DevWsp\\SH_20240401\\Output\\15.0\\x86\\Release\\20-03-54\b09.23.24.avi;FrameRate=25;SWTrigger=false;LoopFilm=true;ReserveOutputs=true;ChunkMode=false;OutputsNumber=1;)
+Basler Basler1(Camera=22806224;StreamState=0;Format=17301505;Shutter_us=4160;Gain_dBx10=239;Brightness=0;Gamma=1;ExposureMode=1;Trig_Selector=1;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Trigger_activate=0;Frame_rate=40;ROI=8,8,1920,1200;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);
+Line3=(LineMode_=Input;LineInverter_=0;);
+Line4=(LineMode_=Input;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureStart;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=10;TimerTrigger=0;OutputSelector=0;OutputValue=0;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+VideoFlip VideoFlip1(Flip=0;)
+VideoNegative VideoNegative1(_OUTPUTMODE=1;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=0;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0xF1EBC\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=0.862600,um;SaveImagesDir=;)
+AviRender AviRender1(Overwrite=true;NumInputs=3;File=%X\b%x;videofourcc=0;cyclewritting=1;maxfilenumber=-1;maxfilelength=60;overwriteframerate=false;calcframerate=false;RenderId=-1;framerate=25;)
+
+Connect(Basler1>>0,RenderFrameRate1<<0)
+Connect(Basler1>>0,FRender1<<0)
+Connect(Basler1>>0,VideoNegative1<<0)
+Connect(Basler1>>0,VideoFlip1<<0)
+Connect(Basler1>>0,AviRender1<<0)
+Connect(VideoFlip1>>0,AviRender1<<2)
+Connect(VideoNegative1>>0,AviRender1<<1)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Basler1;x=118;y=144;)
+MOVE(gadget=RenderFrameRate1;x=331;y=61;)
+MOVE(gadget=FRender1;x=373;y=188;)
+MOVE(gadget=AviRender1;x=443;y=329;)
+MOVE(gadget=VideoNegative1;x=153;y=271;)
+MOVE(gadget=VideoFlip1;x=160;y=366;)
+MOVE(gadget=AviCapture1;x=59;y=231;)
+FLOATWND(name=Float\bwindow\b1;x=1645;y=807;w=764;h=567;Selected=FRender1;)
+GRAPHVIEW(name=GraphView;x=0.00946074;y=0.0150602;w=0.849574;h=0.796185;x_view_off=0;y_view_off=0;scale=0.620921;Viewed=0;)
+SHSTUDIOVIEW(name=SHStudioView;x=898;y=65;w=1269;h=1296;)
+END_VIEW_SECTION
+

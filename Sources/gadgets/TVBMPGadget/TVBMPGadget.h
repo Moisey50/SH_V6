@@ -1,0 +1,15 @@
+// TVBMPGadget.h : main header file for the TVBMPGADGET DLL
+//
+
+#if !defined(AFX_TVBMPGADGET_H__DC605992_A50D_4D08_8232_32551CCEB0BC__INCLUDED_)
+#define AFX_TVBMPGADGET_H__DC605992_A50D_4D08_8232_32551CCEB0BC__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+#include "resource.h"		// main symbols
+
+extern char TVDB400_PLUGIN_NAME[APP_NAME_MAXLENGTH];
+
+#endif // !defined(AFX_TVBMPGADGET_H__DC605992_A50D_4D08_8232_32551CCEB0BC__INCLUDED_)

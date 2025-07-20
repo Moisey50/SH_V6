@@ -1,0 +1,31 @@
+ControlPinTester ControlPinTester1(Name=_inplace;)
+GenericCapture OUT_BY_ID_ON(Name=_inplace;Message=Quantity\e13\s;Attributes=;Label=on;NoSync=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=11;IgnoreInConnect=0;)
+GenericCapture OUT_BY_ID_OFF(Name=_inplace;Message=Quantity\e13\s;Attributes=;Label=off;NoSync=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=11;IgnoreInConnect=0;)
+GenericCapture OUT_BY_MASK_TOGGLE(Name=_inplace;Message=TextData\e0xffff\s;Attributes=;Label=toggle;NoSync=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+GenericCapture OUT_BY_IDs_TOGGLE(Name=_inplace;Message=TextData\e0\\s2\\s15\s;Attributes=;Label=toggle;NoSync=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+GenericCapture OUT_BY_MASK_ON(Name=_inplace;Message=TextData\e0xffff\s;Attributes=;Label=on;NoSync=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+GenericCapture OUT_BY_MASK_OFF(Name=_inplace;Message=TextData\e0xffff\s;Attributes=;Label=off;NoSync=0;SetRegistered=0;Manual=1;Replace=0;FrameRate=25;DataType=3;IgnoreInConnect=0;)
+Phidget_0_16_16 Phidget_0_16_161(_OUTPUTMODE=1;Phidget_Device=-1;Input_State_As_Mask=false;Output_State_As_Mask=false;Output_Cmmnd_As_Mask=false;_GADGET_OUTPUT1=Name\eI/OState\s;_GADGET_INPUT1=Name\eDigitalInput\s;_GADGET_DUPLEX1=Name\eDuplexName1\s;)
+TextRender TextRender1(Name=_inplace;)
+
+Connect(ControlPinTester1<>0,Phidget_0_16_161<>0)
+Connect(OUT_BY_ID_ON>>0,Phidget_0_16_161<<0)
+Connect(OUT_BY_ID_OFF>>0,Phidget_0_16_161<<0)
+Connect(OUT_BY_MASK_TOGGLE>>0,Phidget_0_16_161<<0)
+Connect(OUT_BY_IDs_TOGGLE>>0,Phidget_0_16_161<<0)
+Connect(OUT_BY_MASK_ON>>0,Phidget_0_16_161<<0)
+Connect(OUT_BY_MASK_OFF>>0,Phidget_0_16_161<<0)
+Connect(Phidget_0_16_161>>0,TextRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Phidget_0_16_161;x=799;y=33;)
+MOVE(gadget=OUT_BY_MASK_TOGGLE;x=7;y=22;)
+MOVE(gadget=ControlPinTester1;x=1295;y=293;)
+MOVE(gadget=TextRender1;x=1285;y=22;)
+MOVE(gadget=OUT_BY_MASK_ON;x=10;y=372;)
+MOVE(gadget=OUT_BY_MASK_OFF;x=8;y=446;)
+MOVE(gadget=OUT_BY_IDs_TOGGLE;x=13;y=549;)
+MOVE(gadget=OUT_BY_ID_ON;x=458;y=549;)
+MOVE(gadget=OUT_BY_ID_OFF;x=907;y=547;)
+END_VIEW_SECTION
+

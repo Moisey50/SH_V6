@@ -1,0 +1,17 @@
+CaptureTimer CaptureTimer1(FrameRate=1;FramePeriod_msec=1000;NSendOnStart=0;)
+Knob Knob1(Name=_inplace;ButtonName=Press\bme!;Value=;Mode=0;)
+SensorGadget SensorGadget1(_OUTPUTMODE=1;_GADGET_OUTPUT1=Name\eAngleSpeed\s;_GADGET_INPUT1=Name\eCoordinates\s;)
+TextRender TextRender1(Name=_inplace;ViewLabel=0;ViewTiming=0;)
+
+Connect(CaptureTimer1>>0,SensorGadget1<<0)
+Connect(Knob1>>0,SensorGadget1<<0)
+Connect(SensorGadget1>>0,TextRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=SensorGadget1;x=174;y=162;)
+MOVE(gadget=Knob1;x=55;y=193;)
+MOVE(gadget=CaptureTimer1;x=70;y=60;)
+MOVE(gadget=TextRender1;x=359;y=33;)
+GRAPHVIEW(name=GraphView;x=0.00234192;y=0.0055325;w=0.858899;h=0.666667;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

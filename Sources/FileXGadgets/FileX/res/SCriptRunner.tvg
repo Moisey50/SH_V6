@@ -1,0 +1,11 @@
+TextCaptureCtrl TextCaptureCtrl1(Name=_inplace;Text=i\e10\s;Quantity=0;NoSync=0;Manual=1;FrameRate=1;FramePeriod_ms=1000.00;SendOnStart=0;StringSeparate=0;Loop=0;FileName=;)
+ScriptRunner ScriptRunner1(Path=C:\\Graph\\Script.cpp;NumOfOutPins=1;)
+
+Connect(TextCaptureCtrl1>>0,ScriptRunner1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=ScriptRunner1;x=392;y=199;)
+MOVE(gadget=TextCaptureCtrl1;x=109;y=182;)
+GRAPHVIEW(name=GraphView;x=0.00304414;y=0.0045977;w=0.777017;h=0.663218;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

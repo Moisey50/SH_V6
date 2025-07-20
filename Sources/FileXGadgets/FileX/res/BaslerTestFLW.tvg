@@ -1,0 +1,50 @@
+Basler Basler4(Camera=40279804;StreamState=0;Format=17301505;Shutter_us=5000;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=0;Trig_Selector=3;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Frame_rate=100;ROI=8,8,1920,1200;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line3=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=Off;TimerDuration_=9;TimerDelay_=0;);
+Timer2=(TimerTriggerSource_=Off;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=8.99888;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+Basler Basler5(Camera=40282730;StreamState=0;Format=17301505;Shutter_us=4530;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=0;Trig_Selector=3;Trigger_mode=0;Trigger_source=0;FireSoftTrigger=0;Trigger_delay_us=0;Frame_rate=30;ROI=8,8,1920,1200;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);
+Line3=(LineMode_=Input;LineSource_=Off;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=Off;TimerDuration_=1;TimerDelay_=0;);
+Timer2=(TimerTriggerSource_=Off;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=0.999875;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+Basler Basler2(Camera=23126391;StreamState=0;Format=17301513;Shutter_us=10000;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=1;Trig_Selector=1;Trigger_mode=0;Trigger_source=1;Trigger_delay_us=0;Trigger_activate=0;Frame_rate=56.9995;ROI=0,0,3088,2064;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);
+Line3=(LineMode_=Input;LineInverter_=0;);
+Line4=(LineMode_=Input;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureStart;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=10;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+Basler Basler3(Camera=-1;)
+Basler Basler1(Camera=22213456;StreamState=0;Format=17301505;Shutter_us=2480;Gain_dBx10=0;Brightness=0;Gamma=1;ExposureMode=1;Trig_Selector=1;Trigger_mode=0;Trigger_source=1;Trigger_delay_us=0;Trigger_activate=0;Frame_rate=69.9986;ROI=0,0,3088,2064;
+Line1=(LineMode_=Input;LineInverter_=0;);
+Line2=(LineMode_=Output;LineSource_=UserOutput1;LineInverter_=0;);
+Line3=(LineMode_=Input;LineInverter_=0;);
+Line4=(LineMode_=Input;LineInverter_=0;);LineSelect=0;LineInvert=0;
+Timer1=(TimerTriggerSource_=ExposureStart;TimerDuration_=10;TimerDelay_=0;);TimerSelect=0;TimerDelay_us=0;TimerDuration_us=10;TimerTrigger=0;OutputSelector=0;OutputValue=0;UserSetSelect=0;SaveSettings=0;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+FRender FRender1(Name=Float\bwindow\b1;Monochrome=0;offset=0,0;Scale=0;LineSelection=0;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0\b-\b0x40CC0\b\bOwn;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=0.862600,um;SaveImagesDir=;)
+FLWRender FLWRender1(filename=N:\\FLW_Test\\%x_%X.flw;DoLog=0;)
+
+Connect(Basler4>>0,FLWRender1<<0)
+Connect(Basler5>>0,FLWRender1<<0)
+Connect(Basler2>>0,FLWRender1<<0)
+Connect(Basler1>>0,RenderFrameRate1<<0)
+Connect(Basler1>>0,FRender1<<0)
+Connect(Basler1>>0,FLWRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Basler1;x=24;y=11;)
+MOVE(gadget=RenderFrameRate1;x=331;y=61;)
+MOVE(gadget=FRender1;x=373;y=188;)
+MOVE(gadget=FLWRender1;x=367;y=270;)
+MOVE(gadget=Basler2;x=32;y=127;)
+MOVE(gadget=Basler3;x=-127;y=104;)
+MOVE(gadget=Basler4;x=32;y=256;)
+MOVE(gadget=Basler5;x=30;y=395;)
+FLOATWND(name=Float\bwindow\b1;x=1645;y=807;w=764;h=567;Selected=FRender1;)
+GRAPHVIEW(name=GraphView;x=0.0113529;y=0.0170683;w=0.846736;h=0.793173;x_view_off=0;y_view_off=0;scale=1.1;Viewed=0;)
+SHSTUDIOVIEW(name=SHStudioView;x=898;y=65;w=1269;h=1296;)
+END_VIEW_SECTION
+

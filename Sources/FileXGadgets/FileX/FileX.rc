@@ -1,0 +1,187 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FileX.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_POLY_SETUP_DLG DIALOG DISCARDABLE  0, 0, 286, 121
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Polytransformation setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,172,100,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,229,100,50,14
+    LTEXT           "ax:",IDC_STATIC,14,21,10,8
+    EDITTEXT        IDC_AX,26,19,24,14,ES_AUTOHSCROLL
+    LTEXT           "bx:",IDC_STATIC,56,21,10,8
+    EDITTEXT        IDC_BX,70,19,24,14,ES_AUTOHSCROLL
+    LTEXT           "cx:",IDC_STATIC,99,21,10,8
+    EDITTEXT        IDC_CX,112,19,24,14,ES_AUTOHSCROLL
+    LTEXT           "dx:",IDC_STATIC,144,21,10,8
+    EDITTEXT        IDC_DX,157,19,24,14,ES_AUTOHSCROLL
+    LTEXT           "ex:",IDC_STATIC,187,21,10,8
+    EDITTEXT        IDC_EX,199,19,24,14,ES_AUTOHSCROLL
+    LTEXT           "fx:",IDC_STATIC,232,21,8,8
+    EDITTEXT        IDC_FX,243,19,24,14,ES_AUTOHSCROLL
+    GROUPBOX        "X = ax*x^2+bx*x*y+cx*y^2+dx*x+ex*y+fx",IDC_STATIC,7,7,
+                    272,32
+    LTEXT           "ay:",IDC_STATIC,14,58,10,8
+    EDITTEXT        IDC_AY,26,57,24,14,ES_AUTOHSCROLL
+    LTEXT           "by:",IDC_STATIC,56,58,10,8
+    EDITTEXT        IDC_BY,70,57,24,14,ES_AUTOHSCROLL
+    LTEXT           "cy:",IDC_STATIC,99,58,10,8
+    EDITTEXT        IDC_CY,112,57,24,14,ES_AUTOHSCROLL
+    LTEXT           "dy:",IDC_STATIC,144,58,10,8
+    EDITTEXT        IDC_DY,157,57,24,14,ES_AUTOHSCROLL
+    LTEXT           "ey:",IDC_STATIC,187,58,10,8
+    EDITTEXT        IDC_EY,199,57,24,14,ES_AUTOHSCROLL
+    LTEXT           "fy:",IDC_STATIC,232,58,8,8
+    EDITTEXT        IDC_FY,243,57,24,14,ES_AUTOHSCROLL
+    GROUPBOX        "Y = ay*x^2+by*x*y+cy*y^2+dy*x+ey*y+fy",IDC_STATIC,7,44,
+                    272,32
+    PUSHBUTTON      "Load....",IDC_LOAD,114,100,50,14
+    LTEXT           "xC:",IDC_STATIC,13,83,11,8
+    EDITTEXT        IDC_XC,27,80,24,14,ES_AUTOHSCROLL
+    LTEXT           "yC:",IDC_STATIC,61,83,11,8
+    EDITTEXT        IDC_YC,74,80,24,14,ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 6,0,0,1
+PRODUCTVERSION 6,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "File X Ltd.\0"
+            VALUE "FileDescription", "FileX DLL\0"
+            VALUE "FileVersion", "6.0.0.1\0"
+            VALUE "InternalName", "FileX\0"
+            VALUE "LegalCopyright", "Copyright (C) File X Ltd. 2008-2023\0"
+            VALUE "LegalTrademarks", "Trademark (R) File X Ltd. 2008\0"
+            VALUE "OriginalFilename", "FileX.DLL\0"
+            VALUE "ProductName", "FileX Dynamic Link Library\0"
+            VALUE "ProductVersion", "6.0.0.1\0"
+            VALUE "Comments", "Gadgets coloring, Ports, Tecto, MPP, Iscar\0"
+            VALUE "PrivateBuild", "File X Ltd.\0"
+            VALUE "SpecialBuild", "File X Ltd.\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+IDR_ColorExtractHelp      MHTML                    "res\\ColorExtract.mht"
+#endif    // !_MAC
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\FileX.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

@@ -1,0 +1,22 @@
+MatVis MatVis2(Camera=205330;StreamState=0;PixelFormat=4;AcqMode=0;FrameRate=\b\b\b5.00;Shutt_uS=3385;Gain_dBx10=40;ROI=0,0,1024,1024;Grab=-1;TriggerMode=0;TriggerSource=0;TriggerDelay=0;Tr.Polarity=0;BinHor=0;BinVert=0;DecimHor=1;DecimVert=1;)
+MatVis MatVis1(Camera=205320;StreamState=0;PixelFormat=4;AcqMode=0;FrameRate=\b\b\b7.00;Shutt_uS=1228;Gain_dBx10=40;ROI=0,0,512,512;Grab=-1;TriggerMode=0;TriggerSource=0;TriggerDelay=0;Tr.Polarity=0;BinHor=0;BinVert=0;DecimHor=1;DecimVert=1;)
+RenderFrameRate RenderFrameRate2(Name=_inplace;)
+RenderFrameRate RenderFrameRate1(Name=_inplace;)
+FRender FRender2(Name=_inplace;Monochrome=0;offset=0,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;)
+FRender FRender1(Name=_inplace;Monochrome=0;offset=0,0;Scale=0;LineSelection=true;RectSelection=true;CutOverlap=0;ViewRGB=false;hTargetWindow=0x0;Id=0;ObjectSelection=1;ShowLabel=1;Scale&Units=1.000000,pix;)
+
+Connect(MatVis2>>0,RenderFrameRate2<<0)
+Connect(MatVis2>>0,FRender2<<0)
+Connect(MatVis1>>0,RenderFrameRate1<<0)
+Connect(MatVis1>>0,FRender1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=MatVis1;x=131;y=145;)
+MOVE(gadget=MatVis2;x=196;y=333;)
+MOVE(gadget=RenderFrameRate1;x=349;y=48;)
+MOVE(gadget=RenderFrameRate2;x=354;y=164;)
+MOVE(gadget=FRender1;x=490;y=19;)
+MOVE(gadget=FRender2;x=496;y=290;)
+GRAPHVIEW(name=GraphView;x=0.00688468;y=0.010989;w=0.787435;h=0.861264;Viewed=0;)
+END_VIEW_SECTION
+

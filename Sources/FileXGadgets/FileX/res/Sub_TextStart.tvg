@@ -1,0 +1,19 @@
+Complex Block1({TextCaptureCtrl TextCaptureCtrl1(Name=_inplace;Text=Start\bTest;Quantity=0;NoSync=1;Manual=1;FrameRate=1;SendOnStart=1;StringSeparate=0;Loop=0;FileName=;)
+Delay Delay1(Delay=10;)
+
+Connect(TextCaptureCtrl1>>0,Delay1<<0)
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=TextCaptureCtrl1;x=210;y=140;)
+MOVE(gadget=Delay1;x=409;y=179;)
+GRAPHVIEW(name=GraphView;x=0.443155;y=0.0525114;w=0.396172;h=0.638128;x_view_off=0;y_view_off=0;scale=1;Viewed=1;)
+END_VIEW_SECTION
+
+})
+
+
+BEGIN_VIEW_SECTION
+MOVE(gadget=Block1;x=335;y=102;)
+GRAPHVIEW(name=GraphView;x=0.00348028;y=0.00684932;w=0.37587;h=0.6621;x_view_off=0;y_view_off=0;scale=1;Viewed=0;)
+END_VIEW_SECTION
+

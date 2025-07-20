@@ -1,0 +1,122 @@
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r">
+<link rel="stylesheet" type="text/css" href="1001.css">
+<title>The computer vision application development workbench. Gadget.
+</title>
+</head>
+
+<body>
+
+<table width="100%" id="table1" class="pagelike">
+	<tr>
+		<th class="pg"><span lang="en-us">TVDB</span>400<span lang="en-us"> - 
+		The computer vision application development workbench. Gadget.</span></th>
+	</tr>
+	<tr>
+		<td height="113">
+		<form id="aspnetForm" name="aspnetForm" method="post" action="http://msdn.microsoft.com/en-us/library/ms899747.aspx">
+			<div class="resizableArea" id="ctl00_LibFrame_ra1">
+				<div class="rightSection" id="ctl00_LibFrame_raRight" onkeyup=" ra_keyPress(window.event?window.event:event, &quot;ctl00_LibFrame_raSplitter&quot;,&quot;ctl00_LibFrame_raLeft&quot;)">
+					<div id="mainSection">
+						<div id="mainBody">
+							<div class="topic">
+								<div id="nstext" valign="bottom">
+&nbsp;<p><span lang="en-us">Gadgets</span> are the basic building
+									<span lang="en-us">elements</span> of
+									<span lang="en-us">TVDB400</span>.
+									<span lang="en-us">TVDB400</span> separates 
+									the data<span lang="en-us"> </span>
+									processing into discrete steps, and a
+									<span lang="en-us">gadget</span> represents 
+									one processing step.<span lang="en-us"> It 
+									can be quite simple or rather complex.</span> 
+									This <span lang="en-us">allows</span> 
+									applications to perform many different kinds 
+									of operations on <span lang="en-us">a </span>
+									different <span lang="en-us">types of data</span>. 
+									Although each of these <span lang="en-us">
+									Gadgets</span> does something very unique 
+									internally, from the point of view of an 
+									application, each <span lang="en-us">has 
+									same structure. The main unit of most 
+									gadgets is thread which call appointed 
+									function for data processing. So, for 
+									implementation new gadget is enough to 
+									define processing data type for input or/and 
+									output and implement data processing 
+									function. That allows significantly decrease 
+									time required for development new gadget.
+									</span></p>
+									<p>All <span lang="en-us">TVDB400</span>
+									<span lang="en-us">gadgets</span>
+									<span lang="en-us">can be divided</span> 
+									into one of these three categories: capture
+									<span lang="en-us">gadgets</span>, transform
+									<span lang="en-us">gadgets</span>, and 
+									renderer <span lang="en-us">gadgets</span>.</p>
+<p><img border="0" src="GIFS/10111.gif" width="626" height="340"></p>
+									<h4 class="dtH4"><span lang="en-us">Capture</span> <span lang="en-us">
+									Gadgets</span></h4>
+									<p>Capture gadgets present the data for 
+									processing. They may get it from a file on a 
+									hard disk, or they may get it from a &quot;live&quot; 
+									capture such as a <span lang="en-us">TV 
+									camera, ADC, GPS etc</span>. Some capture 
+									gadgets simply pass on the raw data to a 
+									parser or splitter gadget, while other 
+									capture gadgets also perform the parsing step 
+									themselves. <span lang="en-us">Some of the 
+									capture gadgets has additional input 
+									connectors for synchronization. Usually,&nbsp; 
+									the implementation class for capture gadget 
+									is derived from class
+									<a href="capturegadget.htm">CCaptureGadget</a>.</span></p>
+									<h4 class="dtH4">Transform
+									<span lang="en-us">Gadgets</span></h4>
+									<p>Transform gadgets accept either raw or 
+									partially processed data and process it 
+									further before passing it on. There are many 
+									types of transform gadgets
+									<span lang="en-us">- the types of input and 
+									output data can vary, some kind filters just 
+									make another representation of the same data 
+									type, for example - invert image to 
+									negative, another gives different type of 
+									the data on the output - for example: some 
+									kind of motion detectors can gives in an 
+									output set of rectangles as data frame. For 
+									transform gadget development use class
+									<a href="filtergadget.htm">CFilterGadget</a> 
+									as base class. </span> </p>
+									<h4 class="dtH4">Renderer <span lang="en-us">
+									Gadgets</span></h4>
+									<p>Renderer gadgets generally accept 
+									<span lang="en-us">result</span> data and 
+									<span lang="en-us">render it to </span>some external 
+									<span lang="en-us">or internal </span>
+									device. <span lang="en-us">That can be some 
+									displaying devices, that can be or file 
+									storage or database. The only difference of 
+									render gadget from another gadgets is that 
+									it has only input connectors. The class for 
+									renderer gadget implementation usually is 
+									derived from class
+									<a href="rendergadget.htm">CRenderGadget</a>.</span></p>
+<p><span lang="en-us">&nbsp;</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<p>&nbsp;</p>
+		</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

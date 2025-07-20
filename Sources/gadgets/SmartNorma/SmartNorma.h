@@ -1,0 +1,15 @@
+// SmartNorma.h : main header file for the SMARTNORMA DLL
+//
+
+#if !defined(AFX_SMARTNORMA_H__F0CA8AEA_0A54_44EE_9F7A_CBF6E180D42F__INCLUDED_)
+#define AFX_SMARTNORMA_H__F0CA8AEA_0A54_44EE_9F7A_CBF6E180D42F__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+#include "resource.h"		// main symbols
+
+extern char TVDB400_PLUGIN_NAME[APP_NAME_MAXLENGTH];
+
+#endif // !defined(AFX_SMARTNORMA_H__F0CA8AEA_0A54_44EE_9F7A_CBF6E180D42F__INCLUDED_)

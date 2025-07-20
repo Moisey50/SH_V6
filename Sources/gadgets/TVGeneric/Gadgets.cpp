@@ -1,0 +1,15 @@
+// Gadgets.cpp: implementation of the Gadgets class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "Gadgets.h"
+#include "TVGeneric.h"
+
+IMPLEMENT_RUNTIME_GADGET_EX(Delay, CFilterGadget, LINEAGE_DIAGNOSTIC, TVDB400_PLUGIN_NAME);
+IMPLEMENT_RUNTIME_GADGET_EX(RenderID, CRenderGadget, LINEAGE_DIAGNOSTIC, TVDB400_PLUGIN_NAME);
+IMPLEMENT_RUNTIME_GADGET_EX(ChangeID, CFilterGadget, LINEAGE_GENERIC, TVDB400_PLUGIN_NAME);
+IMPLEMENT_RUNTIME_GADGET_EX(RenderFrameRate, CRenderGadget, LINEAGE_DIAGNOSTIC, TVDB400_PLUGIN_NAME);
+IMPLEMENT_RUNTIME_GADGET_EX(RenderContainer, CRenderGadget, LINEAGE_DIAGNOSTIC, TVDB400_PLUGIN_NAME);
+IMPLEMENT_RUNTIME_GADGET_EX( Meas_dT , CFilterGadget , LINEAGE_DIAGNOSTIC , TVDB400_PLUGIN_NAME );
+//IMPLEMENT_RUNTIME_GADGET_EX(SerializeTest, CFilterGadget, LINEAGE_DIAGNOSTIC, TVDB400_PLUGIN_NAME);

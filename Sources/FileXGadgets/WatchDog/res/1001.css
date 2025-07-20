@@ -1,0 +1,83 @@
+ODY 
+{
+	background-color: #EEEEFF;
+	margin: 2; padding: 0;
+	FONT-SIZE: 10pt;
+	COLOR: #112288;
+	FONT-FAMILY: Verdana;
+}
+
+TABLE
+{
+     FONT-SIZE: 10pt; 
+     FONT-FAMILY: Verdana;
+     BACKGROUND: #EEEEFF;
+     text-indent: 0; 
+}
+
+TABLE.pagelike 
+{
+     FONT-SIZE: 10pt; 
+     FONT-FAMILY: Verdana;
+     BACKGROUND: #EEEEFF;
+     text-indent: 0; 
+}
+
+P
+{
+	margin: 10;
+	text-align: justify;
+}
+
+h5
+{
+	FONT-SIZE: 10pt; 
+	margin: 0; padding: 0;
+}
+
+TABLE.people 
+{
+     FONT-SIZE: 8pt; 
+     COLOR: #112288; 
+     FONT-FAMILY: Verdana;
+     BACKGROUND: #E0E0F0;
+}
+
+TR
+{
+     vertical-align: top;
+     padding-left: 10;
+     text-align: left;
+}
+
+TH.pg
+{
+    margin: 5; padding:5;
+    FONT-SIZE: 12pt; 
+    COLOR: #FFFFFF; 
+    BACKGROUND: #112288;
+	text-align:left;    
+}
+
+A
+{ 
+	COLOR: #112288;
+	font-weight: bold;
+	text-decoration: underline; 
+}
+
+A:hover 
+{
+	COLOR: #2244FF;
+	font-weight: bold;
+	text-decoration: underline; 
+}
+
+p.codetext
+{
+	BACKGROUND: #EEEEFF;
+	margin: 6; padding-left: 60;
+	FONT-SIZE: 10pt;
+	COLOR: #112288;
+	FONT-FAMILY: monospace;
+}

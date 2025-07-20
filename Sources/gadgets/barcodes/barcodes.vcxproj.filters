@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{abc75e84-a57b-4c01-9f59-877a71af7c61}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0ede0a68-89c1-4823-8486-7b8e7f55c308}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{26f76e83-aabf-45ed-b8dd-2d9831c39e97}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\GIFS">
+      <UniqueIdentifier>{f6dc9065-845e-480e-a34d-557b49b034c9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="barcodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Code128Reader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Code39.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataMarixReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\imageproc\recognition\MatrixReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\imageproc\recognition\mtrxrd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\imageproc\recognition\MxReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UPCReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\imageproc\recognition\mtrxDecode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\barcodes.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\1001.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10000.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10001.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10002.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\10003.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="barcodes.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="barcodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Code128Reader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Code39.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataMarixReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UPCReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\imageproc\recognition\matrixreader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\imageproc\recognition\mtrxDecode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\imageproc\recognition\mtrxrd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\imageproc\recognition\mxreader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\imageproc\recognition\decode39.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\imageproc\recognition\decode128.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\imageproc\recognition\decodeupc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\imageproc\recognition\htriggerbin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\GIFS\1000.gif">
+      <Filter>Resource Files\GIFS</Filter>
+    </Image>
+    <Image Include="res\GIFS\1001.gif">
+      <Filter>Resource Files\GIFS</Filter>
+    </Image>
+    <Image Include="res\GIFS\1002.gif">
+      <Filter>Resource Files\GIFS</Filter>
+    </Image>
+    <Image Include="res\GIFS\1003.gif">
+      <Filter>Resource Files\GIFS</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
