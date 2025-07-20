@@ -60,31 +60,32 @@ inline int GetArray( const FXString& AsString , TCHAR cType , int iMaxNItems , v
     case 'u':
     case 'x':
     {
-      FXSIZE * pInt = (FXSIZE*) pArray ;
-      int iVal ;
+      int32_t * pInt = ( int32_t*) pArray ;
       do
       {
         Token = AsString.Tokenize( _T( " \t\n\r,;:" ) , iPos ) ;
         if ( Token.IsEmpty() )
           return iItemCnt ;
         int iRes = 0 ;
+        int32_t iVal ;
+        uint32_t uiVal ;
         switch ( cType )
         {
           case 'd':
           case 'i':
             iRes = sscanf_s( Token , "%d" , &iVal ) ;
-            if ( iRes && (iItemCnt < iMaxNItems) )
+            if ( iRes && ( iItemCnt < iMaxNItems ) )
               pInt[ iItemCnt ] = iVal ;
             break ;
           case 'u':
-            iRes = sscanf_s( Token , "%u" , &iVal ) ;
-            if ( iRes && (iItemCnt < iMaxNItems) )
-              pInt[ iItemCnt ] = iVal ;
+            iRes = sscanf_s( Token , "%u" , &uiVal ) ;
+            if ( iRes && ( iItemCnt < iMaxNItems ) )
+              pInt[ iItemCnt ] = uiVal ;
             break ;
           case 'x':
-            iRes = sscanf_s( Token , "%x" , &iVal ) ;
+            iRes = sscanf_s( Token , "%x" , &uiVal ) ;
             if ( iRes && (iItemCnt < iMaxNItems) )
-              pInt[ iItemCnt ] = iVal ;
+              pInt[ iItemCnt ] = uiVal ;
             break ;
         }
         iItemCnt++ ;

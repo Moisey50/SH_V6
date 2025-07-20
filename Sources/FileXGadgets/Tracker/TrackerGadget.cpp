@@ -6,6 +6,8 @@
 #include "math\intf_sup.h"
 #include "TrackerGadget.h"
 
+#define THIS_MODULENAME ("Tracker")
+
 //
 //using namespace cv;
 IMPLEMENT_RUNTIME_GADGET_EX(TrackerGadget, CFilterGadget, "Matchers", TVDB400_PLUGIN_NAME);
@@ -15,7 +17,6 @@ const char* TrackerGadget::pList = "CV_TM_SQDIFF;CV_TM_SQDIFF_NORMED;CV_TM_CCORR
 TrackerGadget::TrackerGadget()
 {
 	m_pContainer = NULL;
-	m_pOutput = new COutputConnector(vframe * text);
 
 	FXPropertyKit pk;
 	FXString text;
@@ -31,9 +32,51 @@ TrackerGadget::TrackerGadget()
 	m_cdTrackPt.x = m_cdTrackPt.y = -1;
 	m_dMaxAllowedPattern = 0.99;
 	m_dMaxAllowedView = 0.5;
+  m_sPO = "PO-Unknown";
 	m_sMatchMethod = "CV_TM_CCORR";
 
 	init();
+  FXRegistry Reg( "TheFileX\\FindObjects" );
+//   Reg.GetRegiCmplx( "Parameters" , "SaveFragmentSize" , m_SaveFragmentSize ,
+//     cmplx( 300. , 300. ) );
+  m_sDataDir = Reg.GetRegiString( _T("DataLocation") , _T( "MainDir" ) , _T( "e:/FindObjects" ) ) ;
+  if ( FxVerifyCreateDirectory( m_sDataDir ) )
+    SENDERR( "Can't create directory %s" , ( LPCTSTR ) m_sDataDir ) ;
+  m_sPatternsDir = Reg.GetRegiString( _T( "DataLocation" ) , _T( "PatternsDir" ) , _T( "/Patterns" ) );
+  m_sPatternsDir = m_sDataDir + m_sPatternsDir + _T('/') ;
+  if ( FxVerifyCreateDirectory( m_sPatternsDir ) )
+    SENDERR( "Can't create directory %s" , ( LPCTSTR ) m_sPatternsDir ) ;
+  m_sPartID = Reg.GetRegiString( _T( "LastMeasurement" ), _T( "LastPart" ) , _T( "" ) );
+  m_sPO = Reg.GetRegiString( _T( "LastMeasurement" ) , _T( "LastOrder" ) , m_sPO );
+  m_iMeasurementExposure_us = Reg.GetRegiInt( _T( "LastMeasurement" ) , _T( "MeasExp_us" ) ,
+    m_iMeasurementExposure_us );
+
+}
+
+
+void TrackerGadget::ConfigParamChange( 
+  LPCTSTR pName , void* pObject , bool& bInvalidate , bool& bInitRescan )
+{
+  TrackerGadget* pGadget = ( TrackerGadget* ) pObject;
+  if ( pGadget )
+  {
+    if ( !_tcsicmp( pName , _T( "ActivePatterns" ) ) )
+    {
+      pGadget->m_DataUpdateLock.Lock( INFINITE , _T("ConfigParamChange") ) ;
+      pGadget->m_NewActiveIndexes.clear() ;
+      FXSIZE iPos = 0 ;
+      FXString Token = pGadget->m_sActivePatternsAsText.Tokenize( " ,;\t" , iPos ) ;
+      while( !Token.IsEmpty() )
+      {
+        int iNextIndex = atoi( ( LPCTSTR ) Token ) ;
+        if ( iNextIndex > 0 )
+          pGadget->m_NewActiveIndexes.push_back( iNextIndex ) ;
+
+        Token = pGadget->m_sActivePatternsAsText.Tokenize( " ,;\t" , iPos ) ;
+      }
+      pGadget->m_DataUpdateLock.Unlock() ;
+    }
+  }
 }
 
 cv::Mat TrackerGadget::ConvertVideoFrameToCvMat(const CVideoFrame* pVideoFrame)
@@ -49,12 +92,56 @@ cv::Mat TrackerGadget::ConvertVideoFrameToCvMat(const CVideoFrame* pVideoFrame)
 	Img.step = pVideoFrame->lpBMIH->biWidth;// 640/*1920*/;
 	Img.step.buf[1] = 1;
 	Img.data = (uchar*)malloc(memsize);
-	memset(Img.data, 0, memsize);
+	//memset(Img.data, 0, memsize);
 	memcpy(Img.data, pVideoFrame->lpBMIH + 1, memsize);
 
 	//cv::imwrite("e:\\RAWImage.jpg", Img);
 	return Img;
 }
+
+CVideoFrame* TrackerGadget::ConvertCvMatToVideoFrame( const cv::Mat cvImage )
+{
+  if ( ( cvImage.dims != 2 ) || ( cvImage.rows == 0 ) || ( cvImage.cols == 0 ) )
+    return nullptr ;
+
+  int iWidth = ( cvImage.cols & 3 ) ? ( cvImage.cols & ~3 ) + 4 : cvImage.cols ;
+  int iHeight = ( cvImage.rows & 3 ) ? ( cvImage.rows & ~3 ) + 4 : cvImage.rows ;
+  pTVFrame pTVF = makeNewY8Frame( iWidth , iHeight ,
+    ( ( cvImage.cols & 3 ) || ( cvImage.rows & 3 ) ) ? 0 : cvImage.data ) ;
+  if ( pTVF )
+  {
+    int iY = 0 , iRest ;
+    if ( ( cvImage.cols & 3 ) || ( cvImage.rows & 3 ) ) // not *4, needs to copy data by strings
+    {
+      LPBYTE pSrc = cvImage.data , pDest = GetData( pTVF ) ;
+      for ( ; iY < cvImage.rows ; iY++ )
+      {
+        memcpy( pDest , pSrc , cvImage.cols ) ;
+        pSrc += cvImage.step1() ;
+        pDest += cvImage.cols ;
+        iRest = cvImage.cols & 3 ;
+        while ( iRest++ & 3 )
+        {
+          *( pDest++ ) = *( pSrc - 1 ) ;
+        }
+      }
+      iRest = cvImage.rows & 3 ;
+      LPBYTE pLastDest = pDest - iWidth ;
+      while ( iRest++ & 3 )
+      {
+        memcpy( pDest , pLastDest , iWidth ) ;
+        pDest += iWidth ;
+      }
+    }
+    CVideoFrame* pVF = CVideoFrame::Create( pTVF );
+    if ( pVF )
+      return pVF ;
+    else
+      freeTVFrame( pTVF ) ;
+  }
+  return nullptr ;
+}
+
 CDataFrame* TrackerGadget::DoProcessing(const CDataFrame* pDataFrame)
 {
 
@@ -68,35 +155,18 @@ CDataFrame* TrackerGadget::DoProcessing(const CDataFrame* pDataFrame)
 	if (m_bselect_ROI)
 	{
 		m_bselect_ROI = false;
-		cv::Mat tmp = CropROI(cvImg, m_cdTrackPt, m_dRadius, 1);
-		tmp.copyTo(m_template);
-		tmp.release();
+    UpdateTemplateRect( cvImg , m_FutureROI_Rect ) ;
 	}
 
 	double dMatchFactor = 0;	
 	CDPoint cdCenterPoint;
-
-	 cdCenterPoint = TrackTemplateMatching(cvImg, m_template, dMatchFactor);
-
-	 //double dAnotherMatchactor;
-	 //CDPoint pt = TrackKeyPoints(cvImg, m_template, dAnotherMatchactor);
-
-	 m_cdTrackPt = cdCenterPoint;
-
-	//if (m_dFirstMatchCoeff == -1 && dMatchFactor != 0)
-	//{
-	//	m_dFirstMatchCoeff = dMatchFactor;
-	//	dMatchFactor = dMatchFactor / m_dFirstMatchCoeff;
-	//}
-		
-	
-	if (dMatchFactor > m_dMaxAllowedPattern)
+  CDataFrame* pDataFrameOut = NULL ;
+  if ( m_template.dims && m_template.rows && m_template.cols )
 	{
-         cdCenterPoint = GetNextCenter(cdCenterPoint, pDataFrame->GetTime());
-		 UpdateTemplateROI(cvImg, cdCenterPoint);
-	}
+    cv::Mat result;
+    int match_method = cv::TM_CCOEFF_NORMED;
 
-
+    cv::matchTemplate( cvImg , m_template , result , match_method );
 
 	CContainerFrame* resVal;
 	resVal = CContainerFrame::Create();
@@ -105,86 +175,84 @@ CDataFrame* TrackerGadget::DoProcessing(const CDataFrame* pDataFrame)
 	resVal->SetTime(pDataFrame->GetTime());
 	resVal->SetLabel("Results");
 
-	if (dMatchFactor > m_dMaxAllowedView)
+    std::vector<CPoint> cpFiltered ;
+    DoubleVector MaxCorrValues ;
+    CSize RectSize( m_template.cols , m_template.rows ) ;
+    CSize OffFromCent( RectSize.cx / 2 , RectSize.cy / 2 ) ;
+    for ( int y = 0; y < result.rows; ++y )
 	{
-		m_prevCenter = cdCenterPoint;//save for image lost case
-		
-		//Template
-		CFigureFrame* ff = CFigureFrame::Create();
-		ff->Attributes()->WriteString("color", "0xff0000");
-		ff->AddPoint(CDPoint(cdCenterPoint.x - m_dRadius, cdCenterPoint.y - m_dRadius));
-		ff->AddPoint(CDPoint(cdCenterPoint.x + m_dRadius, cdCenterPoint.y - m_dRadius));
-		ff->AddPoint(CDPoint(cdCenterPoint.x + m_dRadius, cdCenterPoint.y + m_dRadius));
-		ff->AddPoint(CDPoint(cdCenterPoint.x - m_dRadius, cdCenterPoint.y + m_dRadius));
-		ff->AddPoint(CDPoint(cdCenterPoint.x - m_dRadius, cdCenterPoint.y - m_dRadius));
-		ff->ChangeId(pDataFrame->GetId());
-		resVal->AddFrame(ff);
-
-		//ROI
-		
-
-		ff = CFigureFrame::Create();
-		ff->Attributes()->WriteString("color", "0x0000FF");
-		ff->AddPoint(CDPoint(cdCenterPoint.x - m_dRadius * m_dTemplateToROICoeff, cdCenterPoint.y - m_dRadius * m_dTemplateToROICoeff));
-		ff->AddPoint(CDPoint(cdCenterPoint.x + m_dRadius * m_dTemplateToROICoeff, cdCenterPoint.y - m_dRadius * m_dTemplateToROICoeff));
-		ff->AddPoint(CDPoint(cdCenterPoint.x + m_dRadius * m_dTemplateToROICoeff, cdCenterPoint.y + m_dRadius * m_dTemplateToROICoeff));
-		ff->AddPoint(CDPoint(cdCenterPoint.x - m_dRadius * m_dTemplateToROICoeff, cdCenterPoint.y + m_dRadius * m_dTemplateToROICoeff));
-		ff->AddPoint(CDPoint(cdCenterPoint.x - m_dRadius * m_dTemplateToROICoeff, cdCenterPoint.y - m_dRadius * m_dTemplateToROICoeff));
-		ff->ChangeId(pDataFrame->GetId());
-		resVal->AddFrame(ff);
-
-
-
-		//ff = CFigureFrame::Create();
-		//ff->Attributes()->WriteString("color", "0xff00FF");
-		//ff->AddPoint(pt);
-		//ff->ChangeId(pDataFrame->GetId());
-		//resVal->AddFrame(ff);
-	}
-	else
+      for ( int x = 0; x < result.cols; ++x )
 	{
-		//cdCenterPoint = m_prevCenter;		
-
-
-		cdCenterPoint = TrackTemplateMatching(cvImg, m_template, dMatchFactor,true);
-		m_cdTrackPt = cdCenterPoint;
-		if (m_dFirstMatchCoeff == -1 && dMatchFactor != 0)
+        CPoint Pt( x , y ) ;
+        double dCorrValue = result.at<float>( y , x ) ;
+        if ( dCorrValue >= m_dThreshold )
 		{
-			m_dFirstMatchCoeff = dMatchFactor;
-			dMatchFactor = dMatchFactor / m_dFirstMatchCoeff;
+          size_t iExisted = 0 ;
+          for (  ; iExisted < cpFiltered.size() ; ++iExisted )
+          {
+            CPoint cpDist = Pt - cpFiltered[ iExisted ] ;
+            if ( (abs( cpDist.x ) < RectSize.cx) && ( abs( cpDist.y ) < RectSize.cy )  )
+            {
+              if ( MaxCorrValues[ iExisted ] < dCorrValue )
+              {       // New point has bigger correlation
+                MaxCorrValues[ iExisted ] = dCorrValue ;
+                cpFiltered[ iExisted ] = Pt ;
+              } // else new point has lower correlation
+              break ;
 		}
-		if (dMatchFactor > m_dMaxAllowedPattern)
+          }
+          if ( iExisted >= cpFiltered.size() )
 		{
-			cdCenterPoint = GetNextCenter(cdCenterPoint, pDataFrame->GetTime());
-			UpdateTemplateROI(cvImg, cdCenterPoint);
+            MaxCorrValues.push_back( dCorrValue ) ;
+            cpFiltered.push_back( Pt ) ;
 		}
 	}
+      }
+    }
+    for ( size_t Index = 0; Index < cpFiltered.size(); ++Index )
+    {
+      CRect ViewRect( cpFiltered[ Index ] , RectSize );
+      CFigureFrame* ff = CreateFigureFrameEx( ViewRect , 0x0000ff , 3 ) ;
+      resVal->AddFrame( ff ) ;
+      cmplx cPt( cpFiltered[ Index ].x + OffFromCent.cx , 
+        cpFiltered[ Index ].y + OffFromCent.cy ) ;
+      CTextFrame* pViewText = CreateTextFrameEx( cPt , 0x0000ff , 
+        10 , "%.3f" , MaxCorrValues[ Index ] );
+      resVal->AddFrame( pViewText ) ;
+    }
 		 
-	m_cdTrackPt = cdCenterPoint;
-	FXString CoordView;
-	CoordView.Format("Match Factor : %6.5f", dMatchFactor);
-	CTextFrame * ViewText = CTextFrame::Create(CoordView);
-	ViewText->ChangeId(pDataFrame->GetId());
-	ViewText->SetTime(pDataFrame->GetTime());
-	resVal->AddFrame(ViewText);
-
+  // 	m_cdTrackPt = cdCenterPoint;
 	//FXString CoordView;
-	CoordView.Format("New Coordinate : x=%6.2f,y=%6.2f", cdCenterPoint.x, cdCenterPoint.y);
-	ViewText = CTextFrame::Create(CoordView);
-	ViewText->ChangeId(pDataFrame->GetId());
-	ViewText->SetTime(pDataFrame->GetTime());
-	resVal->AddFrame(ViewText);
-
-	free(cvImg.data);
-	cvImg.release();
+  // 	CoordView.Format("Match Factor : %6.5f", dMatchFactor);
+  // 	CTextFrame * ViewText = CTextFrame::Create(CoordView);
+  // 	ViewText->ChangeId(pDataFrame->GetId());
+  // 	ViewText->SetTime(pDataFrame->GetTime());
+  // 	resVal->AddFrame(ViewText);
+  // 
+  // 	//FXString CoordView;
+  // 	CoordView.Format("New Coordinate : x=%6.2f,y=%6.2f", cdCenterPoint.x, cdCenterPoint.y);
+  // 	ViewText = CTextFrame::Create(CoordView);
+  // 	ViewText->ChangeId(pDataFrame->GetId());
+  // 	ViewText->SetTime(pDataFrame->GetTime());
+  // 	resVal->AddFrame(ViewText);
 
 	resVal->AddFrame(VideoFrame);
-	m_pOutput->Put(resVal);
+    pDataFrameOut = resVal ;
+    cv::normalize( result , result , 0 , 255 , cv::NORM_MINMAX , CV_8U );
+    CVideoFrame * pVF = ConvertCvMatToVideoFrame( result ) ;
 
+    PutFrame( GetOutputConnector( CORRELATION_OUT_PIN ) , pVF , 100 ) ;
+  }
+  else // no template
+  {
+    ((CDataFrame*)pDataFrame)->AddRef() ;
+    pDataFrameOut = ( ( CDataFrame* ) pDataFrame ) ;
+  }
 
+  free( cvImg.data ) ;
+  cvImg.release();
 
-	CVideoFrame* retV = NULL;
-	return retV;
+  return pDataFrameOut ;
 }
 cv::Rect TrackerGadget::GetRect(CDPoint center, double rad)
 {
@@ -210,89 +278,99 @@ void TrackerGadget::AsyncTransaction(CDuplexConnector* pConnector, CDataFrame* p
 
     TRACE( "%s" , _T( ParamText->GetString() ) );
 
-    if ( ParamText->GetString().Find( "selected" ) == -1 )
-      return;
-
-    if ( ParamText->GetString().Find( "x=" ) > -1 && ParamText->GetString().Find( "y=" ) > -1 )
+    if ( ParamText->GetString().Find( "Rect" ) >= 0 )
     {
-      double x = -1 , y = -1;
-      FXSIZE iTok = 0;
-      FXString fxData = ParamText->GetString().Tokenize( _T( ";" ) , iTok );
-      if ( iTok == -1 )
-        return;
-      //iTok = 0;
-      FXString fxY;
-      FXString fxX = ParamText->GetString().Tokenize( _T( ";" ) , iTok );
-      if ( iTok != -1 )
-        fxY = ParamText->GetString().Tokenize( _T( ";" ) , iTok );
-
-      FXString pt;
-      if ( iTok != -1 )
+      FXPropKit2 Param = ParamText->GetString() ;
+      FXString RectPts ;
+      Param.GetString( "Rect" , RectPts ) ;
+      CRect ROI ;
+      int iNPts = GetArray( RectPts , _T( 'i' ) , 4 , &ROI ) ;
+      if ( iNPts == 4 )
       {
-        iTok = 0;
-        pt = fxX.Tokenize( _T( "=" ) , iTok );
-        if ( iTok != -1 )
-          x = atof( fxX.Tokenize( _T( "=" ) , iTok ) );
-
-        iTok = 0;
-        pt = fxY.Tokenize( _T( "=" ) , iTok );
-        if ( iTok != -1 )
-          y = atof( fxY.Tokenize( _T( "=" ) , iTok ) );
-
-
-        m_cdTrackPt.x = x;
-        m_cdTrackPt.y = y;
-
+        m_FutureROI_Rect = ROI ;
         m_bselect_ROI = true;
         m_dFirstMatchCoeff = -1;
         m_centersArr.RemoveAll();
         m_prevCenter.x = m_prevCenter.y = -1;
+        m_cdTrackPt = CDPoint( ROI.CenterPoint() );
       }
     }
   }
   pParamFrame->Release( pParamFrame );
 };
 
-void TrackerGadget::UpdateTemplateROI(cv::Mat Img, CDPoint center)
+bool TrackerGadget::UpdateTemplateRect(cv::Mat Img, CRect& rect )
 {
 	try
 	{
-		cv::Mat newTemplate = CropROI(Img, m_cdTrackPt, m_dRadius, 1);
+    cv::Mat newTemplate = CropROI( Img , rect );
 		newTemplate.copyTo(m_template);
+    return true ;
 	}
   
   catch ( const char * str )
 	{
-    TRACE( "\n exception in TrackerGadget::UpdateTemplateROI:%s" , str ) ;
+    SENDERR( "TrackerGadget::UpdateTemplateRect - Exception in :%s" , str ) ;
 		int y = *str ;
 	}
-	//cv::imwrite("e:\\NewTemplate.jpg", m_template);	
+  return false ;
 }
 
-void TrackerGadget::PropertiesRegistration()
+bool TrackerGadget::CreateAndSaveTemplate( cv::Mat Img , CRect& rect )
 {	
-	addProperty(SProperty::EDITBOX, _T("MaxAllowedForView"), &m_dMaxAllowedView, SProperty::Double, 0.001, 1000000000);
-	addProperty(SProperty::EDITBOX, _T("MaxAllowedForPattern"), &m_dMaxAllowedPattern, SProperty::Double, 0.001, 100000000);
-	addProperty(SProperty::EDITBOX, _T("Template_pix"), &m_dRadius, SProperty::Double, 5, 400);
-	addProperty(SProperty::EDITBOX, _T("ROI_xToTempl"), &m_dTemplateToROICoeff, SProperty::Double, 1, 100);
-	//addProperty(SProperty::COMBO, _T("MatchMethod"), &m_sMatchMethod, SProperty::String, pList);
-};
+  if ( UpdateTemplateRect( Img , rect ) )
+  {
+    int iFoundIndex = 1 ;
+    for ( ; iFoundIndex <= m_iMaxIndex ; iFoundIndex++ )
+    {
+      size_t i = 0 ;
+      for ( ; i < m_BusyIndexes.size() ; i++ )
+      {
+        if ( m_BusyIndexes[ i ] == iFoundIndex )
+          break ;
+      }
+      if ( i >= m_BusyIndexes.size() )
+        break ;
+    }
+    Template Templ( m_template , m_sPatternName , iFoundIndex ) ;
+    if ( Templ.Save( m_sPatternsDir ) )
+    {
+      if ( m_iMaxIndex < iFoundIndex )
+        m_iMaxIndex ;
 
-void TrackerGadget::ConnectorsRegistration()
+    }
+  }
+  return false ;
+}
+
+void TrackerGadget::UpdateTemplateROI( cv::Mat Img , CDPoint center )
 {
-	addInputConnector( transparent, "Image");
-	addOutputConnector( createComplexDataType(3, rectangle, text, vframe) , "Results");
-	addDuplexConnector( transparent, transparent, "Control");
-};
+  try
+  {
+    cv::Mat newTemplate = CropROI( Img , m_cdTrackPt , m_dRadius , 1 );
+    newTemplate.copyTo( m_template );
+  }
+
+  catch ( const char* str )
+  {
+    TRACE( "\n exception in TrackerGadget::UpdateTemplateROI:%s" , str ) ;
+    int y = *str ;
+  }
+  //cv::imwrite("e:\\NewTemplate.jpg", m_template);	
+}
 
 cv::Mat TrackerGadget::CropROI(const cv::Mat &img ,CDPoint center, double rad ,double sizeCoeff)
 {
 	cv::Rect newRect = GetRect(center, rad * sizeCoeff);
 
-	if (newRect.x < 4) newRect.x = 4;
-	if (newRect.y < 4) newRect.y = 4;
-	if (newRect.y + newRect.height > img.rows - 4) newRect.height = img.rows - newRect.y - 4;
-	if (newRect.x + newRect.width > img.cols - 4) newRect.width = img.cols - newRect.x - 4;
+  if ( newRect.x < 4 )
+    newRect.x = 4;
+  if ( newRect.y < 4 )
+    newRect.y = 4;
+  if ( newRect.y + newRect.height > img.rows - 4 )
+    newRect.height = img.rows - newRect.y - 4;
+  if ( newRect.x + newRect.width > img.cols - 4 )
+    newRect.width = img.cols - newRect.x - 4;
     cv::Mat newImg;
 	if (newRect.height > 4 && newRect.width > 4)
 	{
@@ -303,6 +381,68 @@ cv::Mat TrackerGadget::CropROI(const cv::Mat &img ,CDPoint center, double rad ,d
 
 	return newImg;
 }
+
+cv::Mat TrackerGadget::CropROI( const cv::Mat& img , CRect rect )
+{
+  cv::Rect newRect( rect.left , rect.top , rect.Width() , rect.Height() );
+
+  if ( newRect.x < 4 )
+    newRect.x = 4;
+  if ( newRect.y < 4 )
+    newRect.y = 4;
+  if ( newRect.y + newRect.height > img.rows - 4 )
+    newRect.height = img.rows - newRect.y - 4;
+  if ( newRect.x + newRect.width > img.cols - 4 )
+    newRect.width = img.cols - newRect.x - 4;
+  cv::Mat newImg;
+  if ( newRect.height > 4 && newRect.width > 4 )
+  {
+    newImg = img( newRect );
+    m_ROI_Origin = CDPoint( rect.CenterPoint() ) ;
+    m_TemplateRect = newRect ;
+  }
+
+  return newImg;
+}
+
+
+void TrackerGadget::PropertiesRegistration()
+{	
+  addProperty( SProperty::EDITBOX , _T( "PartID" ) , &m_sPartID ,
+    SProperty::String );
+  addProperty( SProperty::EDITBOX , _T( "MaxAllowedForView" ) , &m_dMaxAllowedView ,
+    SProperty::Double, 0.001, 1000000000);
+	addProperty(SProperty::EDITBOX, _T("MaxAllowedForPattern"), &m_dMaxAllowedPattern, 
+    SProperty::Double, 0.001, 100000000);
+  addProperty( SProperty::EDITBOX , _T( "Template_pix" ) , &m_dRadius ,
+    SProperty::Double , 5 , 400 );
+  addProperty( SProperty::EDITBOX , _T( "Threshold" ) , &m_dThreshold , 
+    SProperty::Double , 0. , 1. );
+  addProperty( SProperty::EDITBOX , _T( "ROI_xToTempl" ) , &m_dTemplateToROICoeff , 
+    SProperty::Double , 1 , 100 );
+  //addProperty(SProperty::COMBO, _T("MatchMethod"), &m_sMatchMethod, SProperty::String, pList);
+  addProperty(SProperty::EDITBOX, _T("ActivePatterns"), &m_sActivePatternsAsText ,
+    SProperty::String );
+  SetChangeNotification( _T( "ActivePatterns" ) , ConfigParamChange , this );
+
+  addProperty( SProperty::EDITBOX , _T( "SizeRange_perc" ) , &m_dSizeRangePercent ,
+    SProperty::Double , 0. , 25. );
+  addProperty( SProperty::EDITBOX , _T( "AngleRange_deg" ) , &m_dAngleRange_deg ,
+    SProperty::Double , 0. , 10. );
+  addProperty( SProperty::SPIN_BOOL , _T( "CurrentPattern#" ) , &m_iCurrentPattern ,
+    SProperty::Int , 0 , m_iLastPattern + 1 );
+  addProperty( SProperty::EDITBOX , _T( "NewPatternName" ) , &m_sPatternName ,
+    SProperty::String );
+
+};
+
+void TrackerGadget::ConnectorsRegistration()
+{
+	addInputConnector( transparent, "Image");
+  addOutputConnector( createComplexDataType( 3 , rectangle , text , vframe ) , "Results" );
+  addOutputConnector( createComplexDataType( 3 , rectangle , text , vframe ) , "Correlation" );
+  addDuplexConnector( transparent , transparent , "Control" );
+};
 CDPoint  TrackerGadget::TrackTemplateMatching(cv::Mat &img, const cv::Mat &templ, double &dMatch, bool bSearchAllImage)
 {
 	if (m_template.data == NULL)
@@ -437,127 +577,39 @@ cv::Mat TrackerGadget::GetEdges(const cv::Mat &img)
 	cv::Canny(img, detected_edges, lowThreshold, lowThreshold*ratio, kernel_size);
 	return detected_edges;
 }
-/*
-CDPoint  TrackerGadget::TrackKeyPoints(cv::Mat &img, const cv::Mat &templ, double &dMatch)
+
+size_t TrackerGadget::LoadTemplates()
 {
-	if (m_template.data == NULL)
-		return CDPoint(-1, -1);
+  namespace fs = std::filesystem;
 
-	//int minHessian = 400;
-	cv::SiftFeatureDetector   detector;
-
-	cv::Mat cropedImg;
-	if (m_cdTrackPt.x != -1 && m_cdTrackPt.y != -1)
+  fs::path dirPath = ( LPCTSTR ) m_sPatternsDir ;
+  Template NewTemplate ;
+  m_Templates.clear() ;
+  m_iMaxIndex = 1 ;
+  try
 	{
-		cropedImg = CropROI(img, m_cdTrackPt, m_dRadius, m_dTemplateToROICoeff);
-		//cropedImg = CropROI(img, m_dTemplateToROICoeff);
-		//cv::imwrite("e:\\templ.jpg", templ);
-		//cv::imwrite("e:\\cropedImg.jpg", cropedImg);		
-	}
-	else
+    for ( const auto& entry : fs::directory_iterator( dirPath ) )
 	{
-		img.copyTo(cropedImg);
-	}
-
-	std::vector<cv::KeyPoint> keypoints_1, keypoints_2;
-	detector.detect(cropedImg, keypoints_1);
-	detector.detect(templ, keypoints_2);
-
-	if (keypoints_1.size() == 0 || keypoints_2.size() == 0)
-		return CDPoint(-1,-1);
-
-	cv::SurfDescriptorExtractor extractor;
-
-	cv::Mat descriptors_1, descriptors_2;
-	extractor.compute(cropedImg, keypoints_1, descriptors_1);
-	extractor.compute(templ, keypoints_2, descriptors_2);
-
-	cv::FlannBasedMatcher matcher;
-	std::vector< cv::DMatch > matches;
-	matcher.match(descriptors_1, descriptors_2, matches);
-
-	double max_dist = 0; double min_dist = 100;
-	//-- Quick calculation of max and min distances between keypoints
-	for (int i = 0; i < descriptors_1.rows; i++)
+      if ( entry.is_regular_file() )
 	{
-		double dist = matches[i].distance;
-		if (dist < min_dist) min_dist = dist;
-		if (dist > max_dist) max_dist = dist;
-	}
 
-	std::vector< cv::DMatch > good_matches;
-	for (int i = 0; i < descriptors_1.rows; i++)
+        if ( NewTemplate.Load( entry.path().string().c_str() ) )
 	{
-		if (matches[i].distance <= max(2 * min_dist, 0.02))
-			good_matches.push_back(matches[i]);
+          m_Templates.push_back( NewTemplate ) ;
+          if ( m_iMaxIndex < NewTemplate.m_iIndex )
+            m_iMaxIndex = NewTemplate.m_iIndex ;
 	}
-
-
-	vector<cv::Point> contours01;
-	vector<cv::Point> contours02;
-	std::vector<cv::KeyPoint>::iterator it;
-	for (int i = 0; i < (int)good_matches.size(); i++)
+        else
 	{
-		int j = good_matches[i].queryIdx;
-		int k = good_matches[i].trainIdx;
-		contours01.push_back(keypoints_1[j].pt);
-		contours02.push_back(keypoints_2[k].pt);
+          SENDERR( "Can't load template %s" , entry.path().c_str() ) ;
 	}
-
-	vector<vector<cv::Point> > contours1;
-	vector<vector<cv::Point> > contours2;
-	contours1.push_back(contours01);
-	contours2.push_back(contours02);
-
-	vector<cv::Moments> mu1(contours1.size());
-	for (int j = 0; j < (int)contours1.size(); j++)
-		mu1[j] = moments(contours1[j], false);
-
-	std::vector<cv::Point>::iterator it1;
-	float dsum1x = 0, dsum1Y = 0;
-	for (it1 = contours01.begin(); it1 != contours01.end(); it1++)
-	{
-		dsum1x += it1->x;
-		dsum1Y += it1->y;
 	}
-	vector<cv::Point2f> mc(2);
-	mc[0] = cv::Point2f(dsum1x / (int)good_matches.size(), dsum1Y / (int)good_matches.size());
-
-	int lx = int(mc[0].x);
-	int ly = int(mc[0].y);
-
-
-	cv::Point matchLoc(-1,-1);
-	matchLoc.x = lx;
-	matchLoc.y = ly;
-
-	//if (min_dist < m_dMaxAllowedPattern)
-	//{
-	//	cv::Rect newRect = cv::Rect((int)matchLoc.x - (int)m_dRadius, (int)matchLoc.y - (int)m_dRadius, 2 * (int)m_dRadius, 2 * (int)m_dRadius);
-	//	if (newRect.x >= 0 && newRect.y >= 0)
-	//	{
-	//		cv::Mat newTemplate = img(newRect);
-	//		newTemplate.copyTo(m_template);
-	//	}
-	//}
-
-	keypoints_1.clear();
-	keypoints_2.clear();
-	good_matches.clear();
-	matches.clear();
-	contours1.clear();
-	contours1.clear();
-	//mu1.clear();
-	//mu2.clear();
-
-	dMatch = min_dist;
-
-	CDPoint matchPt(-1,-1);
-	//if (min_dist < m_dMaxAllowedView)
-	{	
-		matchPt.x = m_ROI_Origin.x +  matchLoc.x;
-		matchPt.y = m_ROI_Origin.y + matchLoc.y;
 	}
-	return matchPt;
+    return m_Templates.size() ;
+  }
+  catch ( const std::filesystem::filesystem_error& e )
+  {
+    SENDERR( "Tracker::TemplatesLoad : Exception %s" , e.what() ) ;
 }
-*/
+  return 0;
+};

@@ -128,6 +128,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
   <Choose>
     <When Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' Or '$(Configuration)|$(Platform)'=='Debug_xp|Win32' ">
       <PropertyGroup>
@@ -148,7 +155,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.5.3\opencv\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -196,7 +203,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.5.3\opencv\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -214,9 +221,9 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>opencv_img_hash453$(OpenCVDebugSuffix).lib;opencv_world453$(OpenCVDebugSuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world490d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\..\Externals\opencv\4.5.3\opencv\$(PlatformTarget)\vc15\lib;$(OutDir);$(OutDir)..\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir);$(OutDir)..\</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -224,16 +231,15 @@
       <ShowProgress>NotSet</ShowProgress>
     </Link>
     <PreBuildEvent>
-      <Command>
-        xcopy /y /s "$(SolutionDir)..\..\Externals\opencv\2.4.13.5\opencv\build\x86\vc14\bin\opencv_core2413$(OpenCVDebugSuffix).dll"       "$(OutDir)..\*"
-        xcopy /y /s "$(SolutionDir)..\..\Externals\opencv\2.4.13.5\opencv\build\x86\vc14\bin\opencv_imgproc2413$(OpenCVDebugSuffix).dll"    "$(OutDir)..\*"</Command>
+      <Command> copy /y /v "$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\$(PlatformTarget)\vc16\bin\*490*$(OpenCVDebugSuffix).dll" "$(OutDir)..\*.*"
+ copy /y /v "$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\$(PlatformTarget)\vc16\lib\*490*$(OpenCVDebugSuffix).lib" "$(OutDir)..\*.*"</Command>
       <Message>Copy working dlls to working directory</Message>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy /y /v "$(SolutionDir)..\..\Externals\opencv\4.5.3\opencv\$(PlatformTarget)\vc15\bin\*453$(OpenCVDebugSuffix).dll" "$(OutDir)..\*.*"</Command>
+      <Command>copy /y /v "$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\$(PlatformTarget)\vc16\bin\*490*$(OpenCVDebugSuffix).dll" "$(OutDir)..\*.*"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>Copy opencv 4.5.3 runtime files for vc15 (VS2017)</Message>
+      <Message>Copy opencv 4.9.0 runtime files for vc16 (VS2022)</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_xp|Win32'">
@@ -243,7 +249,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)\packages\opencv.win.native.310.3.0\build\native\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -284,7 +290,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)\packages\opencv.win.native.310.3.0\build\native\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -325,7 +331,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.5.3\opencv\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -375,7 +381,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.5.3\opencv\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -392,9 +398,9 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>opencv_img_hash453$(OpenCVDebugSuffix).lib;opencv_world453$(OpenCVDebugSuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world490$(OpenCVDebugSuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\..\Externals\opencv\4.5.3\opencv\$(PlatformTarget)\vc15\lib;$(OutDir);$(OutDir)..\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir);$(OutDir)..\</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -405,15 +411,15 @@
     </Link>
     <PreBuildEvent>
       <Command>
-        xcopy /y /s "$(SolutionDir)..\..\Externals\opencv\2.4.13.5\opencv\build\x86\vc14\bin\opencv_core2413$(OpenCVDebugSuffix).dll"       "$(OutDir)..\*"
-        xcopy /y /s "$(SolutionDir)..\..\Externals\opencv\2.4.13.5\opencv\build\x86\vc14\bin\opencv_imgproc2413$(OpenCVDebugSuffix).dll"    "$(OutDir)..\*"</Command>
+        xcopy /y /s "$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\x64\vc16\bin\opencv_world490$(OpenCVDebugSuffix).dll"       "$(OutDir)..\*"
+        xcopy /y /s "$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\x64\vc16\lib\opencv_world490$(OpenCVDebugSuffix).lib"    "$(OutDir)..\*"</Command>
       <Message>Copy working dlls to working directory</Message>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy /y /v "$(SolutionDir)..\..\Externals\opencv\4.5.3\opencv\$(PlatformTarget)\vc15\bin\*453$(OpenCVDebugSuffix).dll" "$(OutDir)..\*.*"</Command>
+      <Command>copy /y /v "$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\$(PlatformTarget)\vc16\bin\*490*$(OpenCVDebugSuffix).dll" "$(OutDir)..\*.*"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>Copy opencv 4.5.3 runtime files for vc15 (VS2017)</Message>
+      <Message>Copy opencv 4.9.0 runtime files for vc16 (VS2022)</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForAtom|Win32'">
@@ -424,7 +430,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)\packages\opencv.win.native.310.3.0\build\native\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -474,7 +480,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)\packages\opencv.win.native.310.3.0\build\native\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -523,7 +529,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)\packages\opencv.win.native.310.3.0\build\native\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -566,7 +572,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)\packages\opencv.win.native.310.3.0\build\native\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;$(ProjectDir)common;$(ProjectDir)..\common;$(ProjectDir)..\..\common;$(ProjectDir)..\..\gadgets\common;$(SolutionDir)..\..\Externals\opencv\4.9.0\opencv\build\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;%(PreprocessorDefinitions);NO_ATL_DEBUG</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -601,8 +607,8 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Common\Math\FRegression.cpp" />
     <ClCompile Include="..\..\Common\Math\PlaneGeometry.cpp" />
-    <ClCompile Include="..\Common\Math\FRegression.cpp" />
     <ClCompile Include="Tracker.cpp" />
     <ClCompile Include="TrackerGadget.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -619,8 +625,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Common\Math\FRegression.h" />
     <ClInclude Include="..\..\Common\Math\Line2d.h" />
-    <ClInclude Include="..\Common\Math\FRegression.h" />
     <ClInclude Include="Tracker.h" />
     <ClInclude Include="TrackerGadget.h" />
     <ClInclude Include="Resource.h" />
